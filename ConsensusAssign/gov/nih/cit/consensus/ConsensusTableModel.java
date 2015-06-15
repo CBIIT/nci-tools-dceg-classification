@@ -1,8 +1,8 @@
 package gov.nih.cit.consensus;
 
 import gov.nih.cit.consensus.jdbc.SQLiteConsensusDAO;
-import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.AssignmentCodingSystem;
+import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.codingsysten.OccupationCode;
 import gov.nih.cit.soccer.input.SoccerInput;
 import gov.nih.cit.soccer.input.ValidJobDescriptionTypes;

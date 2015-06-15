@@ -1,7 +1,5 @@
 package gov.nih.cit.consensus;
 
-import gov.nih.cit.consensus.SOCConsensusDAO;
-
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;

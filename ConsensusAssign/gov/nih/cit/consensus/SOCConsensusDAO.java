@@ -1,7 +1,7 @@
 package gov.nih.cit.consensus;
 
-import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.AssignmentCodingSystem;
+import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.codingsysten.OccupationCode;
 import gov.nih.cit.soccer.input.SoccerInput;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ListIterator;
 
-import au.com.bytecode.opencsv.CSVReader;
+import com.opencsv.CSVReader;
 
 public class SOCConsensusDAO {
 
