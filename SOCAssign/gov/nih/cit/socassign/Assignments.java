@@ -12,7 +12,7 @@ import java.util.List;
  * Job Description for later review.  Only 3 Assignments
  * are stored.
  * 
- * @author druss
+ * @author Daniel Russ
  *
  */
 public class Assignments {
