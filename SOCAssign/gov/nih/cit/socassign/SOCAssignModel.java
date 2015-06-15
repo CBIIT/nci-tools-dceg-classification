@@ -47,7 +47,7 @@ public class SOCAssignModel {
 	private SingleSOCcerResultTableModel singleJobDescriptionTableModel=new SingleSOCcerResultTableModel();
 	/** Maps the RowID to the coders results.  <B>WARNING</B>: this is not necessarily the rowIndex. */
 	private Map<Integer, Assignments> assignmentListMap=new HashMap<Integer,Assignments>();
-	private DefaultListModel singleJobDescriptionListModel=new DefaultListModel();
+	private DefaultListModel<String> singleJobDescriptionListModel=new DefaultListModel<String>();
 	
 	/** the selected row NOT the selected rowID (This can get confusing.)*/
 	private int selectedResultsRow=0;
@@ -117,7 +117,7 @@ public class SOCAssignModel {
 	}
 
 	/** @return the ListModel for the JList  */
-	public ListModel getSingleJobDescriptionListModel() {
+	public ListModel<String> getSingleJobDescriptionListModel() {
 		return singleJobDescriptionListModel;
 	}
 

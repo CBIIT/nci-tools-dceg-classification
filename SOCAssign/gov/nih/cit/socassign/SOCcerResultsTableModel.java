@@ -49,7 +49,9 @@ public class SOCcerResultsTableModel extends AbstractTableModel{
 		SOCAssignModel socAssignModel=SOCAssignModel.getInstance();
 		if (results==null) return "";
 		if (columnIndex==0) {
-			return socAssignModel.getAssignmentsForRow(rowIndex).getFlag()==FlagType.FLAGGED;
+			Assignments assignments=socAssignModel.getAssignmentsForRow(rowIndex);
+			if (assignments==null) return false;
+			return assignments.getFlag()==FlagType.FLAGGED;
 		}
 
 		columnIndex--;

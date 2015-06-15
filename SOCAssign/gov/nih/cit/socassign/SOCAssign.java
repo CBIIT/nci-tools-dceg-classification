@@ -70,7 +70,7 @@ public class SOCAssign{
 	/** displays the results of SOCcer */
 	private static JTable resultsTable=new JTable(testModel.getTableModel());
 	/** display the codes assigned by the coder. */
-	private static JList assigmentList=new JList(testModel.getAssignmentListModel());
+	private static JList<OccupationCode> assigmentList=new JList<OccupationCode>(testModel.getAssignmentListModel());
 	/** A text field where coders can type in a code */
 	private static JTextField assignmentTF=new JTextField(8);
 	/** A table that displays the results of SOCcer for a single job description.  This is filled
@@ -79,7 +79,7 @@ public class SOCAssign{
 	/** A JPanel that display all the codes for a coding system */
 	private static CodingSystemPanel codingSystemPanel=new CodingSystemPanel();
 	/** Displays the selected Job Description from the resultsTable */
-	private static JList jobDescriptionInfoList=new JList(testModel.getSingleJobDescriptionListModel());
+	private static JList<String> jobDescriptionInfoList=new JList<String>(testModel.getSingleJobDescriptionListModel());
 	/** A list that holds the last 3 files used */
 	private static RollingList<File> lastWorkingFileList=new RollingList<File>(3);
 	/** Stores information (the last files used) in a properties file so it will be remembered next time the program starts*/
@@ -607,50 +607,14 @@ public class SOCAssign{
 			}
 		}
 	};
-
-
-
-	/*
-	private static TreeSelectionListener codingSystemTreeListener =new TreeSelectionListener() {
-	
-		@Override
-		public void valueChanged(TreeSelectionEvent event) {
-			if (!validResultSelected()) return;
-			if (event.getPath().getPathCount()==1) return;
-	
-			OccupationCode code=codingSystemPanel.getLastSelectedPathComponent();
-			if (code==null) return;
-	
-			if (code.isLeaf()){
-				logger.finer("Setting the Assigned SOC...");
-				testModel.addSelection(code.getName());
-			}
-			assignmentTF.setText(code.getName());
-		}
-	};
-
-
-	private static JPopupMenu popup=new JPopupMenu();
-
-	private static KeyListener myKeyListener=new KeyAdapter() {
-		@Override
-		public void keyTyped(KeyEvent e) {
-			if ( (e.getKeyChar() >= KeyEvent.VK_0) && (e.getKeyChar()<=KeyEvent.VK_9) ){
-				System.out.println(assignmentTF.getText()+e.getKeyChar()+" "+assignmentTF.getX());
-				popup.setLocation(assignmentTF.getLocation());
-			}else{
-			}
-		}
-	};
-*/
 	private static ListSelectionListener assignmentListSelectionListener = new ListSelectionListener() {
 
 		@Override
 		public void valueChanged(ListSelectionEvent event) {
 			int row=event.getFirstIndex();
-			Object element=assigmentList.getModel().getElementAt(row);
-			// the element is "" return;
-			if (element instanceof String){
+			if (row<0 || row>= assigmentList.getModel().getSize()){
+				assigmentList.clearSelection();
+				codingSystemPanel.clearSelection();
 				return;
 			}
 			OccupationCode code=(OccupationCode)assigmentList.getModel().getElementAt(row);

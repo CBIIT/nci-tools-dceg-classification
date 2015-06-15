@@ -14,7 +14,7 @@ import javax.swing.AbstractListModel;
  * @author Daniel Russ
  *
  */
-public class AssignmentListModel extends AbstractListModel {
+public class AssignmentListModel extends AbstractListModel<OccupationCode> {
 
 	private static Assignments NO_ASSIGNMENT=new Assignments(-1,new ArrayList<OccupationCode>());
 
@@ -89,8 +89,7 @@ public class AssignmentListModel extends AbstractListModel {
 	}
 	
 	@Override
-	public Object getElementAt(int indx) {
-		if (indx>=assignments.size()) return "";
+	public OccupationCode getElementAt(int indx) {
 		return assignments.get(indx);
 	}
 

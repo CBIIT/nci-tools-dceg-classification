@@ -16,7 +16,7 @@ import javax.swing.MutableComboBoxModel;
  *
  * @param <T>  the class of the object in the ComboBox.
  */
-public class FilteringComboBoxModel<T> extends AbstractListModel implements MutableComboBoxModel {
+public class FilteringComboBoxModel<T> extends AbstractListModel<T> implements MutableComboBoxModel<T> {
 
 	ArrayList<T> completeItemList,filteredItems;
 	T selectedItem=null;
@@ -94,9 +94,9 @@ public class FilteringComboBoxModel<T> extends AbstractListModel implements Muta
 	}
 
 	@Override
-	public Object getElementAt(int index) {
-		if (filteredItems.get(index)==null) return "";
-		return filteredItems.get(index).toString();
+	public T getElementAt(int index) {
+		//if (filteredItems.get(index)==null) return "";
+		return filteredItems.get(index);
 	}
 
 	// ============ Mutable ComboBox Model ==========
