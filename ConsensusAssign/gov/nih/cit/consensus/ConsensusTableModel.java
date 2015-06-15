@@ -125,6 +125,8 @@ public class ConsensusTableModel extends AbstractTableModel {
 				sqliteDAO.fillCodingSystemTable(codingSystem);
 				sqliteDAO.fillAssignmentsTable(rowAssignmentsMap);
 				sqliteDAO.fillConsensusTable(consensusMap);
+				
+				SOCconsensus.addDBFileToLastFileList(dbFile);
 			} catch (SQLException e) {
 				throw new IOException(e);
 			}

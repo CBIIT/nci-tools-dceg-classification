@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -26,11 +27,44 @@ public class AppProperties {
 		currentProperties.setProperty(key, value);
 		save();
 	}
+	public void setListOfFiles(String key,List<File> files){
+		for (int i=0;i<files.size();i++){
+			currentProperties.setProperty(key+"."+i, files.get(i).getAbsolutePath());
+		}
+		save();
+	}
+	public List<File> getListOfFiles(String key){
+		List<File> list=new ArrayList<File>();
+
+		String defValue="<N/A>";
+		boolean keepGoing=true;
+		for (int i=0;keepGoing;i++){
+			String value=currentProperties.getProperty(key+"."+i,defValue);
+			keepGoing=!value.equals(defValue);
+			if (keepGoing) list.add(new File(value));
+		}
+
+		return list;
+	}
+	
 	public void setListOfProperties(String key,List<String> values){
 		for (int i=0;i<values.size();i++){
 			currentProperties.setProperty(key+"."+i, values.get(i));
 		}
 		save();
+	}
+	public List<String> getListOfPropertes(String key){
+		List<String> list=new ArrayList<String>();
+
+		String defValue="<N/A>";
+		boolean keepGoing=true;
+		for (int i=0;keepGoing;i++){
+			String value=currentProperties.getProperty(key+"."+i,defValue);
+			keepGoing=!value.equals(defValue);
+			if (keepGoing) list.add(value);
+		}
+
+		return list;
 	}
 	
 	private void save(){

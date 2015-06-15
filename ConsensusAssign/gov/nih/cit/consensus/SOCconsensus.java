@@ -3,6 +3,8 @@ package gov.nih.cit.consensus;
 import gov.nih.cit.socassign.AssignmentCodingSystem;
 import gov.nih.cit.socassign.CodingSystemPanel;
 import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.util.AppProperties;
+import gov.nih.cit.util.RollingList;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -26,6 +28,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -49,7 +52,11 @@ public class SOCconsensus{
 	private static JFrame jf;
 	private static JMenu fileMenu;
 	private static ConsensusExporter consensusExporter = new ConsensusExporter();
-
+	private static AppProperties properties=AppProperties.getDefaultAppProperties("SOCconsensus");
+	/** A list that holds the last 3 files used */
+	private static RollingList<File> lastWorkingFileList=new RollingList<File>(3);
+	
+	
 	private static void createAndShowGUI() {
 		codingSystemPanel.updateCodingSystem(AssignmentCodingSystem.SOC2010);
 		OccupationCodeRenderer cellRenderer=new OccupationCodeRenderer();
@@ -90,20 +97,36 @@ public class SOCconsensus{
 
 		fileMenu=new JMenu("File");
 		fileMenu.add(loadAssignmentAction);
-		fileMenu.add(loadWorkingDatabaseAction);
+		JMenuItem loadDBMI=new JMenuItem(loadWorkingDatabaseAction);loadDBMI.setActionCommand("");
+		fileMenu.add(loadDBMI);
+		fileMenu.add(new JSeparator());
+		
+		List<File> files=properties.getListOfFiles("last.file");
+		lastWorkingFileList.addAll(files);
+		for (int i=0;i<lastWorkingFileList.size();i++){
+			File file=lastWorkingFileList.get(i);
+			JMenuItem menuItem=new JMenuItem(loadWorkingDatabaseAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
+			fileMenu.add(menuItem);
+		}
+		
 		fileMenu.add(new JSeparator());
 		fileMenu.add(exportAction);
-		fileMenu.add(new JSeparator());
 		fileMenu.add(quitAction);
 		
 		menuBar.add(fileMenu);
 
 		return menuBar;
 	}
+	
+	public static void addDBFileToLastFileList(File dbFile){
+		lastWorkingFileList.add(dbFile);
+		properties.setListOfFiles("last.file", lastWorkingFileList);
+		updateFileMenu();
+	}
 
 	private static AbstractAction loadAssignmentAction=new AbstractAction("Load Assignments") {
 
-		JFileChooser jfc=new JFileChooser("/tmp");
+		JFileChooser jfc=new JFileChooser(new File(properties.getProperty("last.directory", System.getProperty("user.home"))));
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -127,23 +150,60 @@ public class SOCconsensus{
 	
 	private static AbstractAction loadWorkingDatabaseAction=new AbstractAction("Load Working File") {
 
-		JFileChooser jfc=new JFileChooser("/tmp");
+		/**
+		 * gets a file from a JFileChooser
+		 * 
+		 * @return selected file
+		 */
+		public File getFile(){			
+			int res=jfc.showOpenDialog(null);
+			if (res==JFileChooser.APPROVE_OPTION){
+				properties.setProperty("last.directory", jfc.getCurrentDirectory().getAbsolutePath());
+				return jfc.getSelectedFile();
+			}
+			return null;
+		}
 		
 		@Override
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent event) {
 			jfc.setFileFilter(dbFF);
-			int res=jfc.showOpenDialog(jf);
-			if (res==JFileChooser.APPROVE_OPTION){
-				File selFile = jfc.getSelectedFile();
-				try {
-					consensusTableModel.loadFromDatabase(selFile);
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
+
+			// if the user selected a file from the file menu, load it.
+			// else get it from the JFileChooser...
+			File dbFile= (event.getActionCommand().length() == 0) ? getFile() : new File(event.getActionCommand());
+			// if the user canceled the JFileChoose return...
+			if (dbFile == null ) return;
+			
+			// if somehow the file does not exist delete it from the lastWorkingFileList...
+			if (!dbFile.exists()) {
+				lastWorkingFileList.remove(dbFile);
+				properties.setListOfFiles("last.file", lastWorkingFileList);
+				updateFileMenu();
+				return;
 			}
+			
+			try {
+				consensusTableModel.loadFromDatabase(dbFile);
+				addDBFileToLastFileList(dbFile);
+			} catch (SQLException e) {
+				JOptionPane.showMessageDialog(null, "Error trying to Open database: (Did you select results instead of a working file?) "+dbFile.getAbsolutePath(), "SOCconsensus Error", JOptionPane.ERROR_MESSAGE);
+			}
+			
 		}
 	};
+	private static void updateFileMenu(){
 
+		for (int i=fileMenu.getMenuComponentCount()-4;i>=3;i-- ){
+			fileMenu.remove(i);
+		}
+
+		for (int i=0;i<lastWorkingFileList.size();i++){
+			File file=lastWorkingFileList.get(i);
+			JMenuItem menuItem=new JMenuItem(loadWorkingDatabaseAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
+			fileMenu.insert(menuItem, 3);
+		}
+		fileMenu.invalidate();
+	}
 	private static AbstractAction exportAction=new AbstractAction("Export Annotation to CSV") {
 	
 		@Override
@@ -171,8 +231,7 @@ public class SOCconsensus{
 	};
 	
 	private static List<String> listOfValidCodes;
-	//	private static FilteringComboBoxModel<String> comboBoxModel;
-	//	private static JComboBox comboBox;
+
 	private static PropertyChangeListener codingSystemChangeListener=new PropertyChangeListener() {
 
 		@Override
@@ -185,11 +244,10 @@ public class SOCconsensus{
 				listOfValidCodes=codingSystem.getListOfCodesAsStrings();
 				listOfValidCodes.add(0, "");
 				listOfValidCodes.remove(codingSystem.toString());
-				
-				Java2sAutoComboBox comboBox=new Java2sAutoComboBox(listOfValidCodes);
-//				comboBox.setEditable(true);
+
+				// at some point we want to make this a list of OccupationCodes, not Strings...
+				Java2sAutoComboBox<String> comboBox=new Java2sAutoComboBox<String>(listOfValidCodes);
 								
-				//reviewerTable.setDefaultEditor(OccupationCode.class, cellEditor);
 				reviewerTable.setDefaultEditor(String.class, new DefaultCellEditor(comboBox));
 				reviewerTable.invalidate();
 			}
@@ -199,6 +257,7 @@ public class SOCconsensus{
 
 	public SOCconsensus() {}
 	public static void main(String[] args) {
+
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();
@@ -226,95 +285,7 @@ public class SOCconsensus{
 		
 	};
 
-/*
- * 
-	public static StringBuilder prefixSB=new StringBuilder();
-	public static MyPredicate predicate=new MyPredicate(prefixSB);
 
-	static KeyListener l=new KeyAdapter() {
-
-		@Override
-		public void keyPressed(KeyEvent e) {
-
-
-			switch (e.getKeyCode()) {
-			case KeyEvent.VK_0:
-			case KeyEvent.VK_1:
-			case KeyEvent.VK_2:
-			case KeyEvent.VK_3:
-			case KeyEvent.VK_4:
-			case KeyEvent.VK_5:
-			case KeyEvent.VK_6:
-			case KeyEvent.VK_7:
-			case KeyEvent.VK_8:
-			case KeyEvent.VK_9:
-			case KeyEvent.VK_MINUS:
-				prefixSB.append(e.getKeyChar());
-				System.out.println(prefixSB);
-				if (!validPrefix()){
-					// remove last the char...
-					prefixSB.setLength(prefixSB.length()-1);
-					e.consume();
-				}
-
-				break;
-			case KeyEvent.VK_BACK_SPACE:
-			case KeyEvent.VK_DELETE:
-				if (prefixSB.length()>0){
-					prefixSB.setLength(prefixSB.length()-1);
-				}
-				break;
-			case KeyEvent.VK_ESCAPE:
-				break;
-			case KeyEvent.VK_DOWN:
-			case KeyEvent.VK_UP:
-			case KeyEvent.VK_RIGHT:
-			case KeyEvent.VK_LEFT:
-				break;
-			case KeyEvent.VK_ENTER:
-				break;
-			default:
-				System.out.println("1: NO!!! default: "+e.paramString());
-				e.consume();
-				break;
-			}
-
-		}
-
-		private boolean validPrefix(){
-			for (String code:listOfValidCodes){
-				if (predicate.apply(code)) return true;
-			}
-			return false;
-		}
-
-		public void keyTyped(KeyEvent event) {
-			//event.consume();
-		};
-	};
-	public static class MyPredicate implements IPredicate<String>,ActionListener{
-		StringBuilder prefix;
-
-		public MyPredicate(StringBuilder prefix) {
-			this.prefix=prefix;
-		}
-
-
-		@Override
-		public boolean apply(String code) {
-			if (code==null) return true;
-			System.out.println("does "+ code+" start with: "+prefix+" "+code.startsWith(prefix.toString()));
-			if (prefix.length()==0) return true;
-
-			return code.startsWith(prefix.toString());
-		}
-
-		@Override
-		public void actionPerformed(ActionEvent event) {
-			prefix.setLength(0);;
-		}
-	}
-*/
 	private static MouseListener mouseListener = new MouseAdapter() {
 
 		public void mouseClicked(MouseEvent event) {
@@ -341,7 +312,7 @@ public class SOCconsensus{
 		};
 	}; 
 
-	static JFileChooser jfc=new JFileChooser("/tmp");
+	static JFileChooser jfc=new JFileChooser(properties.getProperty("last.directory", System.getProperty("user.home")));
 	static FileFilter annFF=new FileNameExtensionFilter("Annotation Results Files (.csv)","csv");
 	static FileFilter dbFF=new FileNameExtensionFilter("Working SQLite Files (.db)","db");
 	
@@ -356,87 +327,3 @@ public class SOCconsensus{
 		}
 	};
 }
-
-/*
-class TextTableEditor extends DefaultCellEditor{
-	public TextTableEditor(KeyListener listener) {
-		super(new JTextField());
-		setClickCountToStart(1);
-
-		getComponent().addKeyListener(listener);
-	}
-	@Override
-	public Component getTableCellEditorComponent(JTable table, Object value,
-			boolean isSelected, int row, int column) {
-		if (value==null) value="";
-		SOCconsensus.prefixSB.replace(0, SOCconsensus.prefixSB.length(), value.toString());
-
-		return super.getTableCellEditorComponent(table, value, isSelected, row, column);
-	}
-}
-
-
-class JCBTableEditor extends AbstractCellEditor implements TableCellEditor,PopupMenuListener,ActionListener{
-	private JComboBox comboBox;
-	protected static final String EDIT = "edit";
-	String selection;
-
-	public JCBTableEditor(JComboBox combobox) {
-		this.comboBox=combobox;
-		combobox.addKeyListener(SOCconsensus.l);
-
-		comboBox.addPopupMenuListener(this);
-		combobox.addActionListener(this);
-	}
-
-	@Override
-	public Object getCellEditorValue() {
-		System.out.println("get value... "+comboBox.getSelectedItem());
-		return comboBox.getSelectedItem();
-	}
-
-	@Override
-	public Component getTableCellEditorComponent(JTable table, Object value,
-			boolean isSelected, int row, int column) {
-
-		System.out.println("getTableCellEditorComponent (A): ("+row+","+column+") >"+value+"<" + "  "+comboBox.getSelectedItem());
-		comboBox.getModel().setSelectedItem(value);
-		if (value==null){
-			((JTextField)comboBox.getEditor().getEditorComponent()).setText("");	
-		}else{
-			((JTextField)comboBox.getEditor().getEditorComponent()).setText(value.toString());	
-		}
-
-		System.out.println("getTableCellEditorComponent (B): ("+row+","+column+") >"+value+"<" + "  "+comboBox.getSelectedItem());
-		System.out.println("----");
-
-		return comboBox;
-	}
-
-
-	// ============   Action listener ===============  
-	public void actionPerformed(ActionEvent event) {
-		System.out.println("Firing that we are done!!!");
-		fireEditingStopped();
-		System.out.println(event.getActionCommand());
-	};
-	// ============   popup listener ===============  
-	@Override
-	public void popupMenuCanceled(PopupMenuEvent e) {
-		System.out.println("PM canceled "+e.toString());
-
-	}
-
-	@Override
-	public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-		System.out.println("PM invisible "+e.toString());
-	}
-
-	@Override
-	public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-		System.out.println("PM Visible");
-
-	}
-
-}
- */

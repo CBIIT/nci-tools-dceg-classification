@@ -9,24 +9,28 @@ import javax.swing.JList;
 import javax.swing.plaf.basic.BasicComboBoxEditor;
 import javax.swing.plaf.basic.BasicComboPopup;
 
-public class Java2sAutoComboBox extends JComboBox {
+public class Java2sAutoComboBox<E> extends JComboBox<E> {
 
 	private class AutoTextFieldEditor extends BasicComboBoxEditor {
 
-		private Java2sAutoTextField getAutoTextFieldEditor() {
-			return (Java2sAutoTextField) editor;
+		
+		@SuppressWarnings("unchecked")
+		private Java2sAutoTextField<E> getAutoTextFieldEditor() {
+			return (Java2sAutoTextField<E>) editor;
 		}
 
-		AutoTextFieldEditor(java.util.List list) {
-			editor = new Java2sAutoTextField(list, Java2sAutoComboBox.this);
+		AutoTextFieldEditor(List<E> list) {
+			editor = new Java2sAutoTextField<E>(list, Java2sAutoComboBox.this);
 		}
 	}
 
-	public Java2sAutoComboBox(java.util.List list) {
+	
+	@SuppressWarnings("unchecked")
+	public Java2sAutoComboBox(List<E> list) {
 		isFired = false;
 		autoTextFieldEditor = new AutoTextFieldEditor(list);
 		setEditable(true);
-		setModel(new DefaultComboBoxModel(list.toArray()) {
+		setModel(new DefaultComboBoxModel<E>((E[])list.toArray()) {
 
 			protected void fireContentsChanged(Object obj, int i, int j) {
 				if (!isFired)
@@ -53,13 +57,14 @@ public class Java2sAutoComboBox extends JComboBox {
 		autoTextFieldEditor.getAutoTextFieldEditor().setStrict(flag);
 	}
 
-	public List getDataList() {
+	public List<E> getDataList() {
 		return autoTextFieldEditor.getAutoTextFieldEditor().getDataList();
 	}
 
-	public void setDataList(List list) {
+	@SuppressWarnings("unchecked")
+	public void setDataList(List<E> list) {
 		autoTextFieldEditor.getAutoTextFieldEditor().setDataList(list);
-		setModel(new DefaultComboBoxModel(list.toArray()));
+		setModel(new DefaultComboBoxModel<E>((E[])list.toArray()));
 	}
 
 	void setSelectedValue(Object obj) {
@@ -69,8 +74,9 @@ public class Java2sAutoComboBox extends JComboBox {
 			isFired = true;
 			setSelectedItem(obj);
 			try {
-				BasicComboPopup popup=(BasicComboPopup)getUI().getAccessibleChild(this, 0);
-				JList list=popup.getList();
+				BasicComboPopup popup=(BasicComboPopup)getUI().getAccessibleChild(this, 0);				
+				@SuppressWarnings("unchecked")
+				JList<E> list=(JList<E>)popup.getList();
 				int indx=list.getSelectedIndex();
 				list.ensureIndexIsVisible(Math.min(list.getModel().getSize()-1, indx+list.getVisibleRowCount()-1));
 			} catch (Exception e) {

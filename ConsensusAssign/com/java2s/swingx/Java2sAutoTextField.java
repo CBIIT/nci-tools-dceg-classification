@@ -7,7 +7,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class Java2sAutoTextField extends JTextField {
+public class Java2sAutoTextField<E> extends JTextField {
 	class AutoDocument extends PlainDocument {
 
 		public void replace(int i, int j, String s, AttributeSet attributeset)
@@ -61,7 +61,7 @@ public class Java2sAutoTextField extends JTextField {
 
 	}
 
-	public Java2sAutoTextField(List list) {
+	public Java2sAutoTextField(List<E> list) {
 		isCaseSensitive = false;
 		isStrict = true;
 		autoComboBox = null;
@@ -74,7 +74,7 @@ public class Java2sAutoTextField extends JTextField {
 		}
 	}
 
-	Java2sAutoTextField(List list, Java2sAutoComboBox b) {
+	Java2sAutoTextField(List<E> list, Java2sAutoComboBox<E> b) {
 		isCaseSensitive = false;
 		isStrict = true;
 		autoComboBox = null;
@@ -110,6 +110,7 @@ public class Java2sAutoTextField extends JTextField {
 	}
 
 	public void replaceSelection(String s) {
+		@SuppressWarnings("unchecked")
 		AutoDocument _lb = (AutoDocument) getDocument();
 		if (_lb != null)
 			try {
@@ -136,11 +137,11 @@ public class Java2sAutoTextField extends JTextField {
 		isStrict = flag;
 	}
 
-	public List getDataList() {
+	public List<E> getDataList() {
 		return dataList;
 	}
 
-	public void setDataList(List list) {
+	public void setDataList(List<E> list) {
 		if (list == null) {
 			throw new IllegalArgumentException("values can not be null");
 		} else {
@@ -149,11 +150,11 @@ public class Java2sAutoTextField extends JTextField {
 		}
 	}
 
-	private List dataList;
+	private List<E> dataList;
 
 	private boolean isCaseSensitive;
 
 	private boolean isStrict;
 
-	private Java2sAutoComboBox autoComboBox;
+	private Java2sAutoComboBox<E> autoComboBox;
 }
