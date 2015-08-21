@@ -4,8 +4,8 @@ import gov.nih.cit.socassign.AssignmentCodingSystem;
 import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.Assignments.FlagType;
 import gov.nih.cit.socassign.SOCcerResults;
-import gov.nih.cit.socassign.codingsysten.CodingSystem;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.CodingSystem;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.io.IOException;
 import java.sql.Connection;

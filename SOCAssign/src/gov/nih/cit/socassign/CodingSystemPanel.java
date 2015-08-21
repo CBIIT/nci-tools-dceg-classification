@@ -1,7 +1,7 @@
 package gov.nih.cit.socassign;
 
-import gov.nih.cit.socassign.codingsysten.CodingSystemTreeModel;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.CodingSystemTreeModel;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.awt.BorderLayout;
 import java.awt.event.MouseListener;

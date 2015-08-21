@@ -2,7 +2,7 @@ package gov.nih.cit.socassign.jdbc;
 
 import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.SOCcerResults;
-import gov.nih.cit.socassign.codingsysten.CodingSystem;
+import gov.nih.cit.socassign.codingsystem.CodingSystem;
 
 import java.io.Closeable;
 import java.sql.SQLException;

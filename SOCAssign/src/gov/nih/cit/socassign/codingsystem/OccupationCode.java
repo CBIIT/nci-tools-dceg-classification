@@ -1,4 +1,4 @@
-package gov.nih.cit.socassign.codingsysten;
+package gov.nih.cit.socassign.codingsystem;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package gov.nih.cit.socassign;
 
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.io.File;
 import java.io.FileReader;

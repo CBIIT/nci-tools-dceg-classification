@@ -1,7 +1,7 @@
 package gov.nih.cit.socassign;
 
-import gov.nih.cit.socassign.codingsysten.CodingSystem;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.CodingSystem;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.util.List;
 import java.util.regex.Pattern;

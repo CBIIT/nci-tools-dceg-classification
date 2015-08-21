@@ -1,7 +1,7 @@
 package gov.nih.cit.socassign;
 
 import gov.nih.cit.socassign.Assignments.FlagType;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 import gov.nih.cit.socassign.jdbc.SOCAssignDAO;
 import gov.nih.cit.socassign.jdbc.SOCAssignDAOFactory;
 
