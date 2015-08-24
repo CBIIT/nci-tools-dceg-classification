@@ -8,6 +8,7 @@ import gov.nih.cit.util.RollingList;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -27,8 +28,11 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -45,6 +49,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
+import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -119,21 +124,25 @@ public class SOCAssign{
 		assigmentList.addListSelectionListener(assignmentListSelectionListener);
 
 		// if you hit the up/down arrow in the textfield, it switches the selected soccerResult
+		assignmentTF.setEditable(true);
 		assignmentTF.setAction(addSelectedAssignment);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "DOWN");
 		assignmentTF.getActionMap().put("DOWN", nextJobDescription);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("UP"), "UP");
 		assignmentTF.getActionMap().put("UP", previousJobDescription);
-//		assignmentTF.addKeyListener(myKeyListener);
+		// assignmentTF.addKeyListener(myKeyListener);
 
 		JPanel mainPanel = new JPanel(new BorderLayout());
 		mainPanel.add(new JScrollPane(resultsTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS),BorderLayout.WEST);
 
-
-		JPanel centerPanel = new JPanel(new BorderLayout());		
+		SpringLayout layout = new SpringLayout();
+		JPanel centerPanel = new JPanel(layout);
+		centerPanel.setPreferredSize(new Dimension(458,761));
 		// add the code assignment box ...
-		JPanel inputPanel=new JPanel(new BorderLayout());
-		inputPanel.add(assignmentTF,BorderLayout.NORTH);
+		centerPanel.add(assignmentTF);
+		layout.putConstraint(SpringLayout.WEST, assignmentTF, 0, SpringLayout.WEST, centerPanel);
+		layout.putConstraint(SpringLayout.EAST, assignmentTF, 0, SpringLayout.EAST, centerPanel);
+		layout.putConstraint(SpringLayout.NORTH, assignmentTF, 0, SpringLayout.NORTH, centerPanel);
 
 		// and the button Panel
 		//JPanel buttonPanel=new JPanel(new GridLayout(2, 2));
@@ -178,13 +187,20 @@ public class SOCAssign{
 			e.printStackTrace();
 		}			
 
-		inputPanel.add(buttonPanel,BorderLayout.CENTER);
-		inputPanel.add(new JScrollPane(assigmentList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS),BorderLayout.SOUTH);
+		centerPanel.add(buttonPanel);
+		alignSpring(layout,buttonPanel,centerPanel,assignmentTF);
+		JScrollPane assignmentScroll = new JScrollPane(assigmentList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		centerPanel.add(assignmentScroll);
+		alignSpring(layout,assignmentScroll,centerPanel,buttonPanel);
 
 		// and the single Job Description Panel.
-		centerPanel.add(inputPanel,BorderLayout.NORTH);
-		centerPanel.add(new JScrollPane(singleJobDescriptionTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS),BorderLayout.CENTER);
-		centerPanel.add(new JScrollPane(jobDescriptionInfoList,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS),BorderLayout.SOUTH);
+		JScrollPane tableScroll = new JScrollPane(singleJobDescriptionTable,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		centerPanel.add(tableScroll);
+		alignSpring(layout,tableScroll,centerPanel,assignmentScroll);
+		JScrollPane infoScroll = new JScrollPane(jobDescriptionInfoList,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		centerPanel.add(infoScroll);
+		alignSpring(layout,infoScroll,centerPanel,tableScroll);
+		layout.putConstraint(SpringLayout.SOUTH, infoScroll, 0, SpringLayout.SOUTH, centerPanel);
 		mainPanel.add(centerPanel,BorderLayout.CENTER);
 
 		// add the Coding System panel on the right
@@ -209,10 +225,24 @@ public class SOCAssign{
 
 		resultsTable.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F,0), "ToggleFlag");
 		resultsTable.getActionMap().put("ToggleFlag", toggleFlagAction);
-
+		
 		applicationFrame.setContentPane(mainPanel);
 		applicationFrame.pack();
 		applicationFrame.setVisible(true);
+
+//		addAutoCompleteBox(layout,centerPanel);
+	}
+
+	private static void alignSpring(SpringLayout layout, JComponent child, JComponent parent, JComponent predecessor) {
+		layout.putConstraint(SpringLayout.WEST, child, 0, SpringLayout.WEST, parent);
+		layout.putConstraint(SpringLayout.EAST, child, 0, SpringLayout.EAST, parent);
+		layout.putConstraint(SpringLayout.NORTH, child, 0, SpringLayout.SOUTH, predecessor);
+	}
+
+	private static void addAutoCompleteBox(SpringLayout layout, JComponent centerPanel) {
+		JButton test = new JButton("CLICK HERE");
+		centerPanel.add(test,0);
+		alignSpring(layout,test,centerPanel,assignmentTF);
 	}
 
 	private static JMenu fileMenu=new JMenu("File");
@@ -315,7 +345,7 @@ public class SOCAssign{
 
 	private static JFileChooser jfc=new JFileChooser(System.getProperty("user.home"));	
 	private static AbstractAction loadAction=new AbstractAction("Load SOCcer Results") {
-
+		private static final long serialVersionUID = 8203307202836747344L;
 
 		@Override
 		public void actionPerformed(ActionEvent event) {
@@ -361,6 +391,7 @@ public class SOCAssign{
 	private static FileFilter annFF=new FileNameExtensionFilter("Annotation Results Files (.csv)","csv");
 
 	private static AbstractAction loadDBAction=new AbstractAction("Load Previous Work") {
+		private static final long serialVersionUID = -7230933573954875342L;
 
 		public File getFile(){
 			jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
@@ -408,7 +439,9 @@ public class SOCAssign{
 
 		}
 	};
+
 	private static AbstractAction exportAction=new AbstractAction("Export Annotation to CSV") {
+		private static final long serialVersionUID = -3145117572994231404L;
 
 		@Override
 		public void actionPerformed(ActionEvent event) {
@@ -429,6 +462,7 @@ public class SOCAssign{
 		}
 	};
 	private static AbstractAction quitAction=new AbstractAction() {
+		private static final long serialVersionUID = 1999213561478931972L;
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -438,6 +472,7 @@ public class SOCAssign{
 	};
 
 	private static AbstractAction selectCodingSystemAction =new AbstractAction() {
+		private static final long serialVersionUID = 1875881058998874597L;
 
 		@Override
 		public void actionPerformed(ActionEvent event) {
@@ -450,6 +485,8 @@ public class SOCAssign{
 	};
 
 	private static AbstractAction firstJobDescription=new AbstractAction() {
+		private static final long serialVersionUID = -8885241378300233154L;
+
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			if (!validResultSelected()) return;			
@@ -457,7 +494,9 @@ public class SOCAssign{
 			resultsTable.scrollRectToVisible( resultsTable.getCellRect(0, 0, true) );
 		}
 	};
+
 	private static AbstractAction nextJobDescription=new AbstractAction() {
+		private static final long serialVersionUID = -8834879565030941627L;
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -470,7 +509,9 @@ public class SOCAssign{
 			resultsTable.scrollRectToVisible( resultsTable.getCellRect(nextRow, 0, true) );
 		}
 	};
+
 	private static AbstractAction previousJobDescription=new AbstractAction() {
+		private static final long serialVersionUID = 6155782637763420434L;
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -482,7 +523,10 @@ public class SOCAssign{
 			resultsTable.scrollRectToVisible( resultsTable.getCellRect(nextRow, 0, true) );
 		}
 	};
+
 	private static AbstractAction lastJobDescription=new AbstractAction() {
+		private static final long serialVersionUID = 1645600806658008798L;
+
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			if (!validResultSelected()) return;
@@ -491,21 +535,25 @@ public class SOCAssign{
 			resultsTable.scrollRectToVisible( resultsTable.getCellRect(row, 0, true) );
 		}
 	};
+
 	private static AbstractAction addSelectedAssignment=new AbstractAction() {
+		private static final long serialVersionUID = -2503045351214365029L;
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			if (!validResultSelected()) return;
 
-			String txt=assignmentTF.getText();
+			String txt=(String)assignmentTF.getText();
 			if (testModel.getCodingSystem().matches(txt)){
-				testModel.addSelection(assignmentTF.getText());
+				testModel.addSelection(txt);
 			}else{
 				JOptionPane.showMessageDialog(applicationFrame, "Assignment is not formatted appropriately "+txt, "SOCassign Error", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	};
+
 	private static AbstractAction removeSelectedAssignment = new AbstractAction() {
+		private static final long serialVersionUID = -9156982327895641153L;
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -515,6 +563,7 @@ public class SOCAssign{
 	};
 
 	private static AbstractAction increaseSelection = new AbstractAction() {
+		private static final long serialVersionUID = -1834161874835015764L;
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -529,6 +578,7 @@ public class SOCAssign{
 	};
 
 	private static AbstractAction decreaseSelection = new AbstractAction() {
+		private static final long serialVersionUID = 3549967732525161523L;
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -545,6 +595,7 @@ public class SOCAssign{
 	};
 
 	private static AbstractAction toggleFlagAction=new AbstractAction() {
+		private static final long serialVersionUID = 2025234944233086908L;
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -561,8 +612,8 @@ public class SOCAssign{
 			}
 		}
 	};
-	private static ListSelectionListener resultsTableSelectionListener = new ListSelectionListener() {
 
+	private static ListSelectionListener resultsTableSelectionListener = new ListSelectionListener() {
 		@Override
 		public void valueChanged(ListSelectionEvent event) {
 			if (!validResultSelected()) return;
@@ -650,6 +701,11 @@ public class SOCAssign{
 	private static DecimalFormat fmt2=new DecimalFormat("0.000E0");
 
 	private static TableCellRenderer selectedResultRenderer = new DefaultTableCellRenderer(){
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -1231757356685263171L;
+
 		@Override
 		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 			super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
@@ -673,6 +729,11 @@ public class SOCAssign{
 	};
 
 	private static TableCellRenderer flagRenderer = new DefaultTableCellRenderer(){
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 6723769622571872667L;
+
 		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 			super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
@@ -693,6 +754,11 @@ public class SOCAssign{
 	};
 
 	private static TableCellRenderer resultsRenderer = new DefaultTableCellRenderer(){
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -6681281477992789310L;
 
 		@Override
 		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
