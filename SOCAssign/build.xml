@@ -36,22 +36,22 @@
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-    	<mkdir dir="build/classes"/>
+        <mkdir dir="build/classes"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="SOCAssign.classpath"/>
         </javac>
     </target>
     <target depends="clean,jar" name="signjars">
-    	<genkey alias="${verisign.key.alias}" verbose="true" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" validity="365" keystore="${verisign.key.store}">
-    		<dname>
-    			<param name="CN" value="NCI"/>
-    			<param name="OU" value="CBIIT"/>
-    			<param name="O" value="NIH"/>
-    			<param name="C" value="US"/>
-    		</dname>
-    	</genkey>
-    	<signjar jar="build/jar/SOCAssign.jar" signedjar="build/jar/SOCAssign.jar" alias="${verisign.key.alias}" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" keystore="${verisign.key.store}"/>
+        <genkey alias="${verisign.key.alias}" verbose="true" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" validity="365" keystore="${verisign.key.store}">
+            <dname>
+                <param name="CN" value="NCI"/>
+                <param name="OU" value="CBIIT"/>
+                <param name="O" value="NIH"/>
+                <param name="C" value="US"/>
+            </dname>
+        </genkey>
+        <signjar jar="build/jar/SOCAssign.jar" signedjar="build/jar/SOCAssign.jar" alias="${verisign.key.alias}" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" keystore="${verisign.key.store}"/>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
     <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
@@ -70,13 +70,14 @@
     <target depends="build" name="jar">
         <mkdir dir="build/jar"/>
         <jar destfile="build/jar/SOCAssign.jar" basedir="build/classes">
+        	<zipgroupfileset dir="./" includes="*.jar"/>
             <manifest>
                 <attribute name="Main-Class" value="gov.nih.cit.socassign.SOCAssign"/>
             </manifest>
         </jar>
     </target>
     <target name="SOCAssign">
-        <java classname="gov.nih.cit.socassign.SOCAssign" failonerror="true" fork="yes">
+        <java jar="build/jar/SOCAssign.jar" failonerror="true" fork="yes">
             <classpath refid="SOCAssign.classpath"/>
         </java>
     </target>
