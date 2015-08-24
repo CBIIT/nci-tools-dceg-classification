@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="SOCAssign">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <property name="verisign.key.store" value=".keystore"/>
+    <property name="verisign.key.storepass" value="nci.nih.gov"/>
+    <property name="verisign.key.alias" value="CBIIT"/>
+    <property name="verisign.key.pass" value="CBIIT.NCI.NIH"/>
+    <path id="SOCAssign.classpath">
+        <pathelement location="."/>
+        <pathelement location="opencsv-3.3.jar"/>
+        <pathelement location="sqlite-jdbc-3.8.11.jar"/>
+    </path>
+    <target name="init">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete>
+            <fileset dir="build/classes" includes="**/*.class"/>
+        </delete>
+        <delete file="${verisign.key.store}"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <mkdir dir="build/classes"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SOCAssign.classpath"/>
+        </javac>
+    </target>
+    <target depends="clean,jar" name="signjars">
+        <genkey alias="${verisign.key.alias}" verbose="true" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" validity="365" keystore="${verisign.key.store}">
+            <dname>
+                <param name="CN" value="NCI"/>
+                <param name="OU" value="CBIIT"/>
+                <param name="O" value="NIH"/>
+                <param name="C" value="US"/>
+            </dname>
+        </genkey>
+        <signjar jar="build/jar/SOCAssign.jar" signedjar="build/jar/SOCAssign.jar" alias="${verisign.key.alias}" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" keystore="${verisign.key.store}"/>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target depends="build" name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/SOCAssign.jar" basedir="build/classes">
+        	<zipgroupfileset dir="./" includes="*.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="gov.nih.cit.socassign.SOCAssign"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="SOCAssign">
+        <java jar="build/jar/SOCAssign.jar" failonerror="true" fork="yes">
+            <classpath refid="SOCAssign.classpath"/>
+        </java>
+    </target>
+</project>

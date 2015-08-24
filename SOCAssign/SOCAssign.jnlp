@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="./" href="SOCAssign.jnlp">
+    <information>
+        <title>SOCAssign</title>
+        <vendor>CBIIT</vendor>
+    </information>
+    <resources>
+        <!-- Application Resources -->
+        <j2se version="1.8+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="./build/jar/SOCAssign.jar" main="true"/>
+    </resources>
+    <application-desc name="SOCAssign" main-class="gov.nih.cit.socassign.SOCAssign" width="300" height="300"/>
+    <update check="background" download="true"/>
+</jnlp>
