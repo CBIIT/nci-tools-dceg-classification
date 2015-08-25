@@ -1,62 +1,22 @@
 package gov.nih.cit.socassign;
 
 import gov.nih.cit.socassign.Assignments.FlagType;
+import gov.nih.cit.socassign.actions.*;
 import gov.nih.cit.socassign.codingsystem.OccupationCode;
-import gov.nih.cit.util.AppProperties;
-import gov.nih.cit.util.RollingList;
+import gov.nih.cit.util.*;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.io.File;
-import java.io.IOException;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.KeyStroke;
-import javax.swing.ListSelectionModel;
-import javax.swing.SpringLayout;
-import javax.swing.SwingUtilities;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
+import javax.swing.*;
+import javax.swing.event.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
+import javax.swing.table.*;
 
 /**
  * SOCAssign is the main class.  
@@ -73,25 +33,25 @@ public class SOCAssign{
 	/** holds most of the data required by the gui components */
 	private static SOCAssignModel testModel=SOCAssignModel.getInstance();
 	/** displays the results of SOCcer */
-	private static JTable resultsTable=new JTable(testModel.getTableModel());
+	private static JTable resultsTable=SOCAssignGlobals.intializeResultsTable(new JTable(testModel.getTableModel()));
 	/** display the codes assigned by the coder. */
 	private static JList<OccupationCode> assigmentList=new JList<OccupationCode>(testModel.getAssignmentListModel());
 	/** A text field where coders can type in a code */
 	private static JTextField assignmentTF=new JTextField(8);
+	/** Autocomplete fields */
+	private static DefaultListModel<String> autocompleteList = new DefaultListModel<String>();
+	private static JList<String> autocompleteField = new JList<String>(autocompleteList);
 	/** A table that displays the results of SOCcer for a single job description.  This is filled
 	 * when the user selects a row in the resultsTable*/
 	private static JTable singleJobDescriptionTable=new JTable(testModel.getTop10Model());
 	/** A JPanel that display all the codes for a coding system */
-	private static CodingSystemPanel codingSystemPanel=new CodingSystemPanel();
+	private static CodingSystemPanel codingSystemPanel=SOCAssignGlobals.intializeCodingSystemPanel(new CodingSystemPanel());
 	/** Displays the selected Job Description from the resultsTable */
 	private static JList<String> jobDescriptionInfoList=new JList<String>(testModel.getSingleJobDescriptionListModel());
 	/** A list that holds the last 3 files used */
-	private static RollingList<File> lastWorkingFileList=new RollingList<File>(3);
+	private static RollingList<File> lastWorkingFileList=SOCAssignGlobals.initializeLastWorkingFileList(new RollingList<File>(3));
 	/** Stores information (the last files used) in a properties file so it will be remembered next time the program starts*/
 	private static AppProperties appProperties;
-	/** used in the JFrame title */
-	private static final String title="SOCAssign v0.0.2";
-
 
 	public static Font fontAwesome;
 	/**
@@ -99,7 +59,7 @@ public class SOCAssign{
 	 */
 	public static void createAndShowGUI() {
 		// create the application frame ...
-		applicationFrame=new JFrame(title);
+		applicationFrame = SOCAssignGlobals.intializeApplicationFrame(new JFrame(SOCAssignGlobals.title));
 		applicationFrame.addWindowListener(windowListener);
 		applicationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -126,6 +86,7 @@ public class SOCAssign{
 		// if you hit the up/down arrow in the textfield, it switches the selected soccerResult
 		assignmentTF.setEditable(true);
 		assignmentTF.setAction(addSelectedAssignment);
+		assignmentTF.addKeyListener(new AssignmentTextFieldListener(autocompleteField,autocompleteList));
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "DOWN");
 		assignmentTF.getActionMap().put("DOWN", nextJobDescription);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("UP"), "UP");
@@ -230,7 +191,7 @@ public class SOCAssign{
 		applicationFrame.pack();
 		applicationFrame.setVisible(true);
 
-//		addAutoCompleteBox(layout,centerPanel);
+		addAutoCompleteBox(layout,centerPanel);
 	}
 
 	private static void alignSpring(SpringLayout layout, JComponent child, JComponent parent, JComponent predecessor) {
@@ -240,12 +201,12 @@ public class SOCAssign{
 	}
 
 	private static void addAutoCompleteBox(SpringLayout layout, JComponent centerPanel) {
-		JButton test = new JButton("CLICK HERE");
-		centerPanel.add(test,0);
-		alignSpring(layout,test,centerPanel,assignmentTF);
+		centerPanel.add(autocompleteField,0);
+		alignSpring(layout,autocompleteField,centerPanel,assignmentTF);
+		autocompleteField.setVisible(false);
 	}
 
-	private static JMenu fileMenu=new JMenu("File");
+	private static JMenu fileMenu=SOCAssignGlobals.initializeFileMenu(new JMenu("File"));
 	private static void createMenus(){
 		JMenuBar menuBar=new JMenuBar();
 
@@ -296,7 +257,7 @@ public class SOCAssign{
 
 
 	private static void setAppProperties(AppProperties appProperties) {
-		SOCAssign.appProperties = appProperties;
+		SOCAssign.appProperties = SOCAssignGlobals.initializeAppProperties(appProperties);
 	}
 
 	private static void fillLastWorkingFileList(){
@@ -312,83 +273,15 @@ public class SOCAssign{
 		}
 	}
 
-	private static void updateLastWorkingFileList(File f){		
-		// only update the file menu if the file is not on the list...
-		if ( lastWorkingFileList.add(f) ) {
-			updateFileMenu();
-
-			List<String> props=new ArrayList<String>();
-			for (File file:lastWorkingFileList){
-				props.add(file.getAbsolutePath());
-			}
-			appProperties.setListOfProperties("last.file", props);
-		}
-	}
-
-	private static void updateFileMenu(){
-
-		for (int i=fileMenu.getMenuComponentCount()-4;i>=3;i-- ){
-			fileMenu.remove(i);
-		}
-
-		for (int i=0;i<lastWorkingFileList.size();i++){
-			File file=lastWorkingFileList.get(i);
-			JMenuItem menuItem=new JMenuItem(loadDBAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
-			fileMenu.insert(menuItem, 3);
-		}
-		fileMenu.invalidate();
-	}
-
 	private static boolean validResultSelected(){
 		return resultsTable.getSelectedRow()>=0;
 	}
 
-	private static JFileChooser jfc=new JFileChooser(System.getProperty("user.home"));	
-	private static AbstractAction loadAction=new AbstractAction("Load SOCcer Results") {
-		private static final long serialVersionUID = 8203307202836747344L;
-
-		@Override
-		public void actionPerformed(ActionEvent event) {
-			jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
-			jfc.setFileFilter(csvFF);
-			int res=jfc.showOpenDialog(applicationFrame);
-			if (res==JFileChooser.APPROVE_OPTION){
-				System.out.println("Selected file: "+jfc.getSelectedFile().getAbsolutePath());
-				try {
-					testModel.resetModel();
-					SOCcerResults results=SOCcerResults.readSOCcerResultsFile(jfc.getSelectedFile());
-					testModel.setResults(results);
-					resultsTable.invalidate();
-
-					boolean systemSpecified=testModel.isCodingSystemSpecifiedInResults();
-					if (systemSpecified){
-						selectCodingSystemAction.setEnabled(false);
-						codingSystemPanel.updateCodingSystem(testModel.getCodingSystem());
-					}else{
-						selectCodingSystemAction.setEnabled(true);
-					}
-
-					String fileName=jfc.getSelectedFile().getAbsolutePath();
-					int indx=fileName.lastIndexOf('.');
-					if (indx<0 || fileName.substring(indx)==".db"){
-						fileName=fileName+".db";
-					}else{
-						fileName=fileName.substring(0,indx)+".db";
-					}					
-					testModel.setNewDB(fileName);
-					updateLastWorkingFileList(new File(fileName));
-
-					applicationFrame.setTitle(title+" ("+fileName+")");
-				} catch (IOException ioe) {
-					JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open File "+jfc.getSelectedFile().getAbsolutePath(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		}
-	};
-
-	private static FileFilter dbFF=new FileNameExtensionFilter("Working Files (.db)","db");
-	private static FileFilter csvFF=new FileNameExtensionFilter("SOCcer Results Files (.csv)","csv");
+	private static JFileChooser jfc = SOCAssignGlobals.initializeJFC(new JFileChooser(System.getProperty("user.home")));
+	private static FileFilter dbFF = SOCAssignGlobals.initializeDBFF(new FileNameExtensionFilter("Working Files (.db)","db"));
 	private static FileFilter annFF=new FileNameExtensionFilter("Annotation Results Files (.csv)","csv");
+
+	private static AbstractAction loadAction = new LoadSoccerResultsAction();
 
 	private static AbstractAction loadDBAction=new AbstractAction("Load Previous Work") {
 		private static final long serialVersionUID = -7230933573954875342L;
@@ -415,20 +308,20 @@ public class SOCAssign{
 			if (!dbFile.exists()) {
 				lastWorkingFileList.remove(dbFile);
 				appProperties.remove(dbFile.getAbsolutePath());
-				updateFileMenu();
+				SOCAssignGlobals.updateFileMenu();
 				return;
 			}
 
 			// load the db...
 			try {
 				testModel.loadPreviousWork(dbFile);
-				updateLastWorkingFileList(dbFile);
+				SOCAssignGlobals.updateLastWorkingFileList(dbFile);
 				resultsTable.invalidate();
 			} catch (IOException e) {
 				e.printStackTrace();
 				JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open database: (Did you select results instead of a working file?) "+dbFile.getAbsolutePath(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);
 			}
-			applicationFrame.setTitle(title+" ("+dbFile.getAbsolutePath()+")");
+			applicationFrame.setTitle(SOCAssignGlobals.title+" ("+dbFile.getAbsolutePath()+")");
 			boolean systemSpecified=testModel.isCodingSystemSpecifiedInResults();
 			if (systemSpecified){
 				selectCodingSystemAction.setEnabled(false);
@@ -471,19 +364,7 @@ public class SOCAssign{
 		}
 	};
 
-	private static AbstractAction selectCodingSystemAction =new AbstractAction() {
-		private static final long serialVersionUID = 1875881058998874597L;
-
-		@Override
-		public void actionPerformed(ActionEvent event) {
-			AssignmentCodingSystem codingSystem=AssignmentCodingSystem.valueOf(event.getActionCommand());
-			if (testModel.getCodingSystem()!=codingSystem){
-				testModel.setCodingSystem(codingSystem);
-				codingSystemPanel.updateCodingSystem(codingSystem);
-			}
-		}
-	};
-
+	private static AbstractAction selectCodingSystemAction = new SelectCodingSystemAction();
 	private static AbstractAction firstJobDescription=new AbstractAction() {
 		private static final long serialVersionUID = -8885241378300233154L;
 
