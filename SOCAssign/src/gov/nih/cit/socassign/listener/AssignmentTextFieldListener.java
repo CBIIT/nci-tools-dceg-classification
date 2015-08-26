@@ -1,41 +1,50 @@
 package gov.nih.cit.socassign.listener;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
-import javax.swing.JTextField;
+import javax.swing.event.*;
+import javax.swing.text.*;
 
-public class AssignmentTextFieldListener implements KeyListener {
-	private DefaultListModel<String> autocompleteList;
-	private JList<String> autocompleteField;
-	public AssignmentTextFieldListener(JList<String> autocompleteField, DefaultListModel<String> autocompleteList) {
-		this.autocompleteField = autocompleteField;
-		this.autocompleteList = autocompleteList;
+import gov.nih.cit.socassign.SOCAssignGlobals;
+import gov.nih.cit.socassign.SOCAssignModel;
+import gov.nih.cit.socassign.codingsystem.CodingSystem;
+
+public class AssignmentTextFieldListener implements DocumentListener {
+	@Override
+	public void insertUpdate(DocumentEvent e) {
+		onChange(e);
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
-		JTextField textField = (JTextField)e.getSource();
-		String newValue = textField.getText();
-		if (e.getKeyChar() != '\b') {
-			newValue += e.getKeyChar();
+	public void removeUpdate(DocumentEvent e) {
+		onChange(e);
+	}
+
+	@Override
+	public void changedUpdate(DocumentEvent e) {
+		onChange(e);
+	}
+
+	private void onChange(DocumentEvent event) {
+		Document doc = event.getDocument();
+		try {
+			String newValue = doc.getText(doc.getStartPosition().getOffset(),doc.getLength());
+			JList<String> autocompleteField = SOCAssignGlobals.getAutocompleteField();
+			if (newValue.isEmpty()) {
+				autocompleteField.setVisible(false);
+			} else {
+				DefaultListModel<String> autocompleteList = (DefaultListModel<String>)autocompleteField.getModel();
+				autocompleteList.clear();
+				CodingSystem system = SOCAssignModel.getInstance().getCodingSystem().getCodingSystem();
+				for (String occupationCode : system.getListOfCodesAsStrings()) {
+					if (occupationCode.contains(newValue)) {
+						autocompleteList.addElement(occupationCode+"    "+system.getOccupationalCode(occupationCode).getTitle());
+					}
+				}
+				autocompleteField.setVisible(true);
+			}
+		} catch (BadLocationException e) {
+			throw new RuntimeException(e);
 		}
-		if (newValue.isEmpty()) {
-			autocompleteField.setVisible(false);
-		} else {
-			autocompleteList.clear();
-			autocompleteList.addElement(newValue);
-			autocompleteField.setVisible(true);
-		}
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
 	}
 }

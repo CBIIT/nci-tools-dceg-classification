@@ -1,15 +1,10 @@
 package gov.nih.cit.socassign;
 
 import gov.nih.cit.socassign.action.*;
-import gov.nih.cit.socassign.adapter.AssignmentSelectionListener;
-import gov.nih.cit.socassign.adapter.CloseEventAdapter;
-import gov.nih.cit.socassign.adapter.CodingSystemAdapter;
-import gov.nih.cit.socassign.adapter.SelectAnotherSoccerResultAdapter;
+import gov.nih.cit.socassign.adapter.*;
 import gov.nih.cit.socassign.codingsystem.OccupationCode;
 import gov.nih.cit.socassign.listener.*;
-import gov.nih.cit.socassign.renderer.FlagRenderer;
-import gov.nih.cit.socassign.renderer.ResultsRenderer;
-import gov.nih.cit.socassign.renderer.SelectedResultRenderer;
+import gov.nih.cit.socassign.renderer.*;
 import gov.nih.cit.util.*;
 
 import java.awt.*;
@@ -41,11 +36,12 @@ public class SOCAssign{
 	private static final AbstractAction removeSelectedAssignment = new RemoveSelectedAssignmentAction();
 	private static final AbstractAction increaseSelection = new IncreaseSelectionAction();
 	private static final AbstractAction decreaseSelection = new DecreaseSelectionAction();
-	private static final AbstractAction toggleFlagAction=new ToggleFlagAction();
+	private static final AbstractAction toggleFlagAction = new ToggleFlagAction();
 	private static final MouseAdapter codingSystemMouseAdapter = new CodingSystemAdapter(); // Use a MouseListener instead of a TreeSelectionListener to handle double clicks.
 	private static final MouseAdapter selectAnotherSoccerResultListener = new SelectAnotherSoccerResultAdapter();
 	private static final ListSelectionListener resultsTableSelectionListener = new ResultsTableSelectionListener();
 	private static final ListSelectionListener assignmentListSelectionListener = new AssignmentSelectionListener();
+	private static final DocumentListener assignmentTextFieldListener = new AssignmentTextFieldListener();
 	private static final WindowListener windowListener = new CloseEventAdapter(); //Closes the database connection when the window is closed.
 	private static final TableCellRenderer selectedResultRenderer = new SelectedResultRenderer();
 	private static final TableCellRenderer flagRenderer = new FlagRenderer();
@@ -57,7 +53,7 @@ public class SOCAssign{
 	private static JTextField assignmentTF = new JTextField(8);
 	/** Autocomplete fields */
 	private static DefaultListModel<String> autocompleteList = new DefaultListModel<String>();
-	private static JList<String> autocompleteField = new JList<String>(autocompleteList);
+	private static JList<String> autocompleteField = SOCAssignGlobals.initializeAutocompleteField(new JList<String>(autocompleteList));
 	/** A list that holds the last 3 files used */
 	private static RollingList<File> lastWorkingFileList = SOCAssignGlobals.initializeLastWorkingFileList(new RollingList<File>(3));
 	/** Stores information (the last files used) in a properties file so it will be remembered next time the program starts*/
@@ -93,22 +89,25 @@ public class SOCAssign{
 
 	private static void createMenus(JFrame applicationFrame){
 		JMenu fileMenu = SOCAssignGlobals.initializeFileMenu(new JMenu("File"));
-		JMenuBar menuBar=new JMenuBar();
+		JMenuBar menuBar = new JMenuBar();
 
 		// fileMenu is a field because it needs to be updated when a user selects a database.
 		// create File > load
-		JMenuItem loadMI=new JMenuItem(loadAction);
+		JMenuItem loadMI = new JMenuItem(loadAction);
 		fileMenu.add(loadMI);
 
 		// create File > load previous coding
-		JMenuItem loadDBMI=new JMenuItem(loadDBAction);loadDBMI.setActionCommand("");
+		JMenuItem loadDBMI = new JMenuItem(loadDBAction);
+		loadDBMI.setActionCommand("");
 		fileMenu.add(loadDBMI);
 
 		fileMenu.add(new JSeparator());
 		// create File > LAST 3 Working Files...
 		if (lastWorkingFileList.size()>0){
 			for (File file:lastWorkingFileList.asRollingStack()){
-				JMenuItem menuItem=new JMenuItem(loadDBAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
+				JMenuItem menuItem = new JMenuItem(loadDBAction);
+				menuItem.setText(file.getName());
+				menuItem.setActionCommand(file.getAbsolutePath());
 				fileMenu.add(menuItem);
 			}
 		}
@@ -117,18 +116,19 @@ public class SOCAssign{
 		fileMenu.add(exportAction);
 
 		// create File > Quit
-		JMenuItem quitMI=new JMenuItem(quitAction);quitMI.setText("Quit");
+		JMenuItem quitMI = new JMenuItem(quitAction);
+		quitMI.setText("Quit");
 		fileMenu.add(quitMI);
 		menuBar.add(fileMenu);
 
 		// create System
-		JMenu systemMenu=new JMenu("CodingSystem");
+		JMenu systemMenu = new JMenu("CodingSystem");
 		//create System > SOC2010 ...
-		ButtonGroup codingSystemButtonGroup=new ButtonGroup();
+		ButtonGroup codingSystemButtonGroup = new ButtonGroup();
 		for (AssignmentCodingSystem system:AssignmentCodingSystem.values()){
-			JRadioButtonMenuItem item=new JRadioButtonMenuItem(selectCodingSystemAction);
+			JRadioButtonMenuItem item = new JRadioButtonMenuItem(selectCodingSystemAction);
 			codingSystemButtonGroup.add(item);
-			if (system==AssignmentCodingSystem.SOC2010) {
+			if (system == AssignmentCodingSystem.SOC2010) {
 				item.setSelected(true);
 			}
 			item.setText(system.toString());
@@ -145,7 +145,7 @@ public class SOCAssign{
 		mainPanel.add(leftPanel,BorderLayout.WEST);
 		mainPanel.add(centerPanel,BorderLayout.CENTER);
 		mainPanel.add(rightPanel, BorderLayout.EAST);
-		// if you are not in the text box,  The "<" key selected the previous row job description ,SHIFT-"<" the first.
+		// if you are not in the text box, The "<" key selected the previous row job description ,SHIFT-"<" the first.
 		// The ">" key selects the next job description and shift-">" the last.
 		mainPanel.getInputMap(JPanel.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA,0), "PreviousJobDescription");
 		mainPanel.getInputMap(JPanel.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_PERIOD,0), "NextJobDescription");
@@ -211,30 +211,30 @@ public class SOCAssign{
 		// if you hit the up/down arrow in the textfield, it switches the selected soccerResult
 		assignmentTF.setEditable(true);
 		assignmentTF.setAction(addSelectedAssignment);
-		assignmentTF.addKeyListener(new AssignmentTextFieldListener(autocompleteField,autocompleteList));
+		assignmentTF.getDocument().addDocumentListener(assignmentTextFieldListener);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "DOWN");
-		assignmentTF.getActionMap().put("DOWN", nextJobDescription);
+		assignmentTF.getActionMap().put("DOWN", new VisibilityConditionalAction(autocompleteField,new TempAction(),nextJobDescription));
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("UP"), "UP");
-		assignmentTF.getActionMap().put("UP", previousJobDescription);
+		assignmentTF.getActionMap().put("UP", new VisibilityConditionalAction(autocompleteField,new TempAction(),previousJobDescription));
 		return assignmentTF;
 	}
 
 	private static JPanel createButtonPanel() {
 		JPanel buttonPanel = new JPanel(new GridLayout(1, 4));
 		// add assignment button
-		JButton addSOCAssignment=new JButton(addSelectedAssignment);
+		JButton addSOCAssignment = new JButton(addSelectedAssignment);
 		buttonPanel.add(addSOCAssignment);
 		// move selection up
-		JButton moveAssignmentUp=new JButton(increaseSelection);
+		JButton moveAssignmentUp = new JButton(increaseSelection);
 		buttonPanel.add(moveAssignmentUp);
 		// move selection down
-		JButton moveAssignmentDown=new JButton(decreaseSelection);
+		JButton moveAssignmentDown = new JButton(decreaseSelection);
 		buttonPanel.add(moveAssignmentDown);
 		// remove assignment button
-		JButton removeSOCAssignment=new JButton(removeSelectedAssignment);
+		JButton removeSOCAssignment = new JButton(removeSelectedAssignment);
 		buttonPanel.add(removeSOCAssignment);
-		// load the icons on the button.  FontAwesome is an open-source font distributed with SOCassign.
-		// if there is a problem, use the icons that I drew.  They are not as pretty.
+		// load the icons on the button. FontAwesome is an open-source font distributed with SOCassign.
+		// if there is a problem, use the icons that I drew. They are not as pretty.
 		try {
 			try {
 				fontAwesome = Font.createFont(Font.TRUETYPE_FONT, SOCAssign.class.getResourceAsStream("fonts/fontawesome-webfont.ttf"));
@@ -295,8 +295,8 @@ public class SOCAssign{
 	private static void fillLastWorkingFileList(){
 		lastWorkingFileList.clear();
 		for (int i=0;i<lastWorkingFileList.capacity();i++){
-			String fileName=appProperties.getProperty("last.file."+i, "");
-			File file=new File(fileName);
+			String fileName = appProperties.getProperty("last.file."+i, "");
+			File file = new File(fileName);
 			if (file.exists()){
 				lastWorkingFileList.add(file);
 			} else {

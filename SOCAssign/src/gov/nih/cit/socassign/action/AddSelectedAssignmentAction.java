@@ -9,10 +9,10 @@ public class AddSelectedAssignmentAction extends AbstractAction {
 	private static final long serialVersionUID = -3841222759101461690L;
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
 		if (!SOCAssignGlobals.validResultSelected()) return;			
-		String txt= (String)SOCAssignGlobals.getAssignmentTF().getText();
+		String txt = SOCAssignGlobals.getAssignmentTF().getText();
 		if (testModel.getCodingSystem().matches(txt)){
 			testModel.addSelection(txt);
 		}else{

@@ -1,4 +1,4 @@
-package gov.nih.cit.socassign.adapter;
+package gov.nih.cit.socassign.listener;
 
 import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
