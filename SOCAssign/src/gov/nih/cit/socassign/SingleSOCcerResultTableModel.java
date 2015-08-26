@@ -13,8 +13,8 @@ import javax.swing.table.AbstractTableModel;
  *
  */
 public class SingleSOCcerResultTableModel extends AbstractTableModel{
-	
-	private static Logger logger=Logger.getLogger(SingleSOCcerResultTableModel.class.getName());
+	private static final long serialVersionUID = -3429014276166136510L;
+	private static final Logger logger = Logger.getLogger(SingleSOCcerResultTableModel.class.getName());
 
 	private String[] values;
 	

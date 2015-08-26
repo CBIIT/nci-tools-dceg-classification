@@ -17,6 +17,7 @@ import javax.swing.MutableComboBoxModel;
  * @param <T>  the class of the object in the ComboBox.
  */
 public class FilteringComboBoxModel<T> extends AbstractListModel<T> implements MutableComboBoxModel<T> {
+	private static final long serialVersionUID = 3228523410848606337L;
 
 	ArrayList<T> completeItemList,filteredItems;
 	T selectedItem=null;

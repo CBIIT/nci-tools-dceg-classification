@@ -15,11 +15,11 @@ import javax.swing.AbstractListModel;
  *
  */
 public class AssignmentListModel extends AbstractListModel<OccupationCode> {
+	private static final long serialVersionUID = 2604929817461626072L;
+	private static final Assignments NO_ASSIGNMENT = new Assignments(-1,new ArrayList<OccupationCode>());
+	private static final Logger logger = Logger.getLogger(AssignmentListModel.class.getName());
 
-	private static Assignments NO_ASSIGNMENT=new Assignments(-1,new ArrayList<OccupationCode>());
-
-	private static Logger logger=Logger.getLogger(AssignmentListModel.class.getName());
-	private Assignments assignments=NO_ASSIGNMENT;
+	private Assignments assignments = NO_ASSIGNMENT;
 	
 	public AssignmentListModel() {
 	}

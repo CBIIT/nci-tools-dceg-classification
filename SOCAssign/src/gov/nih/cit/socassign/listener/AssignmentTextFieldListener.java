@@ -1,4 +1,4 @@
-package gov.nih.cit.socassign.actions;
+package gov.nih.cit.socassign.listener;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

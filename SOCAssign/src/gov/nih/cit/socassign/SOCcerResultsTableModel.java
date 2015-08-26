@@ -15,8 +15,8 @@ import javax.swing.table.AbstractTableModel;
  *
  */
 public class SOCcerResultsTableModel extends AbstractTableModel{
-	
-	private static Logger logger=Logger.getLogger(SOCcerResultsTableModel.class.getName());
+	private static final long serialVersionUID = -7462382712712342515L;
+	private static final Logger logger = Logger.getLogger(SOCcerResultsTableModel.class.getName());
 	private SOCcerResults results;
 
 	

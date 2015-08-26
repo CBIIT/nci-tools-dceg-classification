@@ -1,30 +1,36 @@
 package gov.nih.cit.socassign;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 
-import gov.nih.cit.socassign.actions.LoadDBAction;
+import gov.nih.cit.socassign.action.LoadPreviousWorkAction;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 import gov.nih.cit.util.AppProperties;
 import gov.nih.cit.util.RollingList;
 
 public class SOCAssignGlobals {
 	public static final String title="SOCAssign v0.0.2";
+	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
-	private static LoadDBAction loadDBAction = new LoadDBAction();
+	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();
 
 	private static JFrame applicationFrame;
 	private static JTable resultsTable;
+	private static JList<OccupationCode> assignmentList;
+	private static JTextField assignmentTF;
+	private static JTable singleJobDescriptionTable;
 	private static CodingSystemPanel codingSystemPanel;
 	private static RollingList<File> lastWorkingFileList;
 	private static AppProperties appProperties;
+	private static Font fontAwesome;
 
 	private static JMenu fileMenu;
 	private static JFileChooser jfc;
-	private static FileFilter dbFF;
 
 	public static JFrame intializeApplicationFrame(JFrame applicationFrame) {
 		SOCAssignGlobals.applicationFrame = applicationFrame;
@@ -42,6 +48,33 @@ public class SOCAssignGlobals {
 
 	public static JTable getResultsTable() {
 		return resultsTable;
+	}
+
+	public static JList<OccupationCode> initializeAssignmentList(JList<OccupationCode> assignmentList) {
+		SOCAssignGlobals.assignmentList = assignmentList;
+		return assignmentList;
+	}
+
+	public static JList<OccupationCode> getAssignmentList() {
+		return assignmentList;
+	}
+
+	public static JTextField initializeAssignmentTF(JTextField assignmentTF) {
+		SOCAssignGlobals.assignmentTF = assignmentTF;
+		return assignmentTF;
+	}
+
+	public static JTextField getAssignmentTF() {
+		return assignmentTF;
+	}
+
+	public static JTable initializeSingleJobDescriptionTable(JTable singleJobDescriptionTable) {
+		SOCAssignGlobals.singleJobDescriptionTable = singleJobDescriptionTable;
+		return singleJobDescriptionTable;
+	}
+
+	public static JTable getSingleJobDescriptionTable() {
+		return singleJobDescriptionTable;
 	}
 
 	public static CodingSystemPanel intializeCodingSystemPanel(CodingSystemPanel codingSystemPanel) {
@@ -71,6 +104,15 @@ public class SOCAssignGlobals {
 		return appProperties;
 	}
 
+	public static Font initializeFontAwesome(Font fontAwesome) {
+		SOCAssignGlobals.fontAwesome = fontAwesome;
+		return fontAwesome;
+	}
+
+	public static Font getFontAwesome() {
+		return fontAwesome;
+	}
+
 	public static JFileChooser initializeJFC(JFileChooser jfc) {
 		SOCAssignGlobals.jfc = jfc;
 		return jfc;
@@ -78,15 +120,6 @@ public class SOCAssignGlobals {
 
 	public static JFileChooser getJFC() {
 		return jfc;
-	}
-
-	public static FileFilter initializeDBFF(FileFilter dbFF) {
-		SOCAssignGlobals.dbFF = dbFF;
-		return dbFF;
-	}
-
-	public static FileFilter getDBFF() {
-		return dbFF;
 	}
 
 	public static JMenu initializeFileMenu(JMenu fileMenu) {
@@ -123,5 +156,9 @@ public class SOCAssignGlobals {
 			fileMenu.insert(menuItem, 3);
 		}
 		fileMenu.invalidate();
+	}
+
+	public static boolean validResultSelected(){
+		return resultsTable.getSelectedRow()>=0;
 	}
 }

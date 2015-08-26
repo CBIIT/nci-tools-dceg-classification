@@ -1,4 +1,4 @@
-package gov.nih.cit.socassign.actions;
+package gov.nih.cit.socassign.action;
 
 import java.awt.event.ActionEvent;
 import java.io.File;

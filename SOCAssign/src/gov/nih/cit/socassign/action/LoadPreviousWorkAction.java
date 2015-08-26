@@ -1,24 +1,29 @@
-package gov.nih.cit.socassign.actions;
+package gov.nih.cit.socassign.action;
 
 import java.awt.event.ActionEvent;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import gov.nih.cit.socassign.*;
 import gov.nih.cit.util.AppProperties;
 
-public class LoadDBAction extends AbstractAction {
-	private static final long serialVersionUID = 7770717890150032118L;
+public class LoadPreviousWorkAction extends AbstractAction {
+	private static final long serialVersionUID = -4547819368944091507L;
+
+	private static final String ACTION_NAME = "Load Previous Work";
+
+	public LoadPreviousWorkAction() {
+		super(ACTION_NAME);
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
-		JFileChooser jfc = SOCAssignGlobals.getJFC();
-		jfc.setFileFilter(SOCAssignGlobals.getDBFF());
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
 		JFrame applicationFrame = SOCAssignGlobals.getApplicationFrame();
 		SelectCodingSystemAction selectCodingSystemAction = new SelectCodingSystemAction();
+		SOCAssignGlobals.getJFC().setFileFilter(new FileNameExtensionFilter("Working Files (.db)","db"));
 		// if the user selected a file from the menu ... load the file
 		// else get the file from a JFileChooser...
 		File dbFile= (actionEvent.getActionCommand().length() == 0) ? getFile() : new File(actionEvent.getActionCommand());
@@ -55,9 +60,8 @@ public class LoadDBAction extends AbstractAction {
 	private File getFile(){
 		JFileChooser jfc = SOCAssignGlobals.getJFC();
 		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
-		JFrame applicationFrame = SOCAssignGlobals.getApplicationFrame();
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
-		int res=jfc.showOpenDialog(applicationFrame);
+		int res=jfc.showOpenDialog(SOCAssignGlobals.getApplicationFrame());
 		if (res==JFileChooser.APPROVE_OPTION){
 			appProperties.setProperty("last.directory", jfc.getCurrentDirectory().getAbsolutePath());
 			return jfc.getSelectedFile();

@@ -24,6 +24,7 @@ import javax.swing.tree.TreeSelectionModel;
  *
  */
 public class CodingSystemPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 
 	JTree codingSystemTree=new JTree();
 
