@@ -23,7 +23,7 @@ public class SOCAssignGlobals {
 	private static JTable resultsTable;
 	private static JList<OccupationCode> assignmentList;
 	private static JTextField assignmentTF;
-	private static JList<String> autocompleteField;
+	private static JScrollPane autocompleteScroll;
 	private static JTable singleJobDescriptionTable;
 	private static CodingSystemPanel codingSystemPanel;
 	private static RollingList<File> lastWorkingFileList;
@@ -69,13 +69,13 @@ public class SOCAssignGlobals {
 		return assignmentTF;
 	}
 
-	public static JList<String> initializeAutocompleteField(JList<String> autocompleteField) {
-		SOCAssignGlobals.autocompleteField = autocompleteField;
-		return autocompleteField;
+	public static JScrollPane initializeAutocompleteScroll(JScrollPane autocompleteScroll) {
+		SOCAssignGlobals.autocompleteScroll = autocompleteScroll;
+		return autocompleteScroll;
 	}
 
-	public static JList<String> getAutocompleteField() {
-		return autocompleteField;
+	public static JScrollPane getAutocompleteScroll() {
+		return autocompleteScroll;
 	}
 
 	public static JTable initializeSingleJobDescriptionTable(JTable singleJobDescriptionTable) {

@@ -1,13 +1,18 @@
 package gov.nih.cit.socassign.listener;
 
+import java.awt.Rectangle;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JViewport;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
 import gov.nih.cit.socassign.SOCAssignGlobals;
 import gov.nih.cit.socassign.SOCAssignModel;
 import gov.nih.cit.socassign.codingsystem.CodingSystem;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 public class AssignmentTextFieldListener implements DocumentListener {
 	@Override
@@ -29,19 +34,24 @@ public class AssignmentTextFieldListener implements DocumentListener {
 		Document doc = event.getDocument();
 		try {
 			String newValue = doc.getText(doc.getStartPosition().getOffset(),doc.getLength());
-			JList<String> autocompleteField = SOCAssignGlobals.getAutocompleteField();
+			JScrollPane autocompleteScroll = SOCAssignGlobals.getAutocompleteScroll();
+			@SuppressWarnings("unchecked")
+			JList<String> autocompleteField = (JList<String>)((JViewport)autocompleteScroll.getComponent(0)).getComponent(0);
 			if (newValue.isEmpty()) {
-				autocompleteField.setVisible(false);
+				autocompleteScroll.setVisible(false);
 			} else {
 				DefaultListModel<String> autocompleteList = (DefaultListModel<String>)autocompleteField.getModel();
 				autocompleteList.clear();
 				CodingSystem system = SOCAssignModel.getInstance().getCodingSystem().getCodingSystem();
-				for (String occupationCode : system.getListOfCodesAsStrings()) {
-					if (occupationCode.contains(newValue)) {
-						autocompleteList.addElement(occupationCode+"    "+system.getOccupationalCode(occupationCode).getTitle());
+				for (OccupationCode occupationCode : system.getListOfCodesAtLevel("detailed")) {
+					if (occupationCode.getName().contains(newValue)) {
+						autocompleteList.addElement(occupationCode.getName()+"    "+occupationCode.getTitle());
 					}
 				}
-				autocompleteField.setVisible(true);
+				Rectangle scrollPosition = autocompleteField.getVisibleRect();
+				scrollPosition.y = 0;
+				autocompleteField.scrollRectToVisible(scrollPosition);
+				autocompleteScroll.setVisible(true);
 			}
 		} catch (BadLocationException e) {
 			throw new RuntimeException(e);

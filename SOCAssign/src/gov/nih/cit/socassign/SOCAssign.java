@@ -30,6 +30,9 @@ public class SOCAssign{
 	private static final AbstractAction selectCodingSystemAction = new SelectCodingSystemAction();
 	private static final AbstractAction firstJobDescription = new FirstJobDescriptionAction();
 	private static final AbstractAction nextJobDescription = new NextJobDescriptionAction();
+	private static final AbstractAction decreaseAutocompleteIndexAction = new DecreaseAutocompleteIndexAction();
+	private static final AbstractAction enterAutocompleteFieldAction = new EnterAutocompleteFieldAction();
+	private static final AbstractAction addAutocompleteAssignmentAction = new AddAutocompleteAssignmentAction();
 	private static final AbstractAction previousJobDescription = new PreviousJobDescriptionAction();
 	private static final AbstractAction lastJobDescription = new LastJobDescriptionAction();
 	private static final AbstractAction addSelectedAssignment = new AddSelectedAssignmentAction();
@@ -37,11 +40,13 @@ public class SOCAssign{
 	private static final AbstractAction increaseSelection = new IncreaseSelectionAction();
 	private static final AbstractAction decreaseSelection = new DecreaseSelectionAction();
 	private static final AbstractAction toggleFlagAction = new ToggleFlagAction();
+	private static final MouseAdapter autocompleteDoubleClickAdapter = new AutocompleteDoubleClickAdapter();
 	private static final MouseAdapter codingSystemMouseAdapter = new CodingSystemAdapter(); // Use a MouseListener instead of a TreeSelectionListener to handle double clicks.
 	private static final MouseAdapter selectAnotherSoccerResultListener = new SelectAnotherSoccerResultAdapter();
+	private static final DocumentListener assignmentTextFieldListener = new AssignmentTextFieldListener();
+	private static final FocusListener autocompleteBlurListener = new AutocompleteBlurListener();
 	private static final ListSelectionListener resultsTableSelectionListener = new ResultsTableSelectionListener();
 	private static final ListSelectionListener assignmentListSelectionListener = new AssignmentSelectionListener();
-	private static final DocumentListener assignmentTextFieldListener = new AssignmentTextFieldListener();
 	private static final WindowListener windowListener = new CloseEventAdapter(); //Closes the database connection when the window is closed.
 	private static final TableCellRenderer selectedResultRenderer = new SelectedResultRenderer();
 	private static final TableCellRenderer flagRenderer = new FlagRenderer();
@@ -51,9 +56,10 @@ public class SOCAssign{
 	private static SOCAssignModel testModel = SOCAssignModel.getInstance();
 	/** A text field where coders can type in a code */
 	private static JTextField assignmentTF = new JTextField(8);
+	private static JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
 	/** Autocomplete fields */
 	private static DefaultListModel<String> autocompleteList = new DefaultListModel<String>();
-	private static JList<String> autocompleteField = SOCAssignGlobals.initializeAutocompleteField(new JList<String>(autocompleteList));
+	private static JList<String> autocompleteField = new JList<String>(autocompleteList);
 	/** A list that holds the last 3 files used */
 	private static RollingList<File> lastWorkingFileList = SOCAssignGlobals.initializeLastWorkingFileList(new RollingList<File>(3));
 	/** Stores information (the last files used) in a properties file so it will be remembered next time the program starts*/
@@ -213,17 +219,13 @@ public class SOCAssign{
 		assignmentTF.setAction(addSelectedAssignment);
 		assignmentTF.getDocument().addDocumentListener(assignmentTextFieldListener);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "DOWN");
-		assignmentTF.getActionMap().put("DOWN", new VisibilityConditionalAction(autocompleteField,new TempAction(),nextJobDescription));
+		assignmentTF.getActionMap().put("DOWN", new VisibilityConditionalAction(autocompleteField,enterAutocompleteFieldAction,nextJobDescription));
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("UP"), "UP");
-		assignmentTF.getActionMap().put("UP", new VisibilityConditionalAction(autocompleteField,new TempAction(),previousJobDescription));
+		assignmentTF.getActionMap().put("UP", previousJobDescription);
 		return assignmentTF;
 	}
 
 	private static JPanel createButtonPanel() {
-		JPanel buttonPanel = new JPanel(new GridLayout(1, 4));
-		// add assignment button
-		JButton addSOCAssignment = new JButton(addSelectedAssignment);
-		buttonPanel.add(addSOCAssignment);
 		// move selection up
 		JButton moveAssignmentUp = new JButton(increaseSelection);
 		buttonPanel.add(moveAssignmentUp);
@@ -239,9 +241,6 @@ public class SOCAssign{
 			try {
 				fontAwesome = Font.createFont(Font.TRUETYPE_FONT, SOCAssign.class.getResourceAsStream("fonts/fontawesome-webfont.ttf"));
 				fontAwesome = fontAwesome.deriveFont(20f);
-				addSOCAssignment.setFont(fontAwesome);
-				addSOCAssignment.setForeground(Color.BLUE);
-				addSOCAssignment.setText("\uf055");
 				removeSOCAssignment.setFont(fontAwesome);
 				removeSOCAssignment.setForeground(Color.BLUE);
 				removeSOCAssignment.setText("\uf056");
@@ -252,7 +251,6 @@ public class SOCAssign{
 				moveAssignmentDown.setForeground(Color.BLUE);
 				moveAssignmentDown.setText("\uf0ab");
 			} catch (Exception e) {
-				addSOCAssignment.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/add-blue.png"))));
 				removeSOCAssignment.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/remove-blue.png"))));
 				moveAssignmentUp.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/up-blue.png"))));
 				moveAssignmentDown.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/down-blue.png"))));
@@ -287,9 +285,17 @@ public class SOCAssign{
 	}
 
 	private static void addAutoCompleteBox(SpringLayout layout, JComponent centerPanel) {
-		centerPanel.add(autocompleteField,0);
-		alignSpring(layout,autocompleteField,centerPanel,assignmentTF);
-		autocompleteField.setVisible(false);
+		JScrollPane autocompleteScroll = SOCAssignGlobals.initializeAutocompleteScroll(new JScrollPane(autocompleteField));
+		autocompleteField.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		autocompleteField.addFocusListener(autocompleteBlurListener);
+		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke((char)KeyEvent.VK_UP), "UP");
+		autocompleteField.getActionMap().put("UP",decreaseAutocompleteIndexAction);
+		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke((char)KeyEvent.VK_ENTER), "ENTER");
+		autocompleteField.getActionMap().put("ENTER",addAutocompleteAssignmentAction);
+		autocompleteField.addMouseListener(autocompleteDoubleClickAdapter);
+		centerPanel.add(autocompleteScroll,0);
+		alignSpring(layout,autocompleteScroll,centerPanel,assignmentTF);
+		autocompleteScroll.setVisible(false);
 	}
 
 	private static void fillLastWorkingFileList(){
@@ -297,13 +303,14 @@ public class SOCAssign{
 		for (int i=0;i<lastWorkingFileList.capacity();i++){
 			String fileName = appProperties.getProperty("last.file."+i, "");
 			File file = new File(fileName);
-			if (file.exists()){
+			if (file.exists()) {
 				lastWorkingFileList.add(file);
 			} else {
 				appProperties.remove(fileName);
 			}
 		}
 	}
+
 
 	public static void main(String[] args) {
 		appProperties = SOCAssignGlobals.initializeAppProperties(AppProperties.getDefaultAppProperties("SOCassign"));

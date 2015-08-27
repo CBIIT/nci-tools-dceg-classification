@@ -13,6 +13,5 @@ public class CodingSystemAdapter extends MouseAdapter {
 		if (code.isLeaf() && e.getClickCount()>1){
 			SOCAssignModel.getInstance().addSelection(code.getName());
 		}
-		SOCAssignGlobals.getAssignmentTF().setText(code.getName());
 	};
 }
