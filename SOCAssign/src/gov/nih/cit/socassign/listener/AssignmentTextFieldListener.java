@@ -2,17 +2,12 @@ package gov.nih.cit.socassign.listener;
 
 import java.awt.Rectangle;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.JViewport;
+import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
-import gov.nih.cit.socassign.SOCAssignGlobals;
-import gov.nih.cit.socassign.SOCAssignModel;
-import gov.nih.cit.socassign.codingsystem.CodingSystem;
-import gov.nih.cit.socassign.codingsystem.OccupationCode;
+import gov.nih.cit.socassign.*;
+import gov.nih.cit.socassign.codingsystem.*;
 
 public class AssignmentTextFieldListener implements DocumentListener {
 	@Override
@@ -44,14 +39,18 @@ public class AssignmentTextFieldListener implements DocumentListener {
 				autocompleteList.clear();
 				CodingSystem system = SOCAssignModel.getInstance().getCodingSystem().getCodingSystem();
 				for (OccupationCode occupationCode : system.getListOfCodesAtLevel("detailed")) {
-					if (occupationCode.getName().contains(newValue)) {
+					if (occupationCode.getName().contains(newValue) || occupationCode.getTitle().contains(newValue) || occupationCode.getDescription().contains(newValue)) {
 						autocompleteList.addElement(occupationCode.getName()+"    "+occupationCode.getTitle());
 					}
 				}
-				Rectangle scrollPosition = autocompleteField.getVisibleRect();
-				scrollPosition.y = 0;
-				autocompleteField.scrollRectToVisible(scrollPosition);
-				autocompleteScroll.setVisible(true);
+				if (autocompleteList.size() > 0) {
+					Rectangle scrollPosition = autocompleteField.getVisibleRect();
+					scrollPosition.y = 0;
+					autocompleteField.scrollRectToVisible(scrollPosition);
+					autocompleteScroll.setVisible(true);
+				} else  {
+					autocompleteScroll.setVisible(false);
+				}
 			}
 		} catch (BadLocationException e) {
 			throw new RuntimeException(e);
