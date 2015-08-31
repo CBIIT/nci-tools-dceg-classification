@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.filechooser.*;
 
 import gov.nih.cit.socassign.*;
+import gov.nih.cit.util.AppProperties;
 
 public class LoadSoccerResultsAction extends AbstractAction {
 	private static final long serialVersionUID = 8572841906487942011L;
@@ -26,13 +27,15 @@ public class LoadSoccerResultsAction extends AbstractAction {
 		JTable resultsTable = SOCAssignGlobals.getResultsTable();
 		CodingSystemPanel codingSystemPanel = SOCAssignGlobals.getCodingSystemPanel();
 		SelectCodingSystemAction selectCodingSystemAction = new SelectCodingSystemAction();
-		
-		jfc.setCurrentDirectory(new File(SOCAssignGlobals.getAppProperties().getProperty("last.directory", System.getProperty("user.home"))));
+		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
+		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
 		jfc.setFileFilter(CSV_FF);
 		int res=jfc.showOpenDialog(applicationFrame);
 		if (res==JFileChooser.APPROVE_OPTION){
-			System.out.println("Selected file: "+jfc.getSelectedFile().getAbsolutePath());
+			String lastDirectory = jfc.getSelectedFile().getAbsolutePath();
+			System.out.println("Selected file: "+lastDirectory);
 			try {
+				appProperties.setProperty("last.directory",lastDirectory);
 				testModel.resetModel();
 				SOCcerResults results=SOCcerResults.readSOCcerResultsFile(jfc.getSelectedFile());
 				testModel.setResults(results);

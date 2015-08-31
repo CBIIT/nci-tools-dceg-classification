@@ -22,7 +22,7 @@ import javax.swing.table.*;
  * @author Daniel Russ
  *
  */
-public class SOCAssign{
+public class SOCAssign {
 	private static final AbstractAction loadAction = new LoadSoccerResultsAction();
 	private static final AbstractAction loadDBAction = new LoadPreviousWorkAction();
 	private static final AbstractAction exportAction = new ExportAnnotationAction();
@@ -99,8 +99,7 @@ public class SOCAssign{
 
 		// fileMenu is a field because it needs to be updated when a user selects a database.
 		// create File > load
-		JMenuItem loadMI = new JMenuItem(loadAction);
-		fileMenu.add(loadMI);
+		fileMenu.add(new JMenuItem(loadAction));
 
 		// create File > load previous coding
 		JMenuItem loadDBMI = new JMenuItem(loadDBAction);
@@ -311,13 +310,9 @@ public class SOCAssign{
 		}
 	}
 
-
 	public static void main(String[] args) {
 		appProperties = SOCAssignGlobals.initializeAppProperties(AppProperties.getDefaultAppProperties("SOCassign"));
-		SOCAssignGlobals.initializeJFC(new JFileChooser(System.getProperty("user.home")));
-
 		fillLastWorkingFileList();
-
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();

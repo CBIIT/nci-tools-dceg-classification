@@ -18,6 +18,7 @@ public class SOCAssignGlobals {
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();
+	private static final JFileChooser jfc = new JFileChooser(System.getProperty("user.home"));
 
 	private static JFrame applicationFrame;
 	private static JTable resultsTable;
@@ -29,9 +30,7 @@ public class SOCAssignGlobals {
 	private static RollingList<File> lastWorkingFileList;
 	private static AppProperties appProperties;
 	private static Font fontAwesome;
-
 	private static JMenu fileMenu;
-	private static JFileChooser jfc;
 
 	public static JFrame intializeApplicationFrame(JFrame applicationFrame) {
 		SOCAssignGlobals.applicationFrame = applicationFrame;
@@ -121,11 +120,6 @@ public class SOCAssignGlobals {
 
 	public static Font getFontAwesome() {
 		return fontAwesome;
-	}
-
-	public static JFileChooser initializeJFC(JFileChooser jfc) {
-		SOCAssignGlobals.jfc = jfc;
-		return jfc;
 	}
 
 	public static JFileChooser getJFC() {
