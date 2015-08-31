@@ -8,15 +8,15 @@ import javax.swing.tree.TreePath;
 
 /**
  * Model for a JTree that hold a CodingSystem.
- * 
+ *
  * @author Daniel Russ
  */
-public class CodingSystemTreeModel implements TreeModel{
+public class CodingSystemTreeModel implements TreeModel {
 
 	private final CodingSystem codingSystem;
-	
+
 	public CodingSystemTreeModel(CodingSystem codingSystem) {
-		this.codingSystem=codingSystem;
+		this.codingSystem = codingSystem;
 	}
 
 	@Override
@@ -31,21 +31,21 @@ public class CodingSystemTreeModel implements TreeModel{
 
 	@Override
 	public int getIndexOfChild(Object parent, Object child) {
-		OccupationCode parentCode=getParentFromObject(parent);
-		String childCode=OccupationCode.getCodeFromString(child.toString());
-		
-		List<OccupationCode> children=parentCode.getChildren();
-		for (int i=0;i<parentCode.getChildren().size();i++){
+		OccupationCode parentCode = getParentFromObject(parent);
+		String childCode = OccupationCode.getCodeFromString(child.toString());
+
+		List<OccupationCode> children = parentCode.getChildren();
+		for (int i = 0;i < parentCode.getChildren().size();i++) {
 			if (children.get(i).getName().equals(childCode)) return i;
 		}
 
 		return -1;
 	}
 
-	private OccupationCode getParentFromObject(Object parent){		
-		return codingSystem.getOccupationalCode( OccupationCode.getCodeFromString(parent.toString()) );
+	private OccupationCode getParentFromObject(Object parent) {
+		return codingSystem.getOccupationalCode(OccupationCode.getCodeFromString(parent.toString()));
 	}
-	
+
 	@Override
 	public Object getRoot() {
 		return codingSystem.getRoot();
@@ -60,18 +60,17 @@ public class CodingSystemTreeModel implements TreeModel{
 	@Override
 	public void addTreeModelListener(TreeModelListener l) {
 		// thank you for adding yourself to the treeModelListenerList...
-		// I'll just write your name down and notify you of any changes. (click) 
+		// I'll just write your name down and notify you of any changes. (click)
 	}
 
 	@Override
 	public void removeTreeModelListener(TreeModelListener l) {
-		// thank you, I'll just take you off the list ...  
+		// thank you, I'll just take you off the list ...
 	}
 
 	@Override
 	public void valueForPathChanged(TreePath path, Object newValue) {
 		// anyone listening... no point doing anything...
 	}
-	
-	
+
 }

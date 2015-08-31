@@ -13,11 +13,11 @@ public class DecreaseSelectionAction extends AbstractAction {
 	public void actionPerformed(ActionEvent e) {
 		JList<OccupationCode> assignmentList = SOCAssignGlobals.getAssignmentList();
 		if (!SOCAssignGlobals.validResultSelected()) return;
-		int selectedIndex=assignmentList.getSelectedIndex();
-		if (selectedIndex<0) return;
+		int selectedIndex = assignmentList.getSelectedIndex();
+		if (selectedIndex < 0) return;
 		SOCAssignModel.getInstance().decreaseSelection(selectedIndex);
-		if (selectedIndex<assignmentList.getModel().getSize()-1){
-			assignmentList.setSelectedIndex(selectedIndex+1);
+		if (selectedIndex < assignmentList.getModel().getSize() - 1) {
+			assignmentList.setSelectedIndex(selectedIndex + 1);
 		}
 	}
 }

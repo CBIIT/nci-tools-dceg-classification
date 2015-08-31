@@ -19,22 +19,22 @@ import javax.swing.tree.TreeSelectionModel;
 
 /**
  * This panel holds a JTree displaying a CodingSystem.
- * 
+ *
  * @author Daniel Russ
  *
  */
 public class CodingSystemPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	JTree codingSystemTree=new JTree();
+	JTree codingSystemTree = new JTree();
 
 	public CodingSystemPanel() {
 		setLayout(new BorderLayout());
 		add(new JScrollPane(codingSystemTree, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
 		codingSystemTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 	}
-	
-	public void updateCodingSystem(AssignmentCodingSystem codingSystem){
+
+	public void updateCodingSystem(AssignmentCodingSystem codingSystem) {
 		codingSystemTree.clearSelection();
 		codingSystemTree.setModel(new CodingSystemTreeModel(codingSystem.getCodingSystem()));
 	}
@@ -42,8 +42,8 @@ public class CodingSystemPanel extends JPanel {
 	public void addTreeSelectionListener(TreeSelectionListener treeSelectionListener) {
 		codingSystemTree.addTreeSelectionListener(treeSelectionListener);
 	}
-	
-	public void addMouseListenerToJTree(MouseListener mouseListener){
+
+	public void addMouseListenerToJTree(MouseListener mouseListener) {
 		codingSystemTree.addMouseListener(mouseListener);
 	}
 
@@ -51,27 +51,27 @@ public class CodingSystemPanel extends JPanel {
 		codingSystemTree.removeTreeSelectionListener(tsl);
 	}
 
-	public void selectOccupation(OccupationCode code){
-		TreePath path=makePath(code);
+	public void selectOccupation(OccupationCode code) {
+		TreePath path = makePath(code);
 		codingSystemTree.expandPath(path);
 		codingSystemTree.scrollPathToVisible(path);
 		codingSystemTree.setSelectionPath(path);
 	}
-	
-	private TreePath makePath(OccupationCode code){
-		LinkedList<OccupationCode> pathBuilder=new LinkedList<OccupationCode>();
-		
-		OccupationCode currentCode=code;
-		while(currentCode!=null){
+
+	private TreePath makePath(OccupationCode code) {
+		LinkedList<OccupationCode> pathBuilder = new LinkedList<OccupationCode>();
+
+		OccupationCode currentCode = code;
+		while(currentCode != null) {
 			pathBuilder.addFirst(currentCode);
-			currentCode=currentCode.getParent();
+			currentCode = currentCode.getParent();
 		}
 		return new TreePath(pathBuilder.toArray(new OccupationCode[pathBuilder.size()]));
 	}
-	
-	public int getSelectedPathCount(){
+
+	public int getSelectedPathCount() {
 		if (codingSystemTree.getSelectionPath() == null) return -1;
-		
+
 		return codingSystemTree.getSelectionPath().getPathCount();
 	}
 	public OccupationCode getLastSelectedPathComponent() {
@@ -81,19 +81,19 @@ public class CodingSystemPanel extends JPanel {
 	public void clearSelection() {
 		codingSystemTree.clearSelection();
 	}
-	
-	public void setSelection(OccupationCode code){
+
+	public void setSelection(OccupationCode code) {
 		// build the TreePath
-		List<OccupationCode> list=new ArrayList<OccupationCode>();
-		OccupationCode currentCode=code;
-		while (currentCode!=null){
+		List<OccupationCode> list = new ArrayList<OccupationCode>();
+		OccupationCode currentCode = code;
+		while (currentCode != null) {
 			list.add(currentCode);
-			currentCode=currentCode.getParent();
+			currentCode = currentCode.getParent();
 		}
 		Collections.reverse(list);
 
-		TreePath path = new TreePath(list.toArray()); 
+		TreePath path = new TreePath(list.toArray());
 		codingSystemTree.setSelectionPath(path);
-		codingSystemTree.scrollPathToVisible( path);
+		codingSystemTree.scrollPathToVisible(path);
 	}
 }

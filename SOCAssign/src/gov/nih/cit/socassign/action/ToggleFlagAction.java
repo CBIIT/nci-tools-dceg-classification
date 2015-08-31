@@ -13,16 +13,16 @@ public class ToggleFlagAction extends AbstractAction {
 	public void actionPerformed(ActionEvent arg0) {
 		JTable resultsTable = SOCAssignGlobals.getResultsTable();
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
-		int row= resultsTable.getSelectedRow();
-		if (row>=0){
-			int selectedRow=resultsTable.convertRowIndexToModel( row );
-			boolean flagValue=(Boolean)resultsTable.getValueAt(selectedRow, 0);
-			int rowID=(Integer)resultsTable.getValueAt(selectedRow, 1);
-			System.out.println("FLAG TOGGLER: (row) "+selectedRow+" (rowID) "+rowID+" (current value) "+flagValue);
+		int row = resultsTable.getSelectedRow();
+		if (row >= 0) {
+			int selectedRow = resultsTable.convertRowIndexToModel(row);
+			boolean flagValue = (Boolean)resultsTable.getValueAt(selectedRow, 0);
+			int rowID = (Integer)resultsTable.getValueAt(selectedRow, 1);
+			System.out.println("FLAG TOGGLER: (row) " + selectedRow + " (rowID) " + rowID + " (current value) " + flagValue);
 			testModel.updateFlag(selectedRow, flagValue?FlagType.NOT_FLAGGED:FlagType.FLAGGED);
 			testModel.getTableModel().fireTableRowsUpdated(selectedRow, selectedRow);
-		}else{
-			System.out.println("bad row selected..."+row);
+		} else {
+			System.out.println("bad row selected..." + row);
 		}
 	}
 }

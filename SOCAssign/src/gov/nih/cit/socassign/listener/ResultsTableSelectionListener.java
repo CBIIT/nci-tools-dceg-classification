@@ -15,8 +15,8 @@ public class ResultsTableSelectionListener implements ListSelectionListener {
 		SOCAssignGlobals.getAssignmentTF().setText("");
 		SOCAssignGlobals.getAssignmentList().clearSelection();
 		SOCAssignGlobals.getCodingSystemPanel().clearSelection();
-		int selectRow=resultsTable.getSelectedRow();
-		selectRow=resultsTable.convertRowIndexToModel(selectRow);
+		int selectRow = resultsTable.getSelectedRow();
+		selectRow = resultsTable.convertRowIndexToModel(selectRow);
 		SOCAssignModel.getInstance().setSelectedResult(selectRow);
 	}
 };

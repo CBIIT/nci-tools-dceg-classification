@@ -13,8 +13,8 @@ public class SelectCodingSystemAction extends AbstractAction {
 	public void actionPerformed(ActionEvent event) {
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
 
-		AssignmentCodingSystem codingSystem=AssignmentCodingSystem.valueOf(event.getActionCommand());
-		if (testModel.getCodingSystem()!=codingSystem){
+		AssignmentCodingSystem codingSystem = AssignmentCodingSystem.valueOf(event.getActionCommand());
+		if (testModel.getCodingSystem() != codingSystem) {
 			testModel.setCodingSystem(codingSystem);
 			SOCAssignGlobals.getCodingSystemPanel().updateCodingSystem(codingSystem);
 		}

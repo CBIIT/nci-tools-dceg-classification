@@ -2,7 +2,7 @@ package gov.nih.cit.socassign;
 
 /**
  * A scored object wraps another object and holds a score.
- * 
+ *
  * @author Daniel Russ
  *
  * @param <E>  the class of the wrapped object.
@@ -13,8 +13,8 @@ public class Scored<E> {
 	private final double score;
 
 	public Scored(E object,double score) {
-		this.object=object;
-		this.score=score;
+		this.object = object;
+		this.score = score;
 	}
 
 	public double getScore() {
@@ -23,7 +23,6 @@ public class Scored<E> {
 	public E getScoredObject() {
 		return object;
 	}
-
 
 	/* =======  Eclipse Generated Code ======= */
 	@Override
@@ -56,6 +55,5 @@ public class Scored<E> {
 			return false;
 		return true;
 	}
-
 
 }

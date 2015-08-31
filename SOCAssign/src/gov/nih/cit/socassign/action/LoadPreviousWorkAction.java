@@ -25,8 +25,8 @@ public class LoadPreviousWorkAction extends AbstractAction {
 		SelectCodingSystemAction selectCodingSystemAction = new SelectCodingSystemAction();
 		// if the user selected a file from the menu ... load the file
 		// else get the file from a JFileChooser...
-		File dbFile= (actionEvent.getActionCommand().length() == 0) ? getFile() : new File(actionEvent.getActionCommand());
-		if (dbFile == null ) return;
+		File dbFile = (actionEvent.getActionCommand().length() == 0) ? getFile() : new File(actionEvent.getActionCommand());
+		if (dbFile == null) return;
 
 		// if somehow the file does not exist delete it from the lastWorkingFileList...
 		if (!dbFile.exists()) {
@@ -43,14 +43,14 @@ public class LoadPreviousWorkAction extends AbstractAction {
 			SOCAssignGlobals.getResultsTable().invalidate();
 		} catch (IOException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open database: (Did you select results instead of a working file?) "+dbFile.getAbsolutePath(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open database: (Did you select results instead of a working file?) " + dbFile.getAbsolutePath(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);
 		}
-		applicationFrame.setTitle(SOCAssignGlobals.title+" ("+dbFile.getAbsolutePath()+")");
-		boolean systemSpecified=testModel.isCodingSystemSpecifiedInResults();
-		if (systemSpecified){
+		applicationFrame.setTitle(SOCAssignGlobals.title + " (" + dbFile.getAbsolutePath() + ")");
+		boolean systemSpecified = testModel.isCodingSystemSpecifiedInResults();
+		if (systemSpecified) {
 			selectCodingSystemAction.setEnabled(false);
 			SOCAssignGlobals.getCodingSystemPanel().updateCodingSystem(testModel.getCodingSystem());
-		}else{
+		} else {
 			selectCodingSystemAction.setEnabled(true);
 		}
 
@@ -62,7 +62,7 @@ public class LoadPreviousWorkAction extends AbstractAction {
 		jfc.setFileFilter(DB_FILE_EXTENSION);
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
 		int res = jfc.showOpenDialog(SOCAssignGlobals.getApplicationFrame());
-		if (res == JFileChooser.APPROVE_OPTION){
+		if (res == JFileChooser.APPROVE_OPTION) {
 			appProperties.setProperty("last.directory", jfc.getCurrentDirectory().getAbsolutePath());
 			return jfc.getSelectedFile();
 		}

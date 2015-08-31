@@ -12,7 +12,7 @@ public class RemoveSelectedAssignmentAction extends AbstractAction {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JList<OccupationCode> assignmentList = SOCAssignGlobals.getAssignmentList();
-		if (!SOCAssignGlobals.validResultSelected() || assignmentList.getSelectedIndex()<0) return;
+		if (!SOCAssignGlobals.validResultSelected() || assignmentList.getSelectedIndex() < 0) return;
 		SOCAssignModel.getInstance().removeElementAt(assignmentList.getSelectedIndex());
 	}
 }

@@ -14,6 +14,6 @@ public class FirstJobDescriptionAction extends AbstractAction {
 		JTable resultsTable = SOCAssignGlobals.getResultsTable();
 		if (!SOCAssignGlobals.validResultSelected()) return;			
 		resultsTable.setRowSelectionInterval(0, 0);			
-		resultsTable.scrollRectToVisible( resultsTable.getCellRect(0, 0, true) );
+		resultsTable.scrollRectToVisible(resultsTable.getCellRect(0, 0, true));
 	}
 }

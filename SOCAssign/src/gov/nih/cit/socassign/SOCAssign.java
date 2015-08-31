@@ -93,7 +93,7 @@ public class SOCAssign {
 		return applicationFrame;
 	}
 
-	private static void createMenus(JFrame applicationFrame){
+	private static void createMenus(JFrame applicationFrame) {
 		JMenu fileMenu = SOCAssignGlobals.initializeFileMenu(new JMenu("File"));
 		JMenuBar menuBar = new JMenuBar();
 
@@ -108,8 +108,8 @@ public class SOCAssign {
 
 		fileMenu.add(new JSeparator());
 		// create File > LAST 3 Working Files...
-		if (lastWorkingFileList.size()>0){
-			for (File file:lastWorkingFileList.asRollingStack()){
+		if (lastWorkingFileList.size() > 0) {
+			for (File file:lastWorkingFileList.asRollingStack()) {
 				JMenuItem menuItem = new JMenuItem(loadDBAction);
 				menuItem.setText(file.getName());
 				menuItem.setActionCommand(file.getAbsolutePath());
@@ -130,7 +130,7 @@ public class SOCAssign {
 		JMenu systemMenu = new JMenu("CodingSystem");
 		//create System > SOC2010 ...
 		ButtonGroup codingSystemButtonGroup = new ButtonGroup();
-		for (AssignmentCodingSystem system:AssignmentCodingSystem.values()){
+		for (AssignmentCodingSystem system:AssignmentCodingSystem.values()) {
 			JRadioButtonMenuItem item = new JRadioButtonMenuItem(selectCodingSystemAction);
 			codingSystemButtonGroup.add(item);
 			if (system == AssignmentCodingSystem.SOC2010) {
@@ -297,10 +297,10 @@ public class SOCAssign {
 		autocompleteScroll.setVisible(false);
 	}
 
-	private static void fillLastWorkingFileList(){
+	private static void fillLastWorkingFileList() {
 		lastWorkingFileList.clear();
-		for (int i=0;i<lastWorkingFileList.capacity();i++){
-			String fileName = appProperties.getProperty("last.file."+i, "");
+		for (int i = 0;i < lastWorkingFileList.capacity();i++) {
+			String fileName = appProperties.getProperty("last.file." + i, "");
 			File file = new File(fileName);
 			if (file.exists()) {
 				lastWorkingFileList.add(file);
@@ -320,5 +320,3 @@ public class SOCAssign {
 		});
 	}
 }
-
-

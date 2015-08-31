@@ -40,7 +40,7 @@ public class AssignmentTextFieldListener implements DocumentListener {
 				CodingSystem system = SOCAssignModel.getInstance().getCodingSystem().getCodingSystem();
 				for (OccupationCode occupationCode : system.getListOfCodesAtLevel("detailed")) {
 					if (occupationCode.getName().contains(newValue) || occupationCode.getTitle().contains(newValue) || occupationCode.getDescription().contains(newValue)) {
-						autocompleteList.addElement(occupationCode.getName()+"    "+occupationCode.getTitle());
+						autocompleteList.addElement(occupationCode.getName() + "    " + occupationCode.getTitle());
 					}
 				}
 				if (autocompleteList.size() > 0) {
