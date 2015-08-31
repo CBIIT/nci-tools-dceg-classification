@@ -14,10 +14,11 @@ import gov.nih.cit.util.AppProperties;
 import gov.nih.cit.util.RollingList;
 
 public class SOCAssignGlobals {
-	public static final String title="SOCAssign v0.0.2";
+	public static final String title = "SOCAssign v0.0.2";
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();
+	private static final JFileChooser jfc = new JFileChooser(System.getProperty("user.home"));
 
 	private static JFrame applicationFrame;
 	private static JTable resultsTable;
@@ -29,9 +30,7 @@ public class SOCAssignGlobals {
 	private static RollingList<File> lastWorkingFileList;
 	private static AppProperties appProperties;
 	private static Font fontAwesome;
-
 	private static JMenu fileMenu;
-	private static JFileChooser jfc;
 
 	public static JFrame intializeApplicationFrame(JFrame applicationFrame) {
 		SOCAssignGlobals.applicationFrame = applicationFrame;
@@ -123,11 +122,6 @@ public class SOCAssignGlobals {
 		return fontAwesome;
 	}
 
-	public static JFileChooser initializeJFC(JFileChooser jfc) {
-		SOCAssignGlobals.jfc = jfc;
-		return jfc;
-	}
-
 	public static JFileChooser getJFC() {
 		return jfc;
 	}
@@ -146,8 +140,8 @@ public class SOCAssignGlobals {
 		if (lastWorkingFileList.add(f)) {
 			updateFileMenu();
 
-			List<String> props=new ArrayList<String>();
-			for (File file:lastWorkingFileList){
+			List<String> props = new ArrayList<String>();
+			for (File file:lastWorkingFileList) {
 				props.add(file.getAbsolutePath());
 			}
 			appProperties.setListOfProperties("last.file", props);
@@ -156,19 +150,19 @@ public class SOCAssignGlobals {
 
 	public static void updateFileMenu() {
 
-		for (int i=fileMenu.getMenuComponentCount()-4;i>=3;i-- ){
+		for (int i = fileMenu.getMenuComponentCount() - 4;i >= 3;i--) {
 			fileMenu.remove(i);
 		}
 
-		for (int i=0;i<lastWorkingFileList.size();i++){
-			File file=lastWorkingFileList.get(i);
-			JMenuItem menuItem=new JMenuItem(loadDBAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
+		for (int i = 0;i < lastWorkingFileList.size();i++) {
+			File file = lastWorkingFileList.get(i);
+			JMenuItem menuItem = new JMenuItem(loadDBAction);menuItem.setText(file.getName());menuItem.setActionCommand(file.getAbsolutePath());
 			fileMenu.insert(menuItem, 3);
 		}
 		fileMenu.invalidate();
 	}
 
-	public static boolean validResultSelected(){
-		return resultsTable.getSelectedRow()>=0;
+	public static boolean validResultSelected() {
+		return resultsTable.getSelectedRow() >= 0;
 	}
 }

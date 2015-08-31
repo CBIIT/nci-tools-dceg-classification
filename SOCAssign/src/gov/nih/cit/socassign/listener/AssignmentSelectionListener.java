@@ -14,7 +14,7 @@ public class AssignmentSelectionListener implements ListSelectionListener {
 		JList<OccupationCode> assignmentList = SOCAssignGlobals.getAssignmentList();
 		CodingSystemPanel codingSystemPanel = SOCAssignGlobals.getCodingSystemPanel();
 		int row = event.getFirstIndex();
-		if (row < 0 || row >= assignmentList.getModel().getSize()){
+		if (row < 0 || row >= assignmentList.getModel().getSize()) {
 			assignmentList.clearSelection();
 			codingSystemPanel.clearSelection();
 			return;

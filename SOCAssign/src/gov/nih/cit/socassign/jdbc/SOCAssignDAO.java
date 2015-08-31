@@ -8,7 +8,7 @@ import java.io.Closeable;
 import java.sql.SQLException;
 import java.util.Map;
 
-public interface SOCAssignDAO extends Closeable{
+public interface SOCAssignDAO extends Closeable {
 
 	public void connect(String filename) throws SQLException;
 	public SOCcerResults readResults() throws SQLException;
@@ -17,5 +17,4 @@ public interface SOCAssignDAO extends Closeable{
 	public void setAssignment(Assignments assignment) throws SQLException;
 	public void updateFlag(Assignments assignments) throws SQLException;
 
-	
 }

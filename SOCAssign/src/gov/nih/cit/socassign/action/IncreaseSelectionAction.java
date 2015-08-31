@@ -13,10 +13,10 @@ public class IncreaseSelectionAction extends AbstractAction {
 	public void actionPerformed(ActionEvent arg0) {
 		JList<OccupationCode> assignmentList = SOCAssignGlobals.getAssignmentList();
 		if (!SOCAssignGlobals.validResultSelected()) return;
-		int selectedIndex=assignmentList.getSelectedIndex();
-		if (selectedIndex>0){
+		int selectedIndex = assignmentList.getSelectedIndex();
+		if (selectedIndex > 0) {
 			SOCAssignModel.getInstance().increaseSelection(selectedIndex);
-			assignmentList.setSelectedIndex(selectedIndex-1);
+			assignmentList.setSelectedIndex(selectedIndex - 1);
 		}
 	}
 }

@@ -22,15 +22,15 @@ public class ExportAnnotationAction extends AbstractAction {
 		JFileChooser jfc = SOCAssignGlobals.getJFC();
 		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
 		JFrame applicationFrame = SOCAssignGlobals.getApplicationFrame();
-		if (SOCAssignGlobals.getResultsTable().getRowCount()==0) return;
+		if (SOCAssignGlobals.getResultsTable().getRowCount() == 0) return;
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
 		jfc.setFileFilter(new FileNameExtensionFilter("Annotation Results Files (.csv)","csv"));
-		int res=jfc.showSaveDialog(applicationFrame);
-		if (res==JFileChooser.APPROVE_OPTION){
+		int res = jfc.showSaveDialog(applicationFrame);
+		if (res == JFileChooser.APPROVE_OPTION) {
 			try {
 				SOCAssignModel.getInstance().exportAssignments(jfc.getSelectedFile());
 			} catch (IOException e) {
-				JOptionPane.showMessageDialog(applicationFrame, "Warning could not write out the annotation: "+e.getMessage());
+				JOptionPane.showMessageDialog(applicationFrame, "Warning could not write out the annotation: " + e.getMessage());
 				e.printStackTrace();
 			}
 			appProperties.setProperty("last.directory", jfc.getCurrentDirectory().getAbsolutePath());

@@ -14,7 +14,7 @@ public class AutocompleteDoubleClickAdapter extends MouseAdapter {
 	private final AbstractAction addAutocompleteAssignmentAction = new AddAutocompleteAssignmentAction();
 	@SuppressWarnings("unchecked")
 	public void mousePressed(MouseEvent e) {
-		if (e.getClickCount()>1){
+		if (e.getClickCount() > 1) {
 			if (!SOCAssignGlobals.validResultSelected() || ((JList<String>)e.getSource()).getSelectedIndex() == -1) return;
 			addAutocompleteAssignmentAction.actionPerformed(new ActionEvent(e.getSource(), e.getID(), ""));
 		}

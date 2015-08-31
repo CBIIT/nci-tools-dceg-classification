@@ -14,13 +14,13 @@ public class SelectedResultRenderer extends DefaultTableCellRenderer {
 
 	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 		super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-		if (column<3){
+		if (column < 3) {
 			setHorizontalAlignment(JLabel.CENTER);
-			if (column==2){
-				double val=Double.parseDouble(getText());
-				if (val<1e-4){
+			if (column == 2) {
+				double val = Double.parseDouble(getText());
+				if (val < 1e-4) {
 					setText(FMT2.format(val));
-				}else{
+				} else {
 					setText(FMT1.format(val));
 				}
 			}

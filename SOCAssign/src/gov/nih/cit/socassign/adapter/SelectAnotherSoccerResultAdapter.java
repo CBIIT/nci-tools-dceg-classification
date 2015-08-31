@@ -18,7 +18,7 @@ public class SelectAnotherSoccerResultAdapter extends MouseAdapter {
 		row = singleJobDescriptionTable.convertRowIndexToModel(row);
 		OccupationCode code = testModel.getOccupationCodeForTop10Row(row);
 		SOCAssignGlobals.getCodingSystemPanel().selectOccupation(code);			
-		if (event.getClickCount()>=2){
+		if (event.getClickCount() >= 2) {
 			testModel.addSelection(code.getName());
 		}
 	}

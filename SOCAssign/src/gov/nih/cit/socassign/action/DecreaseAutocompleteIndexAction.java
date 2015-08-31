@@ -16,7 +16,7 @@ public class DecreaseAutocompleteIndexAction extends AbstractAction {
 		if (index == 0) {
 			SOCAssignGlobals.getAssignmentTF().requestFocusInWindow();
 		} else if (index > 0) {
-			autocompleteField.setSelectedIndex(index-1);
+			autocompleteField.setSelectedIndex(index - 1);
 		}
 	}
 }
