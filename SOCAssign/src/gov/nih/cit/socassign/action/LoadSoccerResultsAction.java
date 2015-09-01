@@ -38,6 +38,7 @@ public class LoadSoccerResultsAction extends AbstractAction {
 				appProperties.setProperty("last.directory",lastDirectory);
 				testModel.resetModel();
 				SOCcerResults results = SOCcerResults.readSOCcerResultsFile(jfc.getSelectedFile());
+				if (results == null) return;
 				testModel.setResults(results);
 				resultsTable.invalidate();
 
