@@ -1,6 +1,6 @@
 package gov.nih.cit.consensus;
 
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.awt.Component;
 

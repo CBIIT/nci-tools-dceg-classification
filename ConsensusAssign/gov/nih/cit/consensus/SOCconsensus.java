@@ -2,7 +2,7 @@ package gov.nih.cit.consensus;
 
 import gov.nih.cit.socassign.AssignmentCodingSystem;
 import gov.nih.cit.socassign.CodingSystemPanel;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 import gov.nih.cit.util.AppProperties;
 import gov.nih.cit.util.RollingList;
 

@@ -4,7 +4,7 @@ import gov.nih.cit.socassign.AssignmentCodingSystem;
 import gov.nih.cit.socassign.Assignments;
 import gov.nih.cit.socassign.SOCAssignResultsExporter;
 import gov.nih.cit.socassign.SOCcerResults;
-import gov.nih.cit.socassign.codingsysten.OccupationCode;
+import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.io.File;
 import java.io.IOException;

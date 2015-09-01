@@ -1,6 +1,6 @@
 package gov.nih.cit.socassign;
 
-import gov.nih.cit.socassign.codingsysten.CodingSystem;
+import gov.nih.cit.socassign.codingsystem.CodingSystem;
 
 import org.junit.Assert;
 import org.junit.Test;
