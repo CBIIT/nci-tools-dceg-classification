@@ -133,7 +133,6 @@ public class SOCAssignModel {
 
 		logger.finer("resets updated..");
 		tableModel.changeResults(results);
-
 		setCodingSystem(results.getCodingSystem());
 	}
 

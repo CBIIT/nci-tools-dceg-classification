@@ -1,16 +1,10 @@
 package gov.nih.cit.socassign;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.io.*;
+import java.util.*;
 import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
 
 import com.opencsv.CSVReader;
 
@@ -162,6 +156,7 @@ public class SOCcerResults {
 		String[] head = null;
 		// read the data...
 		List<String[]> data = null;
+		AssignmentCodingSystem codingSystem = null;
 
 		try {
 			reader = new CSVReader(new BufferedReader(new FileReader(soccerResultsFile)));
@@ -173,11 +168,16 @@ public class SOCcerResults {
 			data = reader.readAll();
 			Collections.sort(data, idComparator);
 			logger.finer("finished reading data ..");
+
+			codingSystem = processHead(head);
+		} catch (StringIndexOutOfBoundsException e) {
+			JOptionPane.showMessageDialog(SOCAssignGlobals.getApplicationFrame(), "CSV File appears to be using old header names.");
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(SOCAssignGlobals.getApplicationFrame(), "CSV File appears to be missing the ID column.");
 		} finally {
 			if (reader != null) reader.close();
+			if (codingSystem == null) return null;
 		}
-
-		AssignmentCodingSystem codingSystem = processHead(head);
 
 		return new SOCcerResults(head,data,codingSystem);
 	}
