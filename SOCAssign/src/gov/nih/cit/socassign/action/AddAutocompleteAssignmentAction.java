@@ -14,6 +14,7 @@ public class AddAutocompleteAssignmentAction extends AbstractAction {
 		if (!SOCAssignGlobals.validResultSelected()) return;
 		@SuppressWarnings("unchecked")
 		String value = ((JList<String>)e.getSource()).getSelectedValue().substring(0,7);
+		SOCAssignGlobals.getAssignmentTF().setText("");
 		SOCAssignGlobals.getAutocompleteScroll().setVisible(false);
 		SOCAssignModel.getInstance().addSelection(value);
 	}

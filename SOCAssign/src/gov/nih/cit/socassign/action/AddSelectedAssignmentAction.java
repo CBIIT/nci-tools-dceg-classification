@@ -12,11 +12,13 @@ public class AddSelectedAssignmentAction extends AbstractAction {
 	public void actionPerformed(ActionEvent e) {
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
 		if (!SOCAssignGlobals.validResultSelected()) return;
-		String txt = SOCAssignGlobals.getAssignmentTF().getText();
+		JTextField assignmentTF = SOCAssignGlobals.getAssignmentTF();
+		String txt = assignmentTF.getText();
 		if (testModel.getCodingSystem().matches(txt)) {
 			testModel.addSelection(txt);
 		} else {
 			JOptionPane.showMessageDialog(SOCAssignGlobals.getApplicationFrame(), "Assignment is not formatted appropriately " + txt, "SOCassign Error", JOptionPane.ERROR_MESSAGE);
 		}
+		assignmentTF.setText("");
 	}
 }

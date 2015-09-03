@@ -11,6 +11,7 @@ public class CodingSystemAdapter extends MouseAdapter {
 		if (!SOCAssignGlobals.validResultSelected() || codingSystemPanel.getSelectedPathCount() <= 1) return;
 		OccupationCode code = codingSystemPanel.getLastSelectedPathComponent();
 		if (code.isLeaf() && e.getClickCount() > 1) {
+			SOCAssignGlobals.getAssignmentTF().setText("");
 			SOCAssignModel.getInstance().addSelection(code.getName());
 		}
 	};
