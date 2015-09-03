@@ -12,7 +12,7 @@ import gov.nih.cit.socassign.codingsystem.OccupationCode;
 import gov.nih.cit.util.*;
 
 public class SOCAssignGlobals {
-	public static final String title = "SOCAssign v0.0.2";
+	public static final String title = "SOCAssign v0.0.3";
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();

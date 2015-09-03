@@ -45,6 +45,7 @@ public class SOCAssign {
 	private static final MouseAdapter selectAnotherSoccerResultListener = new SelectAnotherSoccerResultAdapter();
 	private static final DocumentListener assignmentTextFieldListener = new AssignmentTextFieldListener();
 	private static final FocusListener autocompleteBlurListener = new AutocompleteBlurListener();
+	private static final FocusListener assignmentTextFieldFocusListener = new AssignmentTextFieldFocusListener();
 	private static final ListSelectionListener resultsTableSelectionListener = new ResultsTableSelectionListener();
 	private static final ListSelectionListener assignmentListSelectionListener = new AssignmentSelectionListener();
 	private static final WindowListener windowListener = new CloseEventAdapter(); //Closes the database connection when the window is closed.
@@ -60,6 +61,7 @@ public class SOCAssign {
 	/** Autocomplete fields */
 	private static DefaultListModel<String> autocompleteList = new DefaultListModel<String>();
 	private static JList<String> autocompleteField = new JList<String>(autocompleteList);
+	private static JScrollPane autocompleteScroll = SOCAssignGlobals.initializeAutocompleteScroll(new JScrollPane(autocompleteField));
 	/** A list that holds the last 3 files used */
 	private static RollingList<File> lastWorkingFileList = SOCAssignGlobals.initializeLastWorkingFileList(new RollingList<File>(3));
 	/** Stores information (the last files used) in a properties file so it will be remembered next time the program starts*/
@@ -222,9 +224,10 @@ public class SOCAssign {
 		assignmentTF.setAction(addSelectedAssignment);
 		assignmentTF.getDocument().addDocumentListener(assignmentTextFieldListener);
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "DOWN");
-		assignmentTF.getActionMap().put("DOWN", new VisibilityConditionalAction(autocompleteField,enterAutocompleteFieldAction,nextJobDescription));
+		assignmentTF.getActionMap().put("DOWN", new VisibilityConditionalAction(autocompleteScroll,enterAutocompleteFieldAction,nextJobDescription));
 		assignmentTF.getInputMap().put(KeyStroke.getKeyStroke("UP"), "UP");
 		assignmentTF.getActionMap().put("UP", previousJobDescription);
+		assignmentTF.addFocusListener(assignmentTextFieldFocusListener);
 		return assignmentTF;
 	}
 
@@ -287,13 +290,12 @@ public class SOCAssign {
 	}
 
 	private static void addAutoCompleteBox(SpringLayout layout, JComponent centerPanel) {
-		JScrollPane autocompleteScroll = SOCAssignGlobals.initializeAutocompleteScroll(new JScrollPane(autocompleteField));
 		autocompleteField.setFont(UIManager.getDefaults().getFont("ScrollPane.font").deriveFont(Font.ITALIC));
 		autocompleteField.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		autocompleteField.addFocusListener(autocompleteBlurListener);
-		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke((char)KeyEvent.VK_UP), "UP");
+		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_UP,0), "UP");
 		autocompleteField.getActionMap().put("UP",decreaseAutocompleteIndexAction);
-		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke((char)KeyEvent.VK_ENTER), "ENTER");
+		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0), "ENTER");
 		autocompleteField.getActionMap().put("ENTER",addAutocompleteAssignmentAction);
 		autocompleteField.addMouseListener(autocompleteDoubleClickAdapter);
 		centerPanel.add(autocompleteScroll,0);
