@@ -236,10 +236,7 @@ public class SOCAssign {
 		buttonPanel.add(removeSOCAssignment);
 		// load the icons on the button. FontAwesome is an open-source font distributed with SOCassign.
 		// if there is a problem, use the icons that I drew. They are not as pretty.
-		try {
-			try {
-				fontAwesome = Font.createFont(Font.TRUETYPE_FONT, SOCAssign.class.getResourceAsStream("fonts/fontawesome-webfont.ttf"));
-				fontAwesome = fontAwesome.deriveFont(20f);
+				fontAwesome = SOCAssignGlobals.getFontAwesome();
 				removeSOCAssignment.setFont(fontAwesome);
 				removeSOCAssignment.setForeground(Color.BLUE);
 				removeSOCAssignment.setText("\uf056");
@@ -249,14 +246,13 @@ public class SOCAssign {
 				moveAssignmentDown.setFont(fontAwesome);
 				moveAssignmentDown.setForeground(Color.BLUE);
 				moveAssignmentDown.setText("\uf0ab");
-			} catch (Exception e) {
+			try {
 				removeSOCAssignment.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/remove-blue.png"))));
 				moveAssignmentUp.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/up-blue.png"))));
 				moveAssignmentDown.setIcon(new ImageIcon(ImageIO.read(SOCAssign.class.getResourceAsStream("images/down-blue.png"))));
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		return buttonPanel;
 	}
 

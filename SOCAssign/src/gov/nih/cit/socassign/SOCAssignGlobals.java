@@ -1,8 +1,7 @@
 package gov.nih.cit.socassign;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.io.File;
+import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +9,7 @@ import javax.swing.*;
 
 import gov.nih.cit.socassign.action.LoadPreviousWorkAction;
 import gov.nih.cit.socassign.codingsystem.OccupationCode;
-import gov.nih.cit.util.AppProperties;
-import gov.nih.cit.util.RollingList;
+import gov.nih.cit.util.*;
 
 public class SOCAssignGlobals {
 	public static final String title = "SOCAssign v0.0.2";
@@ -29,8 +27,16 @@ public class SOCAssignGlobals {
 	private static CodingSystemPanel codingSystemPanel;
 	private static RollingList<File> lastWorkingFileList;
 	private static AppProperties appProperties;
-	private static Font fontAwesome;
+	private static Font fontAwesome = null;
 	private static JMenu fileMenu;
+
+	static {
+		try {
+			fontAwesome = Font.createFont(Font.TRUETYPE_FONT, SOCAssign.class.getResourceAsStream("fonts/fontawesome-webfont.ttf"));
+		} catch (FontFormatException | IOException e) {
+		}
+		fontAwesome = fontAwesome.deriveFont(20f);
+	}
 
 	public static JFrame intializeApplicationFrame(JFrame applicationFrame) {
 		SOCAssignGlobals.applicationFrame = applicationFrame;
@@ -111,11 +117,6 @@ public class SOCAssignGlobals {
 
 	public static AppProperties getAppProperties() {
 		return appProperties;
-	}
-
-	public static Font initializeFontAwesome(Font fontAwesome) {
-		SOCAssignGlobals.fontAwesome = fontAwesome;
-		return fontAwesome;
 	}
 
 	public static Font getFontAwesome() {
