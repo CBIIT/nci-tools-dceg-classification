@@ -39,7 +39,7 @@ public class AssignmentTextFieldListener implements DocumentListener {
 				autocompleteList.clear();
 				CodingSystem system = SOCAssignModel.getInstance().getCodingSystem().getCodingSystem();
 				for (OccupationCode occupationCode : system.getListOfCodesAtLevel("detailed")) {
-					if (occupationCode.getName().contains(newValue) || occupationCode.getTitle().contains(newValue) || occupationCode.getDescription().contains(newValue)) {
+					if (occupationCode.getName().startsWith(newValue) || occupationCode.getTitle().contains(newValue) || occupationCode.getDescription().contains(newValue)) {
 						autocompleteList.addElement(occupationCode.getName() + "    " + occupationCode.getTitle());
 					}
 				}
