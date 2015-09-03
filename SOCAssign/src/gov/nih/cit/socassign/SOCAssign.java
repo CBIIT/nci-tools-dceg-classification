@@ -180,7 +180,7 @@ public class SOCAssign {
 		return resultsTable;
 	}
 
-	private static JPanel createCenterPanel(SpringLayout layout) {
+	private static JComponent createCenterPanel(SpringLayout layout) {
 		// create elements
 		JTextField assignmentTF = SOCAssignGlobals.initializeAssignmentTF(createAssignmentTextField());
 		JPanel buttonPanel = createButtonPanel();
@@ -188,13 +188,14 @@ public class SOCAssign {
 		JScrollPane assignmentScroll = new JScrollPane(SOCAssignGlobals.initializeAssignmentList(createAssignmentList()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane infoScroll = new JScrollPane(new JList<String>(testModel.getSingleJobDescriptionListModel()),JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		// create panel
-		JPanel centerPanel = new JPanel(layout);
+		JComponent centerPanel = new JLayeredPane();
+		centerPanel.setLayout(layout);
 		//add all elements in order
-		centerPanel.add(assignmentTF);
-		centerPanel.add(buttonPanel);
-		centerPanel.add(assignmentScroll);
-		centerPanel.add(tableScroll);
-		centerPanel.add(infoScroll);
+		centerPanel.add(assignmentTF,JLayeredPane.DEFAULT_LAYER);
+		centerPanel.add(buttonPanel,JLayeredPane.DEFAULT_LAYER);
+		centerPanel.add(assignmentScroll,JLayeredPane.DEFAULT_LAYER);
+		centerPanel.add(tableScroll,JLayeredPane.DEFAULT_LAYER);
+		centerPanel.add(infoScroll,JLayeredPane.DEFAULT_LAYER);
 		// setup visual layout
 		centerPanel.setPreferredSize(new Dimension(458,761));
 		layout.putConstraint(SpringLayout.WEST, assignmentTF, 0, SpringLayout.WEST, centerPanel);
@@ -298,7 +299,7 @@ public class SOCAssign {
 		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0), "ENTER");
 		autocompleteField.getActionMap().put("ENTER",addAutocompleteAssignmentAction);
 		autocompleteField.addMouseListener(autocompleteDoubleClickAdapter);
-		centerPanel.add(autocompleteScroll,0);
+		centerPanel.add(autocompleteScroll,JLayeredPane.POPUP_LAYER);
 		alignSpring(layout,autocompleteScroll,centerPanel,assignmentTF,5);
 		autocompleteScroll.setVisible(false);
 	}
