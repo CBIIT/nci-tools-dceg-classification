@@ -207,8 +207,12 @@ public class SOCAssign {
 	}
 
 	private static void alignSpring(SpringLayout layout, JComponent child, JComponent parent, JComponent predecessor) {
-		layout.putConstraint(SpringLayout.WEST, child, 0, SpringLayout.WEST, parent);
-		layout.putConstraint(SpringLayout.EAST, child, 0, SpringLayout.EAST, parent);
+		alignSpring(layout,child,parent,predecessor,0);
+	}
+
+	private static void alignSpring(SpringLayout layout, JComponent child, JComponent parent, JComponent predecessor, int widthBuffer) {
+		layout.putConstraint(SpringLayout.WEST, child, widthBuffer, SpringLayout.WEST, parent);
+		layout.putConstraint(SpringLayout.EAST, child, -widthBuffer, SpringLayout.EAST, parent);
 		layout.putConstraint(SpringLayout.NORTH, child, 0, SpringLayout.SOUTH, predecessor);
 	}
 
@@ -292,7 +296,7 @@ public class SOCAssign {
 		autocompleteField.getActionMap().put("ENTER",addAutocompleteAssignmentAction);
 		autocompleteField.addMouseListener(autocompleteDoubleClickAdapter);
 		centerPanel.add(autocompleteScroll,0);
-		alignSpring(layout,autocompleteScroll,centerPanel,assignmentTF);
+		alignSpring(layout,autocompleteScroll,centerPanel,assignmentTF,5);
 		autocompleteScroll.setVisible(false);
 	}
 
