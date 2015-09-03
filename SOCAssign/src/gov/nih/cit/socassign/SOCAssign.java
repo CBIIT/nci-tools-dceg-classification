@@ -288,6 +288,7 @@ public class SOCAssign {
 
 	private static void addAutoCompleteBox(SpringLayout layout, JComponent centerPanel) {
 		JScrollPane autocompleteScroll = SOCAssignGlobals.initializeAutocompleteScroll(new JScrollPane(autocompleteField));
+		autocompleteField.setFont(UIManager.getDefaults().getFont("ScrollPane.font").deriveFont(Font.ITALIC));
 		autocompleteField.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		autocompleteField.addFocusListener(autocompleteBlurListener);
 		autocompleteField.getInputMap().put(KeyStroke.getKeyStroke((char)KeyEvent.VK_UP), "UP");
