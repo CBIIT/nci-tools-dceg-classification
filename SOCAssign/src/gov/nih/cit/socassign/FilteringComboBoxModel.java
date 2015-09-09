@@ -11,23 +11,24 @@ import javax.swing.MutableComboBoxModel;
 
 /**
  * Attempting to Filter the combobox based on what the user is typing.  Not currently working
- * 
+ *
  * @author Daniel Russ
  *
  * @param <T>  the class of the object in the ComboBox.
  */
 public class FilteringComboBoxModel<T> extends AbstractListModel<T> implements MutableComboBoxModel<T> {
+	private static final long serialVersionUID = 3228523410848606337L;
 
 	ArrayList<T> completeItemList,filteredItems;
-	T selectedItem=null;
+	T selectedItem = null;
 	IPredicate<T> predicate;
 
-	public FilteringComboBoxModel(Collection<? extends T> collection){
-		this.completeItemList=new ArrayList<T>(collection);
-		filteredItems=completeItemList;
+	public FilteringComboBoxModel(Collection<? extends T> collection) {
+		this.completeItemList = new ArrayList<T>(collection);
+		filteredItems = completeItemList;
 	}
 
-	public FilteringComboBoxModel(T[] items) {	
+	public FilteringComboBoxModel(T[] items) {
 		this(Arrays.asList(items));
 	}
 
@@ -35,67 +36,66 @@ public class FilteringComboBoxModel<T> extends AbstractListModel<T> implements M
 		this.predicate = predicate;
 	}
 
-	public boolean validPrefix(){
-		if (predicate==null) throw new NullPointerException("predicate not defined before filtering");
+	public boolean validPrefix() {
+		if (predicate == null) throw new NullPointerException("predicate not defined before filtering");
 
-		for (T item:filteredItems){
-			if (item==null) continue;
+		for (T item:filteredItems) {
+			if (item == null) continue;
 			if (predicate.apply(item)) return true;
 		}
 		return false;
 	}
-	public void filter(){		
-		if (predicate==null) throw new NullPointerException("predicate not defined before filtering");
+	public void filter() {
+		if (predicate == null) throw new NullPointerException("predicate not defined before filtering");
 
-		int oldSize=filteredItems.size();		
-		ArrayList<T> items=new ArrayList<T>();
-		if (filteredItems.size()==0) filteredItems=completeItemList;
-		for (T item:filteredItems){
+		int oldSize = filteredItems.size();
+		ArrayList<T> items = new ArrayList<T>();
+		if (filteredItems.size() == 0) filteredItems = completeItemList;
+		for (T item:filteredItems) {
 			if (predicate.apply(item)) items.add(item);
 		}
-		filteredItems=items;
+		filteredItems = items;
 		fireContentsChanged(this, 0, oldSize);
 	}
-	public void resetItems(){
-		int oldSize=filteredItems.size();
-		this.filteredItems=completeItemList;
+	public void resetItems() {
+		int oldSize = filteredItems.size();
+		this.filteredItems = completeItemList;
 		fireContentsChanged(this, 0, oldSize);
 	}
 
 	// ============ ComboBox Model ==========
 	@Override
-	public Object getSelectedItem() {		
-		//		if (selectedItem==null) return "";
-		//       System.out.println("FilteringComboBoxModel getSelected: Selected "+selectedItem);
+	public Object getSelectedItem() {
+		//		if (selectedItem == null) return "";
+		//       System.out.println("FilteringComboBoxModel getSelected: Selected " + selectedItem);
 		return selectedItem;
 	}
 
 	@Override
 	public void setSelectedItem(Object anItem) {
 
-		System.out.println("FilteringComboBoxModel setSelected: Selected "+anItem);
-		if (anItem==null || !filteredItems.contains(anItem)){
-			selectedItem=null;
+		System.out.println("FilteringComboBoxModel setSelected: Selected " + anItem);
+		if (anItem == null || !filteredItems.contains(anItem)) {
+			selectedItem = null;
 			return;
 		}
 
-
 		@SuppressWarnings("unchecked")
-		T item=(T)anItem;
-		selectedItem=item;		
+		T item = (T)anItem;
+		selectedItem = item;
 
 	}
 
 	// ============ List Model (Not in AbstractListModel) ==========
 	@Override
 	public int getSize() {
-		if (filteredItems==null) return 0;
+		if (filteredItems == null) return 0;
 		return filteredItems.size();
 	}
 
 	@Override
 	public T getElementAt(int index) {
-		//if (filteredItems.get(index)==null) return "";
+		//if (filteredItems.get(index) == null) return "";
 		return filteredItems.get(index);
 	}
 

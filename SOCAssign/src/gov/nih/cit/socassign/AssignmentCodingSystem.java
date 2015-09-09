@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * An enum that contains all the known Coding Systems.  Prevents creation
  * of multiple instances of a CodingSystem.
- * 
+ *
  * @author Daniel Russ
  *
  */
@@ -18,29 +18,28 @@ public enum AssignmentCodingSystem {
 
 	private Pattern pattern;
 	private CodingSystem codingSystem;
-	
+
 	private AssignmentCodingSystem(String regex,String xmlFilename) {
-		pattern=Pattern.compile(regex);
+		pattern = Pattern.compile(regex);
 		try {
-			this.codingSystem=CodingSystem.loadSystem(xmlFilename);
+			this.codingSystem = CodingSystem.loadSystem(xmlFilename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public boolean matches(String code){
+
+	public boolean matches(String code) {
 		return pattern.matcher(code).matches();
 	}
-	
+
 	public CodingSystem getCodingSystem() {
 		return codingSystem;
 	}
-	
+
 	public OccupationCode getOccupationalCode(String code) {
 		return codingSystem.getOccupationalCode(code);
 	}
 
-	
 	public String lookup(String code) {
 		return codingSystem.lookup(code);
 	}
@@ -48,7 +47,7 @@ public enum AssignmentCodingSystem {
 	public List<OccupationCode> getListOfCodes() {
 		return codingSystem.getListofCodes();
 	}
-	public List<String> getListOfCodesAsStrings(){
+	public List<String> getListOfCodesAsStrings() {
 		return codingSystem.getListOfCodesAsStrings();
 	}
 
@@ -58,7 +57,7 @@ public enum AssignmentCodingSystem {
 	public int getIndexOfCodeAtLevel(OccupationCode code) {
 		return codingSystem.getIndexOfCodeAtLevel(code);
 	}
-	public OccupationCode getRoot(){
+	public OccupationCode getRoot() {
 		return codingSystem.getRoot();
 	}
 }
