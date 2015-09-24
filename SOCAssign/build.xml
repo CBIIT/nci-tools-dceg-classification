@@ -73,6 +73,9 @@
         	<zipgroupfileset dir="./" includes="*.jar"/>
             <manifest>
                 <attribute name="Main-Class" value="gov.nih.cit.socassign.SOCAssign"/>
+            	<attribute name="Permissions" value="all-permissions"/>
+            	<attribute name="Application-Name" value="SOCAssign"/>
+            	<attribute name="Entry-Point" value="gov.nih.cit.socassign.SOCAssign"/>
             </manifest>
         </jar>
     </target>

@@ -1,3 +1,14 @@
-/bin/
-/.classpath
-/.project
+.classpath
+.project
+SOCAssign/.classpath
+SOCAssign/.keystore
+SOCAssign/.project
+SOCAssign/.settings
+SOCAssign/build/*
+SOCAssign/gov/*
+SOCAssign/node_modules/*
+SOCAssign/server.js
+SOCAssign/static/*
+bin/*
+soccer-output3.csv
+soccer-output3.db
