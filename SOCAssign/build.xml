@@ -2,7 +2,7 @@
 <!-- WARNING: Eclipse auto-generated file.
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
+              directory with the processing instruction <eclipse.ant.import>
               as the first entry and export the buildfile again. -->
 <project basedir="." default="build" name="SOCAssign">
     <property environment="env"/>
