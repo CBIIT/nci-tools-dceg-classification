@@ -34,6 +34,7 @@ public class SOCAssignGlobals {
 		try {
 			fontAwesome = Font.createFont(Font.TRUETYPE_FONT, SOCAssign.class.getResourceAsStream("fonts/fontawesome-webfont.ttf"));
 		} catch (FontFormatException | IOException e) {
+			e.printStackTrace();
 		}
 		fontAwesome = fontAwesome.deriveFont(20f);
 	}

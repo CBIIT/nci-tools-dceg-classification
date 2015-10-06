@@ -41,6 +41,9 @@
             <src path="src"/>
             <classpath refid="SOCAssign.classpath"/>
         </javac>
+    	<copy todir="build/classes/gov">
+    		<fileset dir="gov"/>
+    	</copy>
     </target>
     <target depends="clean,jar" name="signjars">
         <genkey alias="${verisign.key.alias}" verbose="true" storepass="${verisign.key.storepass}" keypass="${verisign.key.pass}" validity="365" keystore="${verisign.key.store}">
@@ -76,6 +79,7 @@
             	<attribute name="Permissions" value="all-permissions"/>
             	<attribute name="Application-Name" value="SOCAssign"/>
             	<attribute name="Entry-Point" value="gov.nih.cit.socassign.SOCAssign"/>
+            	<attribute name="class-path" value="SOCAssign.jar"/>
             </manifest>
         </jar>
     </target>
