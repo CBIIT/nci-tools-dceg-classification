@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://soccer-dev.nci.nih.gov/soccer/" href="soccerassign/soccerAssign.jnlp">
+    <information>
+           <title>SOCcer Assign</title>
+           <vendor>NCI CBIIT</vendor>
+           <homepage href="http://soccer-dev.nci.nih.gov/" />
+           <description>SOCcer assign Application</description>
+    </information>
+    <security>
+           <all-permissions/>    
+    </security>
+    <resources>
+          <j2se version="1.7+" />
+          <jar href="soccerassign/SOCAssign.jar" />
+    </resources>
+    <application-desc main-class="gov.nih.cit.socassign.SOCAssign" />
+</jnlp>
