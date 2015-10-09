@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp spec="1.0+" codebase="http://soccer-dev.nci.nih.gov/soccer/" href="soccerassign/SOCAssign.jnlp">
     <information>
-           <title>SOCcer Assign</title>
+           <title>SOCAssign</title>
            <vendor>NCI CBIIT</vendor>
            <homepage href="http://soccer-dev.nci.nih.gov/" />
-           <description>SOCcer assign Application</description>
+           <description>SOCAssign Application</description>
     </information>
     <security>
            <all-permissions/>    
