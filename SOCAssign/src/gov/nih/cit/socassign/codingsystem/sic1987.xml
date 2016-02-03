@@ -1,0 +1,2049 @@
+<SIC1987>
+	<division name="" title="Division A: Agriculture, Forestry, And Fishing">
+		<major name="0100" title="Agricultural Production Crops">
+			<industrygroup name="0110" title="Cash Grains">
+				<industry name="0111" title="Wheat" />
+				<industry name="0112" title="Rice" />
+				<industry name="0115" title="Corn" />
+				<industry name="0116" title="Soybeans" />
+				<industry name="0119" title="Cash Grains, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="0130" title="Field Crops, Except Cash Grains">
+				<industry name="0131" title="Cotton" />
+				<industry name="0132" title="Tobacco" />
+				<industry name="0133" title="Sugarcane and Sugar Beets" />
+				<industry name="0134" title="Irish Potatoes" />
+				<industry name="0139" title="Field Crops, Except Cash Grains, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="0160" title="Vegetables And Melons">
+				<industry name="0161" title="Vegetables and Melons" />
+			</industrygroup>
+			<industrygroup name="0170" title="Fruits And Tree Nuts">
+				<industry name="0171" title="Berry Crops" />
+				<industry name="0172" title="Grapes" />
+				<industry name="0173" title="Tree Nuts" />
+				<industry name="0174" title="Citrus Fruits" />
+				<industry name="0175" title="Deciduous Tree Fruits" />
+				<industry name="0179" title="Fruits and Tree Nuts, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="0180" title="Horticultural Specialties">
+				<industry name="0181" title="Ornamental Floriculture and Nursery Products" />
+				<industry name="0182" title="Food Crops Grown Under Cover" />
+			</industrygroup>
+			<industrygroup name="0190" title="General Farms, Primarily Crop">
+				<industry name="0191" title="General Farms, Primarily Crop" />
+			</industrygroup>
+		</major>
+		<major name="0200"
+			title="Agriculture production livestock and animal specialties">
+			<industrygroup name="0210" title="Livestock, Except Dairy And Poultry">
+				<industry name="0211" title="Beef Cattle Feedlots" />
+				<industry name="0212" title="Beef Cattle, Except Feedlots" />
+				<industry name="0213" title="Hogs" />
+				<industry name="0214" title="Sheep and Goats" />
+				<industry name="0219" title="General Livestock, Except Dairy and Poultry" />
+			</industrygroup>
+			<industrygroup name="0240" title="Dairy Farms">
+				<industry name="0241" title="Dairy Farms" />
+			</industrygroup>
+			<industrygroup name="0250" title="Poultry And Eggs">
+				<industry name="0251" title="Broiler, Fryer, and Roaster Chickens" />
+				<industry name="0252" title="Chicken Eggs" />
+				<industry name="0253" title="Turkeys and Turkey Eggs" />
+				<industry name="0254" title="Poultry Hatcheries" />
+				<industry name="0259" title="Poultry and Eggs, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="0270" title="Animal Specialties">
+				<industry name="0271" title="Fur-Bearing Animals and Rabbits" />
+				<industry name="0272" title="Horses and Other Equines" />
+				<industry name="0273" title="Animal Aquaculture" />
+				<industry name="0279" title="Animal Specialties, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="0290" title="General Farms, Primarily Livestock And Animal">
+				<industry name="0291" title="General Farms, Primarily Livestock and Animal Specialties" />
+			</industrygroup>
+		</major>
+		<major name="0700" title="Agricultural Services">
+			<industrygroup name="0710" title="Soil Preparation Services">
+				<industry name="0711" title="Soil Preparation Services" />
+			</industrygroup>
+			<industrygroup name="0720" title="Crop Services">
+				<industry name="0721" title="Crop Planting, Cultivating, and Protecting" />
+				<industry name="0722" title="Crop Harvesting, Primarily by Machine" />
+				<industry name="0723" title="Crop Preparation Services for Market, Except Cotton Ginning" />
+				<industry name="0724" title="Cotton Ginning" />
+			</industrygroup>
+			<industrygroup name="0740" title="Veterinary Services">
+				<industry name="0741" title="Veterinary Services for Livestock" />
+				<industry name="0742" title="Veterinary Services for Animal Specialties" />
+			</industrygroup>
+			<industrygroup name="0750" title="Animal Services, Except Veterinary">
+				<industry name="0751" title="Livestock Services, Except Veterinary" />
+				<industry name="0752" title="Animal Specialty Services, Except Veterinary" />
+			</industrygroup>
+			<industrygroup name="0760" title="Farm Labor And Management Services">
+				<industry name="0761" title="Farm Labor Contractors and Crew Leaders" />
+				<industry name="0762" title="Farm Management Services" />
+			</industrygroup>
+			<industrygroup name="0780" title="Landscape And Horticultural Services">
+				<industry name="0781" title="Landscape Counseling and Planning" />
+				<industry name="0782" title="Lawn and Garden Services" />
+				<industry name="0783" title="Ornamental Shrub and Tree Services" />
+			</industrygroup>
+		</major>
+		<major name="0800" title="Forestry">
+			<industrygroup name="0810" title="Timber Tracts">
+				<industry name="0811" title="Timber Tracts" />
+			</industrygroup>
+			<industrygroup name="0830" title="Forest Nurseries And Gathering Of Forest">
+				<industry name="0831" title="Forest Nurseries and Gathering of Forest Products" />
+			</industrygroup>
+			<industrygroup name="0850" title="Forestry Services">
+				<industry name="0851" title="Forestry Services" />
+			</industrygroup>
+		</major>
+		<major name="0900" title="Fishing, hunting, and trapping">
+			<industrygroup name="0910" title="Commercial Fishing">
+				<industry name="0912" title="Finfish" />
+				<industry name="0913" title="Shellfish" />
+				<industry name="0919" title="Miscellaneous Marine Products" />
+			</industrygroup>
+			<industrygroup name="0920" title="Fish Hatcheries And Preserves">
+				<industry name="0921" title="Fish Hatcheries and Preserves" />
+			</industrygroup>
+			<industrygroup name="0970" title="Hunting And Trapping, And Game Propagation">
+				<industry name="0971" title="Hunting and Trapping, and Game Propagation" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division B: Mining">
+		<major name="1000" title="Metal Mining">
+			<industrygroup name="1010" title="Iron Ores">
+				<industry name="1011" title="Iron Ores" />
+			</industrygroup>
+			<industrygroup name="1020" title="Copper Ores">
+				<industry name="1021" title="Copper Ores" />
+			</industrygroup>
+			<industrygroup name="1030" title="Lead And Zinc Ores">
+				<industry name="1031" title="Lead and Zinc Ores" />
+			</industrygroup>
+			<industrygroup name="1040" title="Gold And Silver Ores">
+				<industry name="1041" title="Gold Ores" />
+				<industry name="1044" title="Silver Ores" />
+			</industrygroup>
+			<industrygroup name="1060" title="Ferroalloy Ores, Except Vanadium">
+				<industry name="1061" title="Ferroalloy Ores, Except Vanadium" />
+			</industrygroup>
+			<industrygroup name="1080" title="Metal Mining Services">
+				<industry name="1081" title="Metal Mining Services" />
+			</industrygroup>
+			<industrygroup name="1090" title="Miscellaneous Metal Ores">
+				<industry name="1094" title="Uranium-Radium-Vanadium Ores" />
+				<industry name="1099" title="Miscellaneous Metal Ores, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="1200" title="Coal Mining">
+			<industrygroup name="1220" title="Bituminous Coal And Lignite Mining">
+				<industry name="1221" title="Bituminous Coal and Lignite Surface Mining" />
+				<industry name="1222" title="Bituminous Coal Underground Mining" />
+			</industrygroup>
+			<industrygroup name="1230" title="Anthracite Mining">
+				<industry name="1231" title="Anthracite Mining" />
+			</industrygroup>
+			<industrygroup name="1240" title="Coal Mining Services">
+				<industry name="1241" title="Coal Mining Services" />
+			</industrygroup>
+		</major>
+
+		<major name="1300" title="Oil And Gas Extraction">
+			<industrygroup name="1310" title="Crude Petroleum And Natural Gas">
+				<industry name="1311" title="Crude Petroleum and Natural Gas" />
+			</industrygroup>
+			<industrygroup name="1320" title="Natural Gas Liquids">
+				<industry name="1321" title="Natural Gas Liquids" />
+			</industrygroup>
+			<industrygroup name="1380" title="Oil And Gas Field Services">
+				<industry name="1381" title="Drilling Oil and Gas Wells" />
+				<industry name="1382" title="Oil and Gas Field Exploration Services" />
+				<industry name="1389" title="Oil and Gas Field Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="1400" title="Mining And Quarrying Of Nonmetallic Minerals, Except Fuels">
+			<industrygroup name="1410" title="Dimension Stone">
+				<industry name="1411" title="Dimension Stone" />
+			</industrygroup>
+			<industrygroup name="1420" title="Crushed And Broken Stone, Including Riprap">
+				<industry name="1422" title="Crushed and Broken Limestone" />
+				<industry name="1423" title="Crushed and Broken Granite" />
+				<industry name="1429" title="Crushed and Broken Stone, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="1440" title="Sand And Gravel">
+				<industry name="1442" title="Construction Sand and Gravel" />
+				<industry name="1446" title="Industrial Sand" />
+			</industrygroup>
+			<industrygroup name="1450" title="Clay, Ceramic, And Refractory Minerals">
+				<industry name="1455" title="Kaolin and Ball Clay" />
+				<industry name="1459" title="Clay, Ceramic, and Refractory Minerals, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="1470" title="Chemical And Fertilizer Mineral Mining">
+				<industry name="1474" title="Potash, Soda, and Borate Minerals" />
+				<industry name="1475" title="Phosphate Rock" />
+				<industry name="1479" title="Chemical and Fertilizer Mineral Mining, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="1480" title="Nonmetallic Minerals Services, Except Fuels">
+				<industry name="1481" title="Nonmetallic Minerals Services, Except Fuels" />
+			</industrygroup>
+			<industrygroup name="1490" title="Miscellaneous Nonmetallic Minerals, Except">
+				<industry name="1499" title="Miscellaneous Nonmetallic Minerals, Except Fuels" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division C: Construction">
+		<major name="1500" title="Building Construction General Contractors And Operative Builders">
+			<industrygroup name="1520" title="General Building Contractors-residential">
+				<industry name="1521" title="General Contractors-Single-Family Houses" />
+				<industry name="1522" title="General Contractors-Residential Buildings, Other Than Single-Family" />
+			</industrygroup>
+			<industrygroup name="1530" title="Operative Builders">
+				<industry name="1531" title="Operative Builders" />
+			</industrygroup>
+			<industrygroup name="1540" title="General Building Contractors-nonresidential">
+				<industry name="1541" title="General Contractors-Industrial Buildings and Warehouses" />
+				<industry name="1542" title="General Contractors-Nonresidential Buildings, Other than Industrial Buildings and Warehouses" />
+			</industrygroup>
+		</major>
+
+		<major name="1600" title="Heavy Construction Other Than Building Construction Contractors">
+			<industrygroup name="1610" title="Highway And Street Construction, Except">
+				<industry name="1611" title="Highway and Street Construction, Except Elevated Highways" />
+			</industrygroup>
+			<industrygroup name="1620" title="Heavy Construction, Except Highway And Street">
+				<industry name="1622" title="Bridge, Tunnel, and Elevated Highway Construction" />
+				<industry name="1623" title="Water, Sewer, Pipeline, and Communications and Power Line Construction" />
+				<industry name="1629" title="Heavy Construction, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="1700" title="Construction Special Trade Contractors">
+			<industrygroup name="1710" title="Plumbing, Heating And Air-conditioning">
+				<industry name="1711" title="Plumbing, Heating and Air-Conditioning" />
+			</industrygroup>
+			<industrygroup name="1720" title="Painting And Paper Hanging">
+				<industry name="1721" title="Painting and Paper Hanging" />
+			</industrygroup>
+			<industrygroup name="1730" title="Electrical Work">
+				<industry name="1731" title="Electrical Work" />
+			</industrygroup>
+			<industrygroup name="1740" title="Masonry, Stonework, Tile Setting, And Plastering">
+				<industry name="1741" title="Masonry, Stone Setting, and Other Stone Work" />
+				<industry name="1742" title="Plastering, Drywall, Acoustical, and Insulation Work" />
+				<industry name="1743" title="Terrazzo, Tile, Marble, and Mosaic Work" />
+			</industrygroup>
+			<industrygroup name="1750" title="Carpentry And Floor Work">
+				<industry name="1751" title="Carpentry Work" />
+				<industry name="1752" title="Floor Laying and Other Floor Work, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="1760" title="Roofing, Siding, And Sheet Metal Work">
+				<industry name="1761" title="Roofing, Siding, and Sheet Metal Work" />
+			</industrygroup>
+			<industrygroup name="1770" title="Concrete Work">
+				<industry name="1771" title="Concrete Work" />
+			</industrygroup>
+			<industrygroup name="1780" title="Water Well Drilling">
+				<industry name="1781" title="Water Well Drilling" />
+			</industrygroup>
+			<industrygroup name="1790" title="Miscellaneous Special Trade Contractors">
+				<industry name="1791" title="Structural Steel Erection" />
+				<industry name="1793" title="Glass and Glazing Work" />
+				<industry name="1794" title="Excavation Work" />
+				<industry name="1795" title="Wrecking and Demolition Work" />
+				<industry name="1796" title="Installation or Erection of Building Equipment, Not Elsewhere" />
+				<industry name="1799" title="Special Trade Contractors, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division D: Manufacturing">
+		<major name="2000" title="Food And Kindred Products">
+			<industrygroup name="2010" title="Meat Products">
+				<industry name="2011" title="Meat Packing Plants" />
+				<industry name="2013" title="Sausages and Other Prepared Meat Products" />
+				<industry name="2015" title="Poultry Slaughtering and Processing" />
+			</industrygroup>
+			<industrygroup name="2020" title="Dairy Products">
+				<industry name="2021" title="Creamery Butter" />
+				<industry name="2022" title="Natural, Processed, and Imitation Cheese" />
+				<industry name="2023" title="Dry, Condensed, and Evaporated Dairy Products" />
+				<industry name="2024" title="Ice Cream and Frozen Desserts" />
+				<industry name="2026" title="Fluid Milk" />
+			</industrygroup>
+			<industrygroup name="2030" title="Canned, Frozen, And Preserved Fruits, Vegetables, and Food Specialties">
+				<industry name="2032" title="Canned Specialties" />
+				<industry name="2033" title="Canned Fruits, Vegetables, Preserves, Jams, and Jellies" />
+				<industry name="2034" title="Dried and Dehydrated Fruits, Vegetables, and Soup Mixes" />
+				<industry name="2035" title="Pickled Fruits and Vegetables, Vegetable Sauces and Seasonings, and Salad Dressings" />
+				<industry name="2037" title="Frozen Fruits, Fruit Juices, and Vegetables" />
+				<industry name="2038" title="Frozen Specialties, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2040" title="Grain Mill Products">
+				<industry name="2041" title="Flour and Other Grain Mill Products" />
+				<industry name="2043" title="Cereal Breakfast Foods" />
+				<industry name="2044" title="Rice Milling" />
+				<industry name="2045" title="Prepared Flour Mixes and Doughs" />
+				<industry name="2046" title="Wet Corn Milling" />
+				<industry name="2047" title="Dog and Cat Food" />
+				<industry name="2048" title="Prepared Feed and Feed Ingredients for Animals and Fowls, Except Dogs and Cats" />
+			</industrygroup>
+			<industrygroup name="2050" title="Bakery Products">
+				<industry name="2051" title="Bread and Other Bakery Products, Except Cookies and Crackers" />
+				<industry name="2052" title="Cookies and Crackers" />
+				<industry name="2053" title="Frozen Bakery Products, Except Bread" />
+			</industrygroup>
+			<industrygroup name="2060" title="Sugar And Confectionery Products">
+				<industry name="2061" title="Cane Sugar, Except Refining" />
+				<industry name="2062" title="Cane Sugar Refining" />
+				<industry name="2063" title="Beet Sugar" />
+				<industry name="2064" title="Candy and Other Confectionery Products" />
+				<industry name="2066" title="Chocolate and Cocoa Products" />
+				<industry name="2067" title="Chewing Gum" />
+				<industry name="2068" title="Salted and Roasted Nuts and Seeds" />
+			</industrygroup>
+			<industrygroup name="2070" title="Fats And Oils">
+				<industry name="2074" title="Cottonseed Oil Mills" />
+				<industry name="2075" title="Soybean Oil Mills" />
+				<industry name="2076" title="Vegetable Oil Mills, Except Corn, Cottonseed, and Soybean" />
+				<industry name="2077" title="Animal and Marine Fats and Oils" />
+				<industry name="2079" title="Shortening, Table Oils, Margarine, and Other Edible Fats and Oils, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2080" title="Beverages">
+				<industry name="2082" title="Malt Beverages" />
+				<industry name="2083" title="Malt" />
+				<industry name="2084" title="Wines, Brandy, and Brandy Spirits" />
+				<industry name="2085" title="Distilled and Blended Liquors" />
+				<industry name="2086" title="Bottled and Canned Soft Drinks and Carbonated Waters" />
+				<industry name="2087" title="Flavoring Extracts and Flavoring Syrups, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2090" title="Miscellaneous Food Preparations And Kindred">
+				<industry name="2091" title="Canned and Cured Fish and Seafoods" />
+				<industry name="2092" title="Prepared Fresh or Frozen Fish and Seafoods" />
+				<industry name="2095" title="Roasted Coffee" />
+				<industry name="2096" title="Potato Chips, Corn Chips, and Similar Snacks" />
+				<industry name="2097" title="Manufactured Ice" />
+				<industry name="2098" title="Macaroni, Spaghetti, Vermicelli, and Noodles" />
+				<industry name="2099" title="Food Preparations, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2100" title="Tobacco Products">
+			<industrygroup name="2110" title="Cigarettes">
+				<industry name="2111" title="Cigarettes" />
+			</industrygroup>
+			<industrygroup name="2120" title="Cigars">
+				<industry name="2121" title="Cigars" />
+			</industrygroup>
+			<industrygroup name="2130" title="Chewing And Smoking Tobacco And Snuff">
+				<industry name="2131" title="Chewing and Smoking Tobacco and Snuff" />
+			</industrygroup>
+			<industrygroup name="2140" title="Tobacco Stemming And Redrying">
+				<industry name="2141" title="Tobacco Stemming and Redrying" />
+			</industrygroup>
+		</major>
+
+		<major name="2200" title="Textile Mill Products">
+			<industrygroup name="2210" title="Broadwoven Fabric Mills, Cotton">
+				<industry name="2211" title="Broadwoven Fabric Mills, Cotton" />
+			</industrygroup>
+			<industrygroup name="2220" title="Broadwoven Fabric Mills, Manmade Fiber And Silk">
+				<industry name="2221" title="Broadwoven Fabric Mills, Manmade Fiber and Silk" />
+			</industrygroup>
+			<industrygroup name="2230" title="Broadwoven Fabric Mills, Wool (including Dyeing and Finishing)">
+				<industry name="2231" title="Broadwoven Fabric Mills, Wool (Including Dyeing and Finishing)" />
+			</industrygroup>
+			<industrygroup name="2240" title="Narrow Fabric And Other Smallwares Mills, Cotton, Wool, Silk, and Manmade Fiber">
+				<industry name="2241" title="Narrow Fabric and Other Smallware Mills: Cotton, Wool, Silk, and Manmade Fiber" />
+			</industrygroup>
+			<industrygroup name="2250" title="Knitting Mills">
+				<industry name="2251" title="Women's Full-Length and Knee-Length Hosiery, Except Socks" />
+				<industry name="2252" title="Hosiery, Not Elsewhere Classified" />
+				<industry name="2253" title="Knit Outerwear Mills" />
+				<industry name="2254" title="Knit Underwear and Nightwear Mills" />
+				<industry name="2257" title="Weft Knit Fabric Mills" />
+				<industry name="2258" title="Lace and Warp Knit Fabric Mills" />
+				<industry name="2259" title="Knitting Mills, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2260" title="Dyeing And Finishing Textiles, Except Wool Fabrics">
+				<industry name="2261" title="Finishers of Broadwoven Fabrics of Cotton" />
+				<industry name="2262" title="Finishers of Broadwoven Fabrics of Manmade Fiber and Silk" />
+				<industry name="2269" title="Finishers of Textiles, Not elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2270" title="Carpets And Rugs">
+				<industry name="2273" title="Carpets and Rugs" />
+			</industrygroup>
+			<industrygroup name="2280" title="Yarn And Thread Mills">
+				<industry name="2281" title="Yarn Spinning Mills" />
+				<industry name="2282" title="Yarn Texturizing, Throwing, Twisting, and Winding Mills" />
+				<industry name="2284" title="Thread Mills" />
+			</industrygroup>
+			<industrygroup name="2290" title="Miscellaneous Textile Goods">
+				<industry name="2295" title="Coated Fabrics, Not Rubberized" />
+				<industry name="2296" title="Tire Cord and Fabrics" />
+				<industry name="2297" title="Non-woven Fabrics" />
+				<industry name="2298" title="Cordage and Twine" />
+				<industry name="2299" title="Textile goods, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2300" title="Apparel And Other Finished Products Made From Fabrics And Similar Materials">
+			<industrygroup name="2310" title="Men's And Boys' Suits, Coats, And Overcoats">
+				<industry name="2311" title="Men's and Boys' Suits, Coats, and Overcoats" />
+			</industrygroup>
+			<industrygroup name="2320" title="Men's And Boys' Furnishings, Work Clothing, And Allied Garments">
+				<industry name="2321" title="Men's and Boys' Shirts, Except Work Shirts" />
+				<industry name="2322" title="Men's and Boys' Underwear and Nightwear" />
+				<industry name="2323" title="Men's and Boys' Neckwear" />
+				<industry name="2325" title="Men's and Boys' Separate Trousers and Slacks" />
+				<industry name="2326" title="Men's and Boys' Work Clothing" />
+				<industry name="2329" title="Men's and Boys' Clothing, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2330" title="Women's, Misses', And Juniors' Outerwear">
+				<industry name="2331" title="Women's, Misses', and Juniors' Blouses and Shirts" />
+				<industry name="2335" title="Women's, Misses', and Juniors' Dresses" />
+				<industry name="2337" title="Women's, Misses', and Juniors' Suits, Skirts, and Coats" />
+				<industry name="2339" title="Women's, Misses', and Juniors' Outerwear, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2340" title="Women's, Misses', Children's, And Infants'">
+				<industry name="2341" title="Women's, Misses', Children's, and Infants' Underwear and Nightwear" />
+				<industry name="2342" title="Brassieres, Girdles, and Allied Garments" />
+			</industrygroup>
+			<industrygroup name="2350" title="Hats, Caps, And Millinery">
+				<industry name="2353" title="Hats, Caps, and Millinery" />
+			</industrygroup>
+			<industrygroup name="2360" title="Girls', Children's, And Infants' Outerwear">
+				<industry name="2361" title="Girls', Children's, and Infants' Dresses, Blouses, and Shirts" />
+				<industry name="2369" title="Girls', Children's, and Infants' Outerwear, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2370" title="Fur Goods">
+				<industry name="2371" title="Fur Goods" />
+			</industrygroup>
+			<industrygroup name="2380" title="Miscellaneous Apparel And Accessories">
+				<industry name="2381" title="Dress and Work Gloves, Except Knit and All-Leather" />
+				<industry name="2384" title="Robes and Dressing Gowns" />
+				<industry name="2385" title="Waterproof Outerwear" />
+				<industry name="2386" title="Leather and Sheep-Lined Clothing" />
+				<industry name="2387" title="Apparel belts" />
+				<industry name="2389" title="Apparel and Accessories, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2390" title="Miscellaneous Fabricated Textile Products">
+				<industry name="2391" title="Curtains and Draperies" />
+				<industry name="2392" title="House furnishing, Except Curtains and Draperies" />
+				<industry name="2393" title="Textile Bags" />
+				<industry name="2394" title="Canvas and Related Products" />
+				<industry name="2395" title="Pleating, Decorative and Novelty Stitching, and Tucking for the Trade" />
+				<industry name="2396" title="Automotive Trimmings, Apparel Findings, and Related Products" />
+				<industry name="2397" title="Schiffli Machine Embroideries" />
+				<industry name="2399" title="Fabricated Textile Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2400" title="Lumber And Wood Products, Except Furniture">
+			<industrygroup name="2410" title="Logging">
+				<industry name="2411" title="Logging" />
+			</industrygroup>
+			<industrygroup name="2420" title="Sawmills And Planing Mills">
+				<industry name="2421" title="Sawmills and Planing Mills, General" />
+				<industry name="2426" title="Hardwood Dimension and Flooring Mills" />
+				<industry name="2429" title="Special Product Sawmills, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2430" title="Millwork, Veneer, Plywood, And Structural Wood">
+				<industry name="2431" title="Millwork" />
+				<industry name="2434" title="Wood Kitchen Cabinets" />
+				<industry name="2435" title="Hardwood Veneer and Plywood" />
+				<industry name="2436" title="Softwood Veneer and Plywood" />
+				<industry name="2439" title="Structural Wood Members, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2440" title="Wood Containers">
+				<industry name="2441" title="Nailed and Lock Corner Wood Boxes and Shook" />
+				<industry name="2448" title="Wood Pallets and Skids" />
+				<industry name="2449" title="Wood Containers, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2450" title="Wood Buildings And Mobile Homes">
+				<industry name="2451" title="Mobile Homes" />
+				<industry name="2452" title="Prefabricated Wood Buildings and Components" />
+			</industrygroup>
+			<industrygroup name="2490" title="Miscellaneous Wood Products">
+				<industry name="2491" title="Wood Preserving" />
+				<industry name="2493" title="Reconstituted Wood Products" />
+				<industry name="2499" title="Wood Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2500" title="Furniture And Fixtures">
+			<industrygroup name="2510" title="Household Furniture">
+				<industry name="2511" title="Wood Household Furniture, Except Upholstered" />
+				<industry name="2512" title="Wood Household Furniture, Upholstered" />
+				<industry name="2514" title="Metal Household Furniture" />
+				<industry name="2515" title="Mattresses, Foundations, and Convertible Beds" />
+				<industry name="2517" title="Wood Television, Radio, Phonograph, and Sewing Machine Cabinets" />
+				<industry name="2519" title="Household Furniture, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2520" title="Office Furniture">
+				<industry name="2521" title="Wood Office Furniture" />
+				<industry name="2522" title="Office Furniture, Except Wood" />
+			</industrygroup>
+			<industrygroup name="2530" title="Public Building And Related Furniture">
+				<industry name="2531" title="Public Building and Related Furniture" />
+			</industrygroup>
+			<industrygroup name="2540" title="Partitions, Shelving, Lockers, And Office And">
+				<industry name="2541" title="Wood Office and Store Fixtures, Partitions, Shelving, and Lockers" />
+				<industry name="2542" title="Office and Store Fixtures, Partitions, Shelving, and Lockers, Except Wood" />
+			</industrygroup>
+			<industrygroup name="2590" title="Miscellaneous Furniture And Fixtures">
+				<industry name="2591" title="Drapery Hardware and Window Blinds and Shades" />
+				<industry name="2599" title="Furniture and Fixtures, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2600" title="Paper And Allied Products">
+			<industrygroup name="2610" title="Pulp Mills">
+				<industry name="2611" title="Pulp Mills" />
+			</industrygroup>
+			<industrygroup name="2620" title="Paper Mills">
+				<industry name="2621" title="Paper Mills" />
+			</industrygroup>
+			<industrygroup name="2630" title="Paperboard Mills">
+				<industry name="2631" title="Paperboard Mills" />
+			</industrygroup>
+			<industrygroup name="2650" title="Paperboard Containers And Boxes">
+				<industry name="2652" title="Setup Paperboard Boxes" />
+				<industry name="2653" title="Corrugated and Solid Fiber Boxes" />
+				<industry name="2655" title="Fiber Cans, Tubes, Drums, and Similar Products" />
+				<industry name="2656" title="Sanitary Food Containers, Except Folding" />
+				<industry name="2657" title="Folding Paperboard Boxes, Including Sanitary" />
+			</industrygroup>
+			<industrygroup name="2670" title="Converted Paper And Paperboard Products, Except">
+				<industry name="2671" title="Packaging Paper and Plastics Film, Coated and Laminated" />
+				<industry name="2672" title="Coated and Laminated Paper, Not Elsewhere Classified" />
+				<industry name="2673" title="Plastics, Foil, and Coated Paper Bags" />
+				<industry name="2674" title="Uncoated Paper and Multiwall Bags" />
+				<industry name="2675" title="Die-Cut Paper and Paperboard and Cardboard" />
+				<industry name="2676" title="Sanitary Paper Products" />
+				<industry name="2677" title="Envelopes" />
+				<industry name="2678" title="Stationery, Tablets, and Related Products" />
+				<industry name="2679" title="Converted Paper and Paperboard Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2700" title="Printing, Publishing, And Allied Industries">
+			<industrygroup name="2710" title="Newspapers: Publishing, Or Publishing And Printing">
+				<industry name="2711" title="Newspapers: Publishing, or Publishing and Printing" />
+			</industrygroup>
+			<industrygroup name="2720" title="Periodicals: Publishing, Or Publishing And Printing">
+				<industry name="2721" title="Periodicals: Publishing, or Publishing and Printing" />
+			</industrygroup>
+			<industrygroup name="2730" title="Books">
+				<industry name="2731" title="Books: Publishing, or Publishing and Printing" />
+				<industry name="2732" title="Book Printing" />
+			</industrygroup>
+			<industrygroup name="2740" title="Miscellaneous Publishing">
+				<industry name="2741" title="Miscellaneous Publishing" />
+			</industrygroup>
+			<industrygroup name="2750" title="Commercial Printing">
+				<industry name="2752" title="Commercial Printing, Lithographic" />
+				<industry name="2754" title="Commercial Printing, Gravure" />
+				<industry name="2759" title="Commercial Printing, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2760" title="Manifold Business Forms">
+				<industry name="2761" title="Manifold Business Forms" />
+			</industrygroup>
+			<industrygroup name="2770" title="Greeting Cards">
+				<industry name="2771" title="Greeting Cards" />
+			</industrygroup>
+			<industrygroup name="2780" title="Blankbooks, Looseleaf Binders, And Bookbinding">
+				<industry name="2782" title="Blankbooks, Looseleaf Binders and Devices" />
+				<industry name="2789" title="Bookbinding and Related Work" />
+			</industrygroup>
+			<industrygroup name="2790" title="Service Industries For The Printing Trade">
+				<industry name="2791" title="Typesetting" />
+				<industry name="2796" title="Platemaking and Related Services" />
+			</industrygroup>
+		</major>
+
+		<major name="2800" title="Chemicals And Allied Products">
+			<industrygroup name="2810" title="Industrial Inorganic Chemicals">
+				<industry name="2812" title="Alkalies and Chlorine" />
+				<industry name="2813" title="Industrial Gases" />
+				<industry name="2816" title="Inorganic Pigments" />
+				<industry name="2819" title="Industrial Inorganic Chemicals, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2820" title="Plastics Materials And Synthetic Resins, Synthetic">
+				<industry name="2821" title="Plastics Materials, Synthetic Resins, and Nonvulcanizable Elastomers" />
+				<industry name="2822" title="Synthetic Rubber (Vulcanizable Elastomers)" />
+				<industry name="2823" title="Cellulosic Manmade Fibers" />
+				<industry name="2824" title="Manmade Organic Fibers, Except Cellulosic" />
+			</industrygroup>
+			<industrygroup name="2830" title="Drugs">
+				<industry name="2833" title="Medicinal Chemicals and Botanical Products" />
+				<industry name="2834" title="Pharmaceutical Preparations" />
+				<industry name="2835" title="In Vitro and In Vivo Diagnostic Substances" />
+				<industry name="2836" title="Biological Products, Except Diagnostic Substances" />
+			</industrygroup>
+			<industrygroup name="2840" title="Soap, Detergents, And Cleaning Preparations; Perfumes, Cosmetics, and Other Toilet Preparations">
+				<industry name="2841" title="Soap and Other Detergents, Except Specialty Cleaners" />
+				<industry name="2842" title="Specialty Cleaning, Polishing, and Sanitation Preparations" />
+				<industry name="2843" title="Surface Active Agents, Finishing Agents, Sulfonated Oils, and Assistants" />
+				<industry name="2844" title="Perfumes, Cosmetics, and Other Toilet Preparations" />
+			</industrygroup>
+			<industrygroup name="2850" title="Paints, Varnishes, Lacquers, Enamels, And Allied">
+				<industry name="2851" title="Paints, Varnishes, Lacquers, Enamels, and Allied Products" />
+			</industrygroup>
+			<industrygroup name="2860" title="Industrial Organic Chemicals">
+				<industry name="2861" title="Gum and Wood Chemicals" />
+				<industry name="2865" title="Cyclic Organic Crudes and Intermediates, and Organic Dyes and Pigments" />
+				<industry name="2869" title="Industrial Organic Chemicals, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2870" title="Agricultural Chemicals">
+				<industry name="2873" title="Nitrogenous Fertilizers" />
+				<industry name="2874" title="Phosphatic Fertilizers" />
+				<industry name="2875" title="Fertilizers, Mixing Only" />
+				<industry name="2879" title="Pesticides and Agricultural Chemicals, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="2890" title="Miscellaneous Chemical Products">
+				<industry name="2891" title="Adhesives and Sealants" />
+				<industry name="2892" title="Explosives" />
+				<industry name="2893" title="Printing Ink" />
+				<industry name="2895" title="Carbon Black" />
+				<industry name="2899" title="Chemicals and Chemical Preparations, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="2900" title="Petroleum Refining And Related Industries">
+			<industrygroup name="2910" title="Petroleum Refining">
+				<industry name="2911" title="Petroleum Refining" />
+			</industrygroup>
+			<industrygroup name="2950" title="Asphalt Paving And Roofing Materials">
+				<industry name="2951" title="Asphalt Paving Mixtures and Blocks" />
+				<industry name="2952" title="Asphalt Felts and Coatings" />
+			</industrygroup>
+			<industrygroup name="2990" title="Miscellaneous Products Of Petroleum And Coal">
+				<industry name="2992" title="Lubricating Oils and Greases" />
+				<industry name="2999" title="Products of Petroleum and Coal, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3000" title="Rubber And Miscellaneous Plastics Products">
+			<industrygroup name="3010" title="Tires And Inner Tubes">
+				<industry name="3011" title="Tires and Inner Tubes" />
+			</industrygroup>
+			<industrygroup name="3020" title="Rubber And Plastics Footwear">
+				<industry name="3021" title="Rubber and Plastics Footwear" />
+			</industrygroup>
+			<industrygroup name="3050" title="Gaskets, Packing, And Sealing Devices And Rubber">
+				<industry name="3052" title="Rubber and Plastics Hose and Belting" />
+				<industry name="3053" title="Gaskets, Packing, and Sealing Devices" />
+			</industrygroup>
+			<industrygroup name="3060" title="Fabricated Rubber Products, Not Elsewhere">
+				<industry name="3061" title="Molded, Extruded, and Lathe-Cut Mechanical Rubber Goods" />
+				<industry name="3069" title="Fabricated Rubber Products, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3080" title="Miscellaneous Plastics Products">
+				<industry name="3081" title="Unsupported Plastics Film and Sheet" />
+				<industry name="3082" title="Unsupported Plastics Profile Shapes" />
+				<industry name="3083" title="Laminated Plastics Plate, Sheet, and Profile Shapes" />
+				<industry name="3084" title="Plastics Pipe" />
+				<industry name="3085" title="Plastics Bottles" />
+				<industry name="3086" title="Plastics Foam Products" />
+				<industry name="3087" title="Custom Compounding of Purchased Plastics Resins" />
+				<industry name="3088" title="Plastics Plumbing Fixtures" />
+				<industry name="3089" title="Plastics Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3100" title="Leather And Leather Products">
+			<industrygroup name="3110" title="Leather Tanning And Finishing">
+				<industry name="3111" title="Leather Tanning and Finishing" />
+			</industrygroup>
+			<industrygroup name="3130" title="Boot And Shoe Cut Stock And Findings">
+				<industry name="3131" title="Boot and Shoe Cut Stock and Findings" />
+			</industrygroup>
+			<industrygroup name="3140" title="Footwear, Except Rubber">
+				<industry name="3142" title="House Slippers" />
+				<industry name="3143" title="Men's Footwear, Except Athletic" />
+				<industry name="3144" title="Women's Footwear, Except Athletic" />
+				<industry name="3149" title="Footwear, Except Rubber, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3150" title="Leather Gloves And Mittens">
+				<industry name="3151" title="Leather Gloves and Mittens" />
+			</industrygroup>
+			<industrygroup name="3160" title="Luggage">
+				<industry name="3161" title="Luggage" />
+			</industrygroup>
+			<industrygroup name="3170" title="Handbags And Other Personal Leather Goods">
+				<industry name="3171" title="Women's Handbags and Purses" />
+				<industry name="3172" title="Personal Leather Goods, Except Women's Handbags and Purses" />
+			</industrygroup>
+			<industrygroup name="3190" title="Leather Goods, Not Elsewhere Classified">
+				<industry name="3199" title="Leather Goods, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3200" title="Stone, Clay, Glass, And Concrete Products">
+			<industrygroup name="3210" title="Flat Glass">
+				<industry name="3211" title="Flat Glass" />
+			</industrygroup>
+			<industrygroup name="3220" title="Glass And Glassware, Pressed Or Blown">
+				<industry name="3221" title="Glass Containers" />
+				<industry name="3229" title="Pressed and Blown Glass and Glassware, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3230" title="Glass Products, Made Of Purchased Glass">
+				<industry name="3231" title="Glass Products, Made of Purchased Glass" />
+			</industrygroup>
+			<industrygroup name="3240" title="Cement, Hydraulic">
+				<industry name="3241" title="Cement, Hydraulic" />
+			</industrygroup>
+			<industrygroup name="3250" title="Structural Clay Products">
+				<industry name="3251" title="Brick and Structural Clay Tile" />
+				<industry name="3253" title="Ceramic Wall and Floor Tile" />
+				<industry name="3255" title="Clay Refractories" />
+				<industry name="3259" title="Structural Clay Products, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3260" title="Pottery And Related Products">
+				<industry name="3261" title="Vitreous China Plumbing Fixtures and China and Earthenware Fittings and Bathroom Accessories" />
+				<industry name="3262" title="Vitreous China Table and Kitchen Articles" />
+				<industry name="3263" title="Fine Earthenware (Whiteware) Table and Kitchen Articles" />
+				<industry name="3264" title="Porcelain Electrical Supplies" />
+				<industry name="3269" title="Pottery Products, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3270" title="Concrete, Gypsum, And Plaster Products">
+				<industry name="3271" title="Concrete Block and Brick" />
+				<industry name="3272" title="Concrete Products, Except Block and Brick" />
+				<industry name="3273" title="Ready-Mixed Concrete" />
+				<industry name="3274" title="Lime" />
+				<industry name="3275" title="Gypsum Products" />
+			</industrygroup>
+			<industrygroup name="3280" title="Cut Stone And Stone Products">
+				<industry name="3281" title="Cut Stone and Stone Products" />
+			</industrygroup>
+			<industrygroup name="3290" title="Abrasive, Asbestos, And Miscellaneous">
+				<industry name="3291" title="Abrasive Products" />
+				<industry name="3292" title="Asbestos Products" />
+				<industry name="3295" title="Minerals and Earths, Ground or Otherwise Treated" />
+				<industry name="3296" title="Mineral Wool" />
+				<industry name="3297" title="Nonclay Refractories" />
+				<industry name="3299" title="Nonmetallic Mineral Products, Not Elsewhere Classified" />
+
+			</industrygroup>
+		</major>
+
+		<major name="3300" title="Primary Metal Industries">
+			<industrygroup name="3310" title="Steel Works, Blast Furnaces, And Rolling And Finishing Mills">
+				<industry name="3312" title="Steel Works, Blast Furnaces (Including Coke Ovens), and Rolling Mills" />
+				<industry name="3313" title="Electrometallurgical Products, Except Steel" />
+				<industry name="3315" title="Steel Wiredrawing and Steel Nails and Spikes" />
+				<industry name="3316" title="Cold-Rolled Steel Sheet, Strip, and Bars" />
+				<industry name="3317" title="Steel Pipe and Tubes" />
+			</industrygroup>
+			<industrygroup name="3320" title="Iron And Steel Foundries">
+				<industry name="3321" title="Gray and Ductile Iron Foundries" />
+				<industry name="3322" title="Malleable Iron Foundries" />
+				<industry name="3324" title="Steel Investment Foundries" />
+				<industry name="3325" title="Steel Foundries, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3330" title="Primary Smelting And Refining Of Nonferrous">
+				<industry name="3331" title="Primary Smelting and Refining of Copper" />
+				<industry name="3334" title="Primary Production of Aluminum" />
+				<industry name="3339" title="Primary Smelting and Refining of Nonferrous Metals, Except Copper and Aluminum" />
+			</industrygroup>
+			<industrygroup name="3340" title="Secondary Smelting And Refining Of Nonferrous">
+				<industry name="3341" title="Secondary Smelting and Refining of Nonferrous Metals" />
+			</industrygroup>
+			<industrygroup name="3350" title="Rolling, Drawing, And Extruding Of Nonferrous">
+				<industry name="3351" title="Rolling, Drawing, and Extruding Of Copper" />
+				<industry name="3353" title="Aluminum Sheet, Plate, and Foil" />
+				<industry name="3354" title="Aluminum Extruded Products" />
+				<industry name="3355" title="Aluminum Rolling and Drawing, Not Elsewhere Classified" />
+				<industry name="3356" title="Rolling, Drawing, and Extruding of Nonferrous Metals, Except Copper and Aluminum" />
+				<industry name="3357" title="Drawing and Insulating of Nonferrous Wire" />
+			</industrygroup>
+			<industrygroup name="3360" title="Nonferrous Foundries (castings)">
+				<industry name="3363" title="Aluminum Die-Castings" />
+				<industry name="3364" title="Nonferrous Die-Castings, Except Aluminum" />
+				<industry name="3365" title="Aluminum Foundries" />
+				<industry name="3366" title="Copper Foundries" />
+				<industry name="3369" title="Nonferrous Foundries, Except Aluminum and Copper" />
+			</industrygroup>
+			<industrygroup name="3390" title="Miscellaneous Primary Metal Products">
+				<industry name="3398" title="Metal Heat Treating" />
+				<industry name="3399" title="Primary Metal Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3400" title="Fabricated Metal Products, Except Machinery And Transportation Equipment">
+			<industrygroup name="3410" title="Metal Cans And Shipping Containers">
+				<industry name="3411" title="Metal Cans" />
+				<industry name="3412" title="Metal Shipping Barrels, Drums, Kegs, and Pails" />
+			</industrygroup>
+			<industrygroup name="3420" title="Cutlery, Handtools, And General Hardware">
+				<industry name="3421" title="Cutlery" />
+				<industry name="3423" title="Hand and Edge Tools, Except Machine Tools and Handsaws" />
+				<industry name="3425" title="Saw Blades and Handsaws" />
+				<industry name="3429" title="Hardware, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3430" title="Heating Equipment, Except Electric And Warm Air;">
+				<industry name="3431" title="Enameled Iron and Metal Sanitary Ware" />
+				<industry name="3432" title="Plumbing Fixture Fittings and Trim" />
+				<industry name="3433" title="Heating Equipment, Except Electric and Warm Air Furnaces" />
+			</industrygroup>
+			<industrygroup name="3440" title="Fabricated Structural Metal Products">
+				<industry name="3441" title="Fabricated Structural Metal" />
+				<industry name="3442" title="Metal Doors, Sash, Frames, Molding, and Trim Manufacturing" />
+				<industry name="3443" title="Fabricated Plate Work (Boiler Shops)" />
+				<industry name="3444" title="Sheet Metal Work" />
+				<industry name="3446" title="Architectural and Ornamental Metal Work" />
+				<industry name="3448" title="Prefabricated Metal Buildings and Components" />
+				<industry name="3449" title="Miscellaneous Structural Metal Work" />
+			</industrygroup>
+			<industrygroup name="3450" title="Screw Machine Products, And Bolts, Nuts, Screws, Rivets, And Washers">
+				<industry name="3451" title="Screw Machine Products" />
+				<industry name="3452" title="Bolts, Nuts, Screws, Rivets, and Washers" />
+			</industrygroup>
+			<industrygroup name="3460" title="Metal Forgings And Stampings">
+				<industry name="3462" title="Iron and Steel Forgings" />
+				<industry name="3463" title="Nonferrous Forgings" />
+				<industry name="3465" title="Automotive Stampings" />
+				<industry name="3466" title="Crowns and Closures" />
+				<industry name="3469" title="Metal Stampings, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3470" title="Coating, Engraving, And Allied Services">
+				<industry name="3471" title="Electroplating, Plating, Polishing, Anodizing, and Coloring" />
+				<industry name="3479" title="Coating, Engraving, and Allied Services, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3480" title="Ordnance And Accessories, Except Vehicles And Guided Missiles">
+				<industry name="3482" title="Small Arms Ammunition" />
+				<industry name="3483" title="Ammunition, Except for Small Arms" />
+				<industry name="3484" title="Small Arms" />
+				<industry name="3489" title="Ordnance and Accessories, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3490" title="Miscellaneous Fabricated Metal Products">
+				<industry name="3491" title="Industrial Valves" />
+				<industry name="3492" title="Fluid Power Valves and Hose Fittings" />
+				<industry name="3493" title="Steel Springs, Except Wire" />
+				<industry name="3494" title="Valves and Pipe Fittings, Not Elsewhere Classified" />
+				<industry name="3495" title="Wire Springs" />
+				<industry name="3496" title="Miscellaneous Fabricated Wire Products" />
+				<industry name="3497" title="Metal Foil and Leaf" />
+				<industry name="3498" title="Fabricated Pipe and Pipe Fittings" />
+				<industry name="3499" title="Fabricated Metal Products, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3500" title="Industrial And Commercial Machinery And Computer Equipment">
+			<industrygroup name="3510" title="Engines And Turbines">
+				<industry name="3511" title="Steam, Gas, and Hydraulic Turbines, and Turbine Generator Set Units" />
+				<industry name="3519" title="Internal Combustion Engines, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3520" title="Farm And Garden Machinery And Equipment">
+				<industry name="3523" title="Farm Machinery and Equipment" />
+				<industry name="3524" title="Lawn and Garden Tractors and Home Lawn and Garden Equipment" />
+			</industrygroup>
+			<industrygroup name="3530" title="Construction, Mining, And Materials Handling">
+				<industry name="3531" title="Construction Machinery and Equipment" />
+				<industry name="3532" title="Mining Machinery and Equipment, Except Oil and Gas Field Machinery and Equipment" />
+				<industry name="3533" title="Oil and Gas Field Machinery and Equipment" />
+				<industry name="3534" title="Elevators and Moving Stairways" />
+				<industry name="3535" title="Conveyors and Conveying Equipment" />
+				<industry name="3536" title="Overhead Traveling Cranes, Hoists, and Monorail Systems" />
+				<industry name="3537" title="Industrial Trucks, Tractors, Trailers, and Stackers" />
+			</industrygroup>
+			<industrygroup name="3540" title="Metalworking Machinery And Equipment">
+				<industry name="3541" title="Machine Tools, Metal Cutting Types" />
+				<industry name="3542" title="Machine Tools, Metal Forming Types" />
+				<industry name="3543" title="Industrial Patterns" />
+				<industry name="3544" title="Special Dies and Tools, Die Sets, Jigs and Fixtures, and Industrial Molds" />
+				<industry name="3545" title="Cutting Tools, Machine Tool Accessories, and Machinists' Precision Measuring Devices" />
+				<industry name="3546" title="Power-Driven Handtools" />
+				<industry name="3547" title="Rolling Mill Machinery and Equipment" />
+				<industry name="3548" title="Electric and Gas Welding and Soldering Equipment" />
+				<industry name="3549" title="Metalworking Machinery, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3550" title="Special Industry Machinery, Except Metalworking">
+				<industry name="3552" title="Textile Machinery" />
+				<industry name="3553" title="Woodworking Machinery" />
+				<industry name="3554" title="Paper Industries Machinery" />
+				<industry name="3555" title="Printing Trades Machinery and Equipment" />
+				<industry name="3556" title="Food Products Machinery" />
+				<industry name="3559" title="Special Industry Machinery, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3560" title="General Industrial Machinery And Equipment">
+				<industry name="3561" title="Pumps and Pumping Equipment" />
+				<industry name="3562" title="Ball and Roller Bearings" />
+				<industry name="3563" title="Air and Gas Compressors" />
+				<industry name="3564" title="Industrial and Commercial Fans and Blowers and Air Purification Equipment" />
+				<industry name="3565" title="Packaging Machinery" />
+				<industry name="3566" title="Speed Changers, Industrial High-Speed Drives, and Gears" />
+				<industry name="3567" title="Industrial Process Furnaces and Ovens" />
+				<industry name="3568" title="Mechanical Power Transmission Equipment, Not Elsewhere Classified" />
+				<industry name="3569" title="General Industrial Machinery and Equipment, Not Elsewhere" />
+			</industrygroup>
+			<industrygroup name="3570" title="Computer And Office Equipment">
+				<industry name="3571" title="Electronic Computers" />
+				<industry name="3572" title="Computer Storage Devices" />
+				<industry name="3575" title="Computer Terminals" />
+				<industry name="3577" title="Computer Peripheral Equipment, Not Elsewhere Classified" />
+				<industry name="3578" title="Calculating and Accounting Machines, Except Electronic Computers" />
+				<industry name="3579" title="Office Machines, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3580" title="Refrigeration And Service Industry Machinery">
+				<industry name="3581" title="Automatic Vending Machines" />
+				<industry name="3582" title="Commercial Laundry, Drycleaning, and Pressing Machines" />
+				<industry name="3585" title="Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment" />
+				<industry name="3586" title="Measuring and Dispensing Pumps" />
+				<industry name="3589" title="Service Industry Machinery, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3590" title="Miscellaneous Industrial And Commercial">
+				<industry name="3592" title="Carburetors, Pistons, Piston Rings, and Valves" />
+				<industry name="3593" title="Fluid Power Cylinders and Actuators" />
+				<industry name="3594" title="Fluid Power Pumps and Motors" />
+				<industry name="3596" title="Scales and Balances, Except Laboratory" />
+				<industry name="3599" title="Industrial and Commercial Machinery and Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+
+		<major name="3600" title="Electronic And Other Electrical Equipment And Components, Except Computer Equipment">
+			<industrygroup name="3610" title="Electric Transmission And Distribution Equipment">
+				<industry name="3612" title="Power, Distribution, and Specialty Transformers" />
+				<industry name="3613" title="Switchgear and Switchboard Apparatus" />
+			</industrygroup>
+			<industrygroup name="3620" title="Electrical Industrial Apparatus">
+				<industry name="3621" title="Motors and Generators" />
+				<industry name="3624" title="Carbon and Graphite Products" />
+				<industry name="3625" title="Relays and Industrial Controls" />
+				<industry name="3629" title="Electrical Industrial Apparatus, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3630" title="Household Appliances">
+				<industry name="3631" title="Household Cooking Equipment" />
+				<industry name="3632" title="Household Refrigerators and HOme and Farm Freezers" />
+				<industry name="3633" title="Household Laundry Equipment" />
+				<industry name="3634" title="Electric Housewares and Fans" />
+				<industry name="3635" title="Household Vacuum Cleaners" />
+				<industry name="3639" title="Household Appliances, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3640" title="Electric Lighting And Wiring Equipment">
+				<industry name="3641" title="Electric Lamp Bulbs and Tubes" />
+				<industry name="3643" title="Current-Carrying Wiring Devices" />
+				<industry name="3644" title="Noncurrent-Carrying Wiring Devices" />
+				<industry name="3645" title="Residential Electric Lighting Fixtures" />
+				<industry name="3646" title="Commercial, Industrial, and Institutional Electric Lighting Fixtures" />
+				<industry name="3647" title="Vehicular Lighting Equipment" />
+				<industry name="3648" title="Lighting Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3650" title="Household Audio And Video Equipment, And Audio">
+				<industry name="3651" title="Household Audio and Video Equipment" />
+				<industry name="3652" title="Phonograph Records and Prerecorded Audio Tapes and Disks" />
+			</industrygroup>
+			<industrygroup name="3660" title="Communications Equipment">
+				<industry name="3661" title="Telephone and Telegraph Apparatus" />
+				<industry name="3663" title="Radio and Television Broadcasting and Communications Equipment" />
+				<industry name="3669" title="Communications Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3670" title="Electronic Components And Accessories">
+				<industry name="3671" title="Electron Tubes" />
+				<industry name="3672" title="Printed Circuit Boards" />
+				<industry name="3674" title="Semiconductors and Related Devices" />
+				<industry name="3675" title="Electronic Capacitors" />
+				<industry name="3676" title="Electronic Resistors" />
+				<industry name="3677" title="Electronic Coils, Transformers, and Other Inductors" />
+				<industry name="3678" title="Electronic Connectors" />
+				<industry name="3679" title="Electronic Components, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3690" title="Miscellaneous Electrical Machinery, Equipment, and Supplies">
+				<industry name="3691" title="Storage Batteries" />
+				<industry name="3692" title="Primary Batteries, Dry and Wet" />
+				<industry name="3694" title="Electrical Equipment for Internal Combustion Engines" />
+				<industry name="3695" title="Magnetic And Optical Recording Media" />
+				<industry name="3699" title="Electrical Machinery, Equipment, and Supplies, Not Elsewhere" />
+			</industrygroup>
+		</major>
+
+		<major name="3700" title="Transportation Equipment">
+			<industrygroup name="3710" title="Motor Vehicles And Motor Vehicle Equipment">
+				<industry name="3711" title="Motor Vehicles and Passenger Car Bodies" />
+				<industry name="3713" title="Truck and Bus Bodies" />
+				<industry name="3714" title="Motor Vehicle Parts and Accessories" />
+				<industry name="3715" title="Truck Trailers" />
+				<industry name="3716" title="Motor Homes" />
+			</industrygroup>
+			<industrygroup name="3720" title="Aircraft And Parts">
+				<industry name="3721" title="Aircraft" />
+				<industry name="3724" title="Aircraft Engines and Engine Parts" />
+				<industry name="3728" title="Aircraft Parts and Auxiliary Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3730" title="Ship And Boat Building And Repairing">
+				<industry name="3731" title="Ship Building and Repairing" />
+				<industry name="3732" title="Boat Building and Repairing" />
+			</industrygroup>
+			<industrygroup name="3740" title="Railroad Equipment">
+				<industry name="3743" title="Railroad Equipment" />
+			</industrygroup>
+			<industrygroup name="3750" title="Motorcycles, Bicycles, And Parts">
+				<industry name="3751" title="Motorcycles, Bicycles, and Parts" />
+			</industrygroup>
+			<industrygroup name="3760" title="Guided Missiles And Space Vehicles And Parts">
+				<industry name="3761" title="Guided Missiles and Space Vehicles" />
+				<industry name="3764" title="Guided Missile and Space Vehicle Propulsion Units and Propulsion Unit Parts" />
+				<industry name="3769" title="Guided Missile Space Vehicle Parts and Auxiliary Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3790" title="Miscellaneous Transportation Equipment">
+				<industry name="3792" title="Travel Trailers and Campers" />
+				<industry name="3795" title="Tanks and Tank Components" />
+				<industry name="3799" title="Transportation Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="3800" title="Measuring, Analyzing, And Controlling Instruments; Photographic, Medical And Optical Goods; Watches And Clocks">
+			<industrygroup name="3810" title="Search, Detection, Navigation, Guidance, Aeronautical, and Nautical Systems, Instruments, and Equipment">
+				<industry name="3812" title="Search, Detection, Navigation, Guidance, Aeronautical, and Nautical Systems and Instruments" />
+			</industrygroup>
+			<industrygroup name="3820" title="Laboratory Apparatus And Analytical, Optical, Measuring, and Controlling Instruments">
+				<industry name="3821" title="Laboratory Apparatus and Furniture" />
+				<industry name="3822" title="Automatic Controls for Regulating Residential and Commercial Environments and Appliances" />
+				<industry name="3823" title="Industrial Instruments for Measurement, Display, and Control of Process Variables; and Related Products" />
+				<industry name="3824" title="Totalizing Fluid Meters and Counting Devices" />
+				<industry name="3825" title="Instruments for Measuring and Testing of Electricity and Electrical Signals" />
+				<industry name="3826" title="Laboratory Analytical Instruments" />
+				<industry name="3827" title="Optical Instruments and Lenses" />
+				<industry name="3829" title="Measuring and Controlling Devices, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3840" title="Surgical, Medical, And Dental Instruments And Supplies">
+				<industry name="3841" title="Surgical and Medical Instruments and Apparatus" />
+				<industry name="3842" title="Orthopedic, Prosthetic, and Surgical Appliances and Supplies" />
+				<industry name="3843" title="Dental Equipment and Supplies" />
+				<industry name="3844" title="X-Ray Apparatus and Tubes and Related Irradiation Apparatus" />
+				<industry name="3845" title="Electromedical and Electrotherapeutic Apparatus" />
+			</industrygroup>
+			<industrygroup name="3850" title="Ophthalmic Goods">
+				<industry name="3851" title="Ophthalmic Goods" />
+			</industrygroup>
+			<industrygroup name="3860" title="Photographic Equipment And Supplies">
+				<industry name="3861" title="Photographic Equipment and Supplies" />
+			</industrygroup>
+			<industrygroup name="3870" title="Watches, Clocks, Clockwork Operated Devices, and Parts">
+				<industry name="3873" title="Watches, Clocks, Clockwork Operated Devices, and Parts" />
+			</industrygroup>
+		</major>
+		<major name="3900" title="Miscellaneous Manufacturing Industries">
+			<industrygroup name="3910" title="Jewelry, Silverware, And Plated Ware">
+				<industry name="3911" title="Jewelry, Precious Metal" />
+				<industry name="3914" title="Silverware, Plated Ware, and Stainless Steel Ware" />
+				<industry name="3915" title="Jewelers' Findings and Materials, and Lapidary Work" />
+			</industrygroup>
+			<industrygroup name="3930" title="Musical Instruments">
+				<industry name="3931" title="Musical Instruments" />
+			</industrygroup>
+			<industrygroup name="3940" title="Dolls, Toys, Games And Sporting And Athletic">
+				<industry name="3942" title="Dolls and Stuffed Toys" />
+				<industry name="3944" title="Games, Toys, and Children's Vehicles, Except Dolls and Bicycles" />
+				<industry name="3949" title="Sporting and Athletic Goods, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="3950" title="Pens, Pencils, And Other Artists Materials">
+				<industry name="3951" title="Pens, Mechanical Pencils, and Parts" />
+				<industry name="3952" title="Lead Pencils, Crayons, and Artists' Materials" />
+				<industry name="3953" title="Marking Devices" />
+				<industry name="3955" title="Carbon Paper and Inked Ribbons" />
+			</industrygroup>
+			<industrygroup name="3960" title="Costume Jewelry, Costume Novelties, Buttons, And Miscellaneous Notions, Ecept Precious Metal">
+				<industry name="3961" title="Costume Jewelry and Costume Novelties, Except Precious Metal" />
+				<industry name="3965" title="Fasteners, Buttons, Needles, and Pins" />
+			</industrygroup>
+			<industrygroup name="3990" title="Miscellaneous Manufacturing Industries">
+				<industry name="3991" title="Brooms and Brushes" />
+				<industry name="3993" title="Signs and Advertising Specialties" />
+				<industry name="3995" title="Burial Caskets" />
+				<industry name="3996" title="Linoleum, Asphalted-Felt-Base, and Other Hard Surface Floor Coverings, Not Elsewhere Classified" />
+				<industry name="3999" title="Manufacturing Industries, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division E: Transportation, Communications, Electric, Gas, And Sanitary Services">
+		<major name="4000" title="Railroad Transportation">
+			<industrygroup name="4010" title="Railroads">
+				<industry name="4011" title="Railroads, Line-Haul Operating" />
+				<industry name="4013" title="Railroad Switching and Terminal Establishments" />
+			</industrygroup>
+		</major>
+		<major name="4100" title="Local And Suburban Transit And Interurban Highway Passenger Transportation">
+			<industrygroup name="4110" title="Local And Suburban Passenger Transportation">
+				<industry name="4111" title="Local and Suburban Transit" />
+				<industry name="4119" title="Local Passenger Transportation, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4120" title="Taxicabs">
+				<industry name="4121" title="Taxicabs" />
+			</industrygroup>
+			<industrygroup name="4130" title="Intercity And Rural Bus Transportation">
+				<industry name="4131" title="Intercity and Rural Bus Transportation" />
+			</industrygroup>
+			<industrygroup name="4140" title="Bus Charter Service">
+				<industry name="4141" title="Local Bus Charter Service" />
+				<industry name="4142" title="Bus Charter Service, Except Local" />
+			</industrygroup>
+			<industrygroup name="4150" title="School Buses">
+				<industry name="4151" title="School Buses" />
+			</industrygroup>
+			<industrygroup name="4170" title="Terminal And Service Facilities For Motor Vehicle">
+				<industry name="4173" title="Terminal and Service Facilities for Motor Vehicle Passenger Transportation" />
+			</industrygroup>
+		</major>
+		<major name="4200" title="Motor Freight Transportation And Warehousing">
+			<industrygroup name="4210" title="Trucking And Courier Services, Except Air">
+				<industry name="4212" title="Local Trucking Without Storage" />
+				<industry name="4213" title="Trucking, Except Local" />
+				<industry name="4214" title="Local Trucking With Storage" />
+				<industry name="4215" title="Courier Services, Except by Air" />
+			</industrygroup>
+			<industrygroup name="4220" title="Public Warehousing And Storage">
+				<industry name="4221" title="Farm Product Warehousing and Storage" />
+				<industry name="4222" title="Refrigerated Warehousing and Storage" />
+				<industry name="4225" title="General Warehousing and Storage" />
+				<industry name="4226" title="Special Warehousing and Storage, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4230" title="Terminal And Joint Terminal Maintenance">
+				<industry name="4231" title="Terminal and Joint Terminal Maintenance Facilities for Motor Freight Transportation" />
+			</industrygroup>
+		</major>
+		<major name="4300" title="United States Postal Service">
+			<industrygroup name="4310" title="United States Postal Service">
+				<industry name="4311" title="United States Postal Service" />
+			</industrygroup>
+		</major>
+		<major name="4400" title="Water Transportation">
+			<industrygroup name="4410" title="Deep Sea Foreign Transportation Of Freight">
+				<industry name="4412" title="Deep Sea Foreign Transportation of Freight" />
+			</industrygroup>
+			<industrygroup name="4420" title="Deep Sea Domestic Transportation Of Freight">
+				<industry name="4424" title="Deep Sea Domestic Transportation of Freight" />
+			</industrygroup>
+			<industrygroup name="4430" title="Freight Transportation On The Great Lakes-st.">
+				<industry name="4432" title="Freight Transportation on the Great Lakes-St. Lawrence Seaway" />
+			</industrygroup>
+			<industrygroup name="4440" title="Water Transportation Of Freight, Not Elsewhere">
+				<industry name="4449" title="Water Transportation of Freight, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4480" title="Water Transportation Of Passengers">
+				<industry name="4481" title="Deep Sea Transportation of Passengers, Except by Ferry" />
+				<industry name="4482" title="Ferries" />
+				<industry name="4489" title="Water Transportation of Passengers, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4490" title="Services Incidental To Water Transportation">
+				<industry name="4491" title="Marine Cargo Handling" />
+				<industry name="4492" title="Towing and Tugboat Services" />
+				<industry name="4493" title="Marinas" />
+				<industry name="4499" title="Water Transportation Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="4500" title="Transportation By Air">
+			<industrygroup name="4510" title="Air Transportation, Scheduled, And Air Courier">
+				<industry name="4512" title="Air Transportation, Scheduled" />
+				<industry name="4513" title="Air Courier Services" />
+			</industrygroup>
+			<industrygroup name="4520" title="Air Transportation, Nonscheduled">
+				<industry name="4522" title="Air Transportation, Nonscheduled" />
+			</industrygroup>
+			<industrygroup name="4580" title="Airports, Flying Fields, And Airport Terminal">
+				<industry name="4581" title="Airports, Flying Fields, and Airport Terminal Services" />
+			</industrygroup>
+		</major>
+		<major name="4600" title="Pipelines, Except Natural Gas">
+			<industrygroup name="4610" title="Pipelines, Except Natural Gas">
+				<industry name="4612" title="Crude Petroleum Pipelines" />
+				<industry name="4613" title="Refined Petroleum Pipelines" />
+				<industry name="4619" title="Pipelines, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="4700" title="Transportation Services">
+			<industrygroup name="4720" title="Arrangement Of Passenger Transportation">
+				<industry name="4724" title="Travel Agencies" />
+				<industry name="4725" title="Tour Operators" />
+				<industry name="4729" title="Arrangement of Passenger Transportation, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4730" title="Arrangement Of Transportation Of Freight And Cargo">
+				<industry name="4731" title="Arrangement of Transportation of Freight and Cargo" />
+			</industrygroup>
+			<industrygroup name="4740" title="Rental Of Railroad Cars">
+				<industry name="4741" title="Rental of Railroad Cars" />
+			</industrygroup>
+			<industrygroup name="4780" title="Miscellaneous Services Incidental To Transportation">
+				<industry name="4783" title="Packing and Crating" />
+				<industry name="4785" title="Fixed Facilities and Inspection and Weighing Services for Motor Vehicle Transportation" />
+				<industry name="4789" title="Transportation Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="4800" title="Communications">
+			<industrygroup name="4810" title="Telephone Communications">
+				<industry name="4812" title="Radiotelephone Communications" />
+				<industry name="4813" title="Telephone Communications, Except Radiotelephone" />
+			</industrygroup>
+			<industrygroup name="4820" title="Telegraph And Other Message Communications">
+				<industry name="4822" title="Telegraph and Other Message Communications" />
+			</industrygroup>
+			<industrygroup name="4830" title="Radio And Television Broadcasting Stations">
+				<industry name="4832" title="Radio Broadcasting Stations" />
+				<industry name="4833" title="Television Broadcasting Stations" />
+			</industrygroup>
+			<industrygroup name="4840" title="Cable And Other Pay Television Services">
+				<industry name="4841" title="Cable and Other Pay Television Services" />
+			</industrygroup>
+			<industrygroup name="4890" title="Communications Services, Not Elsewhere">
+				<industry name="4899" title="Communications Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="4900" title="Electric, Gas, And Sanitary Services">
+			<industrygroup name="4910" title="Electric Services">
+				<industry name="4911" title="Electric Services" />
+			</industrygroup>
+			<industrygroup name="4920" title="Gas Production And Distribution">
+				<industry name="4922" title="Natural Gas Transmission" />
+				<industry name="4923" title="Natural Gas Transmission and Distribution" />
+				<industry name="4924" title="Natural Gas Distribution" />
+				<industry name="4925" title="Mixed, Manufactured, or Liquefied Petroleum Gas Production and/or" />
+			</industrygroup>
+			<industrygroup name="4930" title="Combination Electric And Gas, And Other Utility">
+				<industry name="4931" title="Electric and Other Services Combined" />
+				<industry name="4932" title="Gas and Other Services Combined" />
+				<industry name="4939" title="Combination Utilities, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4940" title="Water Supply">
+				<industry name="4941" title="Water Supply" />
+			</industrygroup>
+			<industrygroup name="4950" title="Sanitary Services">
+				<industry name="4952" title="Sewerage Systems" />
+				<industry name="4953" title="Refuse Systems" />
+				<industry name="4959" title="Sanitary Services, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="4960" title="Steam And Air-conditioning Supply">
+				<industry name="4961" title="Steam and Air-Conditioning Supply" />
+			</industrygroup>
+			<industrygroup name="4970" title="Irrigation Systems">
+				<industry name="4971" title="Irrigation Systems" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division F: Wholesale Trade">
+		<major name="5000" title="Wholesale Trade-durable Goods">
+			<industrygroup name="5010" title="Motor Vehicles And Motor Vehicle Parts And Supplies">
+				<industry name="5012" title="Automobiles and Other Motor Vehicles" />
+				<industry name="5013" title="Motor Vehicle Supplies and New Parts" />
+				<industry name="5014" title="Tires and Tubes" />
+				<industry name="5015" title="Motor Vehicle Parts, Used" />
+			</industrygroup>
+			<industrygroup name="5020" title="Furniture And Home Furnishings">
+				<industry name="5021" title="Furniture" />
+				<industry name="5023" title="Home furnishings" />
+			</industrygroup>
+			<industrygroup name="5030" title="Lumber And Other Construction Materials">
+				<industry name="5031" title="Lumber, Plywood, Millwork, and Wood Panels" />
+				<industry name="5032" title="Brick, Stone, and Related Construction Materials" />
+				<industry name="5033" title="Roofing, Siding, and Insulation Materials" />
+				<industry name="5039" title="Construction Materials, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5040" title="Professional And Commercial Equipment And Supplies">
+				<industry name="5043" title="Photographic Equipment and Supplies" />
+				<industry name="5044" title="Office Equipment" />
+				<industry name="5045" title="Computers and Computer Peripheral Equipment and Software" />
+				<industry name="5046" title="Commercial Equipment, Not Elsewhere Classified" />
+				<industry name="5047" title="Medical, Dental, and Hospital Equipment and Supplies" />
+				<industry name="5048" title="Ophthalmic Goods" />
+				<industry name="5049" title="Professional Equipment and Supplies, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5050" title="Metals And Minerals, Except Petroleum">
+				<industry name="5051" title="Metals Service Centers and Offices" />
+				<industry name="5052" title="Coal and Other Minerals and Ores" />
+			</industrygroup>
+			<industrygroup name="5060" title="Electrical Goods">
+				<industry name="5063" title="Electrical Apparatus and Equipment Wiring Supplies, and Construction Materials" />
+				<industry name="5064" title="Electrical Appliances, Television and Radio Sets" />
+				<industry name="5065" title="Electronic Parts and Equipment, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5070" title="Hardware, And Plumbing And Heating Equipment">
+				<industry name="5072" title="Hardware" />
+				<industry name="5074" title="Plumbing and Heating Equipment and Supplies (Hydronics)" />
+				<industry name="5075" title="Warm Air Heating and Air-Conditioning Equipment and Supplies" />
+				<industry name="5078" title="Refrigeration Equipment and Supplies" />
+			</industrygroup>
+			<industrygroup name="5080" title="Machinery, Equipment, And Supplies">
+				<industry name="5082" title="Construction and Mining (Except Petroleum) Machinery and Equipment" />
+				<industry name="5083" title="Farm and Garden Machinery and Equipment" />
+				<industry name="5084" title="Industrial Machinery and Equipment" />
+				<industry name="5085" title="Industrial Supplies" />
+				<industry name="5087" title="Service Establishment Equipment and Supplies" />
+				<industry name="5088" title="Transportation Equipment and Supplies, Except Motor Vehicles" />
+			</industrygroup>
+			<industrygroup name="5090" title="Miscellaneous Durable Goods">
+				<industry name="5091" title="Sporting and Recreational Goods and Supplies" />
+				<industry name="5092" title="Toys and Hobby Goods and Supplies" />
+				<industry name="5093" title="Scrap and Waste Materials" />
+				<industry name="5094" title="Jewelry, Watches, Precious Stones, and Precious Metals" />
+				<industry name="5099" title="Durable Goods, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="5100" title="Wholesale Trade-non-durable Goods">
+			<industrygroup name="5110" title="Paper And Paper Products">
+				<industry name="5111" title="Printing and Writing Paper" />
+				<industry name="5112" title="Stationery and Office Supplies" />
+				<industry name="5113" title="Industrial and Personal Service Paper" />
+			</industrygroup>
+			<industrygroup name="5120" title="Drugs, Drug Proprietaries, And Druggists' Sundries">
+				<industry name="5122" title="Drugs, Drug Proprietaries, and Druggists' Sundries" />
+			</industrygroup>
+			<industrygroup name="5130" title="Apparel, Piece Goods, And Notions">
+				<industry name="5131" title="Piece Goods, Notions, and Other Dry Good" />
+				<industry name="5136" title="Men's and Boy's Clothing and Furnishings" />
+				<industry name="5137" title="Women's, Children's, and Infants' Clothing and Accessories" />
+				<industry name="5139" title="Footwear" />
+			</industrygroup>
+			<industrygroup name="5140" title="Groceries And Related Products">
+				<industry name="5141" title="Groceries, General Line" />
+				<industry name="5142" title="Packaged Frozen Foods" />
+				<industry name="5143" title="Dairy Products, Except Dried or Canned" />
+				<industry name="5144" title="Poultry and Poultry Products" />
+				<industry name="5145" title="Confectionery" />
+				<industry name="5146" title="Fish and Seafoods" />
+				<industry name="5147" title="Meats and Meat Products" />
+				<industry name="5148" title="Fresh Fruits and Vegetables" />
+				<industry name="5149" title="Groceries and Related Products, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5150" title="Farm-product Raw Materials">
+				<industry name="5153" title="Grain and Field Beans" />
+				<industry name="5154" title="Livestock" />
+				<industry name="5159" title="Farm-Product Raw Materials, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5160" title="Chemicals And Allied Products">
+				<industry name="5162" title="Plastics Materials and Basic Forms and Shapes" />
+				<industry name="5169" title="Chemicals and Allied Products, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5170" title="Petroleum And Petroleum Products">
+				<industry name="5171" title="Petroleum Bulk stations and Terminals" />
+				<industry name="5172" title="Petroleum and Petroleum Products Wholesalers, Except Bulk Stations and Terminals" />
+			</industrygroup>
+			<industrygroup name="5180" title="Beer, Wine, And Distilled Alcoholic Beverages">
+				<industry name="5181" title="Beer and Ale" />
+				<industry name="5182" title="Wine and Distilled Alcoholic Beverages" />
+			</industrygroup>
+			<industrygroup name="5190" title="Miscellaneous Non-durable Goods">
+				<industry name="5191" title="Farm Supplies" />
+				<industry name="5192" title="Books, Periodicals, and Newspapers" />
+				<industry name="5193" title="Flowers, Nursery Stock, and Florists' Supplies" />
+				<industry name="5194" title="Tobacco and Tobacco Products" />
+				<industry name="5198" title="Paints, Varnishes, and Supplies" />
+				<industry name="5199" title="Nondurable Goods, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division G: Retail Trade">
+		<major name="5200" title="Building Materials, Hardware, Garden Supply, And Mobile Home Dealers">
+			<industrygroup name="5210" title="Lumber And Other Building Materials Dealers">
+				<industry name="5211" title="Lumber and Other Building Materials Dealers" />
+			</industrygroup>
+			<industrygroup name="5230" title="Paint, Glass And Wallpaper Stores">
+				<industry name="5231" title="Paint, Glass, and Wallpaper Stores" />
+			</industrygroup>
+			<industrygroup name="5250" title="Hardware Stores">
+				<industry name="5251" title="Hardware Stores" />
+			</industrygroup>
+			<industrygroup name="5260" title="Retail Nurseries, Lawn And Garden Supply Stores">
+				<industry name="5261" title="Retail Nurseries, Lawn and Garden Supply Stores" />
+			</industrygroup>
+			<industrygroup name="5270" title="Mobile Home Dealers">
+				<industry name="5271" title="Mobile Home Dealers" />
+			</industrygroup>
+		</major>
+		<major name="5300" title="General Merchandise Stores">
+			<industrygroup name="5310" title="Department Stores">
+				<industry name="5311" title="Department Stores" />
+			</industrygroup>
+			<industrygroup name="5330" title="Variety Stores">
+				<industry name="5331" title="Variety Stores" />
+			</industrygroup>
+			<industrygroup name="5390" title="Miscellaneous General Merchandise Stores">
+				<industry name="5399" title="Miscellaneous General Merchandise Stores" />
+			</industrygroup>
+		</major>
+		<major name="5400" title="Food Stores">
+			<industrygroup name="5410" title="Grocery Stores">
+				<industry name="5411" title="Grocery Stores" />
+			</industrygroup>
+			<industrygroup name="5420" title="Meat And Fish (seafood) Markets, Including">
+				<industry name="5421" title="Meat and Fish (Seafood) Markets, Including Freezer Provisioners" />
+			</industrygroup>
+			<industrygroup name="5430" title="Fruit And Vegetable Markets">
+				<industry name="5431" title="Fruit and Vegetable Markets" />
+			</industrygroup>
+			<industrygroup name="5440" title="Candy, Nut, And Confectionery Stores">
+				<industry name="5441" title="Candy, Nut, and Confectionery Stores" />
+			</industrygroup>
+			<industrygroup name="5450" title="Dairy Products Stores">
+				<industry name="5451" title="Dairy Products Stores" />
+			</industrygroup>
+			<industrygroup name="5460" title="Retail Bakeries">
+				<industry name="5461" title="Retail Bakeries" />
+			</industrygroup>
+			<industrygroup name="5490" title="Miscellaneous Food Stores">
+				<industry name="5499" title="Miscellaneous Food Stores" />
+			</industrygroup>
+		</major>
+		<major name="5500" title="Automotive Dealers And Gasoline Service Stations">
+			<industrygroup name="5510" title="Motor Vehicle Dealers (new And Used)">
+				<industry name="5511" title="Motor Vehicle Dealers (New and Used)" />
+			</industrygroup>
+			<industrygroup name="5520" title="Motor Vehicle Dealers (used Only)">
+				<industry name="5521" title="Motor Vehicle Dealers (Used Only)" />
+			</industrygroup>
+			<industrygroup name="5530" title="Auto And Home Supply Stores">
+				<industry name="5531" title="Auto and Home Supply Stores" />
+			</industrygroup>
+			<industrygroup name="5540" title="Gasoline Service Stations">
+				<industry name="5541" title="Gasoline Service Stations" />
+			</industrygroup>
+			<industrygroup name="5550" title="Boat Dealers">
+				<industry name="5551" title="Boat Dealers" />
+			</industrygroup>
+			<industrygroup name="5560" title="Recreational Vehicle Dealers">
+				<industry name="5561" title="Recreational Vehicle Dealers" />
+			</industrygroup>
+			<industrygroup name="5570" title="Motorcycle Dealers">
+				<industry name="5571" title="Motorcycle Dealers" />
+			</industrygroup>
+			<industrygroup name="5590" title="Automotive Dealers, Not Elsewhere Classified">
+				<industry name="5599" title="Automotive Dealers, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="5600" title="Apparel And Accessory Stores">
+			<industrygroup name="5610" title="Men's And Boys' Clothing And Accessory Stores">
+				<industry name="5611" title="Men's and Boys' Clothing and Accessory Stores" />
+			</industrygroup>
+			<industrygroup name="5620" title="Women's Clothing Stores">
+				<industry name="5621" title="Women's Clothing Stores" />
+			</industrygroup>
+			<industrygroup name="5630" title="Women's Accessory And Specialty Stores">
+				<industry name="5632" title="Women's Accessory and Specialty Stores" />
+			</industrygroup>
+			<industrygroup name="5640" title="Children's And Infants' Wear Stores">
+				<industry name="5641" title="Children's and Infants' Wear Stores" />
+			</industrygroup>
+			<industrygroup name="5650" title="Family Clothing Stores">
+				<industry name="5651" title="Family Clothing Stores" />
+			</industrygroup>
+			<industrygroup name="5660" title="Shoe Stores">
+				<industry name="5661" title="Shoe Stores" />
+			</industrygroup>
+			<industrygroup name="5690" title="Miscellaneous Apparel And Accessory Stores">
+				<industry name="5699" title="Miscellaneous Apparel and Accessory Stores" />
+			</industrygroup>
+		</major>
+		<major name="5700" title="Home Furniture, Furnishings, And Equipment Stores">
+			<industrygroup name="5710" title="Home Furniture And Furnishings Stores">
+				<industry name="5712" title="Furniture Stores" />
+				<industry name="5713" title="Floor Covering Stores" />
+				<industry name="5714" title="Drapery, Curtain, and Upholstery Stores" />
+				<industry name="5719" title="Miscellaneous home furnishings Stores" />
+			</industrygroup>
+			<industrygroup name="5720" title="Household Appliance Stores">
+				<industry name="5722" title="Household Appliance Stores" />
+			</industrygroup>
+			<industrygroup name="5730" title="Radio, Television, Consumer Electronics, And Music Stores">
+				<industry name="5731" title="Radio, Television, and Consumer Electronics Stores" />
+				<industry name="5734" title="Computer and Computer Software Stores" />
+				<industry name="5735" title="Record and Prerecorded Tape Stores" />
+				<industry name="5736" title="Musical Instrument Stores" />
+			</industrygroup>
+		</major>
+		<major name="5800" title="Eating And Drinking Places">
+			<industrygroup name="5810" title="Eating And Drinking Places">
+				<industry name="5812" title="Eating Places" />
+				<industry name="5813" title="Drinking Places (alcoholic Beverages)" />
+			</industrygroup>
+		</major>
+		<major name="5900" title="Miscellaneous Retail">
+			<industrygroup name="5910" title="Drug Stores And Proprietary Stores">
+				<industry name="5912" title="Drug Stores and Proprietary Stores" />
+			</industrygroup>
+			<industrygroup name="5920" title="Liquor Stores">
+				<industry name="5921" title="Liquor Stores" />
+			</industrygroup>
+			<industrygroup name="5930" title="Used Merchandise Stores">
+				<industry name="5932" title="Used Merchandise Stores" />
+			</industrygroup>
+			<industrygroup name="5940" title="Miscellaneous Shopping Goods Stores">
+				<industry name="5941" title="Sporting Goods Stores and Bicycle Shops" />
+				<industry name="5942" title="Book Stores" />
+				<industry name="5943" title="Stationery Stores" />
+				<industry name="5944" title="Jewelry Stores" />
+				<industry name="5945" title="Hobby, Toy, and Game Shops" />
+				<industry name="5946" title="Camera and Photographic Supply Stores" />
+				<industry name="5947" title="Gift, Novelty, and Souvenir Shops" />
+				<industry name="5948" title="Luggage and Leather Goods Stores" />
+				<industry name="5949" title="Sewing, Needlework, and Piece Goods Stores" />
+			</industrygroup>
+			<industrygroup name="5960" title="Nonstore Retailers">
+				<industry name="5961" title="Catalog and Mail-Order Houses" />
+				<industry name="5962" title="Automatic Merchandising Machine Operators" />
+				<industry name="5963" title="Direct Selling Establishments" />
+			</industrygroup>
+			<industrygroup name="5980" title="Fuel Dealers">
+				<industry name="5983" title="Fuel Oil Dealers" />
+				<industry name="5984" title="Liquefied Petroleum Gas (Bottled Gas) Dealers" />
+				<industry name="5989" title="Fuel Dealers, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="5990" title="Retail Stores, Not Elsewhere Classified">
+				<industry name="5992" title="Florists" />
+				<industry name="5993" title="Tobacco Stores and Stands" />
+				<industry name="5994" title="News Dealers and Newsstands" />
+				<industry name="5995" title="Optical Goods Stores" />
+				<industry name="5999" title="Miscellaneous Retail Stores, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division H: Finance, Insurance, And Real Estate">
+		<major name="6000" title="Depository Institutions">
+			<industrygroup name="6010" title="Central Reserve Depository Institutions">
+				<industry name="6011" title="Federal Reserve Banks" />
+				<industry name="6019" title="Central Reserve Depository Institutions, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="6020" title="Commercial Banks">
+				<industry name="6021" title="National Commercial Banks" />
+				<industry name="6022" title="State Commercial Banks" />
+				<industry name="6029" title="Commercial Banks, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="6030" title="Savings Institutions">
+				<industry name="6035" title="Savings Institutions, Federally Chartered" />
+				<industry name="6036" title="Savings Institutions, Not Federally Chartered" />
+			</industrygroup>
+			<industrygroup name="6060" title="Credit Unions">
+				<industry name="6061" title="Credit Unions, Federally Chartered" />
+				<industry name="6062" title="Credit Unions, Not Federally Chartered" />
+			</industrygroup>
+			<industrygroup name="6080" title="Foreign Banking And Branches And Agencies Of">
+				<industry name="6081" title="Branches and Agencies of Foreign Banks" />
+				<industry name="6082" title="Foreign Trade and International Banking Institutions" />
+			</industrygroup>
+			<industrygroup name="6090" title="Functions Related To Depository Banking">
+				<industry name="6091" title="Non-deposit Trust Facilities," />
+				<industry name="6099" title="Functions Related to Depository Banking, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="6100" title="Non-depository Credit Institutions">
+			<industrygroup name="6110" title="Federal And Federally-sponsored Credit Agencies">
+				<industry name="6111" title="Federal and Federally-Sponsored Credit Agencies" />
+			</industrygroup>
+			<industrygroup name="6140" title="Personal Credit Institutions">
+				<industry name="6141" title="Personal Credit Institutions" />
+			</industrygroup>
+			<industrygroup name="6150" title="Business Credit Institutions">
+				<industry name="6153" title="Short-Term Business Credit Institutions, Except Agricultural" />
+				<industry name="6159" title="Miscellaneous business Credit Institutions" />
+			</industrygroup>
+			<industrygroup name="6160" title="Mortgage Bankers And Brokers">
+				<industry name="6162" title="Mortgage Bankers and Loan Correspondents" />
+				<industry name="6163" title="Loan Brokers" />
+			</industrygroup>
+		</major>
+		<major name="6200" title="Security And Commodity Brokers, Dealers, Exchanges, And Services">
+			<industrygroup name="6210" title="Security Brokers, Dealers, And Flotation">
+				<industry name="6211" title="Security Brokers, Dealers, and Flotation Companies" />
+			</industrygroup>
+			<industrygroup name="6220" title="Commodity Contracts Brokers And Dealers">
+				<industry name="6221" title="Commodity Contracts Brokers and Dealers" />
+			</industrygroup>
+			<industrygroup name="6230" title="Security And Commodity Exchanges">
+				<industry name="6231" title="Security and Commodity Exchanges" />
+			</industrygroup>
+			<industrygroup name="6280" title="Services Allied With The Exchange Of Securities">
+				<industry name="6282" title="Investment Advice" />
+				<industry name="6289" title="Services Allied With the Exchange of Securities or Commodities, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="6300" title="Insurance Carriers">
+			<industrygroup name="6310" title="Life Insurance">
+				<industry name="6311" title="Life Insurance" />
+			</industrygroup>
+			<industrygroup name="6320" title="Accident And Health Insurance And Medical">
+				<industry name="6321" title="Accident and Health Insurance" />
+				<industry name="6324" title="Hospital and Medical Service Plans" />
+			</industrygroup>
+			<industrygroup name="6330" title="Fire, Marine, And Casualty Insurance">
+				<industry name="6331" title="Fire, Marine, and Casualty Insurance" />
+			</industrygroup>
+			<industrygroup name="6350" title="Surety Insurance">
+				<industry name="6351" title="Surety Insurance" />
+			</industrygroup>
+			<industrygroup name="6360" title="name Insurance">
+				<industry name="6361" title="name Insurance" />
+			</industrygroup>
+			<industrygroup name="6370" title="Pension, Health, And Welfare Funds">
+				<industry name="6371" title="Pension, Health, and Welfare Funds" />
+			</industrygroup>
+			<industrygroup name="6390" title="Insurance Carriers, Not Elsewhere Classified">
+				<industry name="6399" title="Insurance Carriers, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="6400" title="Insurance Agents, Brokers, And Service">
+			<industrygroup name="6410" title="Insurance Agents, Brokers, And Service">
+				<industry name="6411" title="Insurance Agents, Brokers, and Service" />
+			</industrygroup>
+		</major>
+		<major name="6500" title="Real Estate">
+			<industrygroup name="6510" title="Real Estate Operators (except Developers) And Lessors">
+				<industry name="6512" title="Operators of Nonresidential Buildings" />
+				<industry name="6513" title="Operators of Apartment Buildings" />
+				<industry name="6514" title="Operators of Dwellings Other Than Apartment Buildings" />
+				<industry name="6515" title="Operators of Residential Mobile Home Sites" />
+				<industry name="6517" title="Lessors of Railroad Property" />
+				<industry name="6519" title="Lessors of Real Property, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="6530" title="Real Estate Agents And Managers">
+				<industry name="6531" title="Real Estate Agents and Managers" />
+			</industrygroup>
+			<industrygroup name="6540" title="name Abstract Offices">
+				<industry name="6541" title="name Abstract Offices" />
+			</industrygroup>
+			<industrygroup name="6550" title="Land Subdividers And Developers">
+				<industry name="6552" title="Land Subdividers and Developers, Except Cemeteries" />
+				<industry name="6553" title="Cemetery Subdividers and Developers" />
+			</industrygroup>
+		</major>
+		<major name="6700" title="Holding And Other Investment Offices">
+			<industrygroup name="6710" title="Holding Offices">
+				<industry name="6712" title="Offices of Bank Holding Companies" />
+				<industry name="6719" title="Offices of Holding Companies, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="6720" title="Investment Offices">
+				<industry name="6722" title="Management Investment Offices, Open-End" />
+				<industry name="6726" title="Unit Investment Trusts, Face-Amount Certificate Offices, and Closed-End Management Investment Offices" />
+			</industrygroup>
+			<industrygroup name="6730" title="Trusts">
+				<industry name="6732" title="Educational, Religious, and Charitable Trusts" />
+				<industry name="6733" title="Trusts, Except Educational, Religious, and Charitable" />
+			</industrygroup>
+			<industrygroup name="6790" title="Miscellaneous Investing">
+				<industry name="6792" title="Oil Royalty Traders" />
+				<industry name="6794" title="Patent Owners and Lessors" />
+				<industry name="6798" title="Real Estate Investment Trusts" />
+				<industry name="6799" title="Investors, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division I: Services">
+		<major name="7000" title="Hotels, Rooming Houses, Camps, And Other Lodging Places">
+			<industrygroup name="7010" title="Hotels And Motels">
+				<industry name="7011" title="Hotels and Motels" />
+			</industrygroup>
+			<industrygroup name="7020" title="Rooming And Boarding Houses">
+				<industry name="7021" title="Rooming and Boarding Houses" />
+			</industrygroup>
+			<industrygroup name="7030" title="Camps And Recreational Vehicle Parks">
+				<industry name="7032" title="Sporting and Recreational Camps" />
+				<industry name="7033" title="Recreational Vehicle Parks and Campsites" />
+			</industrygroup>
+			<industrygroup name="7040" title="Organization Hotels And Lodging Houses, On">
+				<industry name="7041" title="Organization Hotels and Lodging Houses, on Membership Basis" />
+			</industrygroup>
+		</major>
+		<major name="7200" title="Personal Services">
+			<industrygroup name="7210" title="Laundry, Cleaning, And Garment Services">
+				<industry name="7211" title="Power Laundries, Family and Commercial" />
+				<industry name="7212" title="Garment Pressing, and Agents for Laundries and Drycleaners" />
+				<industry name="7213" title="Linen Supply" />
+				<industry name="7215" title="Coin-Operated Laundries and Drycleaning" />
+				<industry name="7216" title="Drycleaning Plants, Except Rug Cleaning" />
+				<industry name="7217" title="Carpet and Upholstery Cleaning" />
+				<industry name="7218" title="Industrial Launderers" />
+				<industry name="7219" title="Laundry and Garment Services, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7220" title="Photographic Studios, Portrait">
+				<industry name="7221" title="Photographic Studios, Portrait" />
+			</industrygroup>
+			<industrygroup name="7230" title="Beauty Shops">
+				<industry name="7231" title="Beauty Shops" />
+			</industrygroup>
+			<industrygroup name="7240" title="Barber Shops">
+				<industry name="7241" title="Barber Shops" />
+			</industrygroup>
+			<industrygroup name="7250" title="Shoe Repair Shops And Shoeshine Parlors">
+				<industry name="7251" title="Shoe Repair Shops and Shoeshine Parlors" />
+			</industrygroup>
+			<industrygroup name="7260" title="Funeral Service And Crematories">
+				<industry name="7261" title="Funeral Service and Crematories" />
+			</industrygroup>
+			<industrygroup name="7290" title="Miscellaneous Personal Services">
+				<industry name="7291" title="Tax Return Preparation Services" />
+				<industry name="7299" title="Miscellaneous Personal Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="7300" title="Business Services">
+			<industrygroup name="7310" title="Advertising">
+				<industry name="7311" title="Advertising Agencies" />
+				<industry name="7312" title="Outdoor Advertising Services" />
+				<industry name="7313" title="Radio, Television, and Publishers' Advertising Representatives" />
+				<industry name="7319" title="Advertising, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7320" title="Consumer Credit Reporting Agencies, Mercantile">
+				<industry name="7322" title="Adjustment and Collection Services" />
+				<industry name="7323" title="Credit Reporting Services" />
+			</industrygroup>
+			<industrygroup name="7330" title="Mailing, Reproduction, Commercial Art And Photography, and Stenographic Services">
+				<industry name="7331" title="Direct Mail Advertising Services" />
+				<industry name="7334" title="Photocopying and Duplicating Services" />
+				<industry name="7335" title="Commercial Photography" />
+				<industry name="7336" title="Commercial Art and Graphic Design" />
+				<industry name="7338" title="Secretarial and Court Reporting Services" />
+			</industrygroup>
+			<industrygroup name="7340" title="Services To Dwellings And Other Buildings">
+				<industry name="7342" title="Disinfecting and Pest Control Services" />
+				<industry name="7349" title="Building Cleaning and Maintenance Services, Not Elsewhere" />
+			</industrygroup>
+			<industrygroup name="7350" title="Miscellaneous Equipment Rental And Leasing">
+				<industry name="7352" title="Medical Equipment Rental and Leasing" />
+				<industry name="7353" title="Heavy Construction Equipment Rental and Leasing" />
+				<industry name="7359" title="Equipment Rental and Leasing, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7360" title="Personnel Supply Services">
+				<industry name="7361" title="Employment Agencies" />
+				<industry name="7363" title="Help Supply Services" />
+			</industrygroup>
+			<industrygroup name="7370" title="Computer Programming, Data Processing, And Other Computer Related Services">
+				<industry name="7371" title="Computer Programming Services" />
+				<industry name="7372" title="Prepackaged Software" />
+				<industry name="7373" title="Computer Integrated Systems Design" />
+				<industry name="7374" title="Computer Processing and Data Preparation and Processing Services" />
+				<industry name="7375" title="Information Retrieval Services" />
+				<industry name="7376" title="Computer Facilities Management Services" />
+				<industry name="7377" title="Computer Rental and Leasing" />
+				<industry name="7378" title="Computer Maintenance and Repair" />
+				<industry name="7379" title="Computer Related Services, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7380" title="Miscellaneous Business Services">
+				<industry name="7381" title="Detective, Guard, and Armored Car Services" />
+				<industry name="7382" title="Security Systems Services" />
+				<industry name="7383" title="News Syndicates" />
+				<industry name="7384" title="Photofinishing Laboratories" />
+				<industry name="7389" title="Business Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="7500" title="Automotive Repair, Services, And Parking">
+			<industrygroup name="7510" title="Automotive Rental And Leasing, Without Drivers">
+				<industry name="7513" title="Truck Rental and Leasing, Without Drivers" />
+				<industry name="7514" title="Passenger Car Rental" />
+				<industry name="7515" title="Passenger Car Leasing" />
+				<industry name="7519" title="Utility Trailer and Recreational Vehicle Rental" />
+			</industrygroup>
+			<industrygroup name="7520" title="Automobile Parking">
+				<industry name="7521" title="Automobile Parking" />
+			</industrygroup>
+			<industrygroup name="7530" title="Automotive Repair Shops">
+				<industry name="7532" title="Top, Body, and Upholstery Repair Shops and Paint Shops" />
+				<industry name="7533" title="Automotive Exhaust System Repair Shops" />
+				<industry name="7534" title="Tire Retreading and Repair Shops" />
+				<industry name="7536" title="Automotive Glass Replacement Shops" />
+				<industry name="7537" title="Automotive Transmission Repair Shops" />
+				<industry name="7538" title="General Automotive Repair Shops" />
+				<industry name="7539" title="Automotive Repair Shops, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7540" title="Automotive Services, Except Repair">
+				<industry name="7542" title="Carwashes" />
+				<industry name="7549" title="Automotive Services, Except Repair and Carwashes" />
+			</industrygroup>
+		</major>
+		<major name="7600" title="Miscellaneous Repair Services">
+			<industrygroup name="7620" title="Electrical Repair Shops">
+				<industry name="7622" title="Radio and Television Repair Shops" />
+				<industry name="7623" title="Refrigeration and Air-Conditioning Service and Repair Shops" />
+				<industry name="7629" title="Electrical and Electronic Repair Shops, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="7630" title="Watch, Clock, And Jewelry Repair">
+				<industry name="7631" title="Watch, Clock, and Jewelry Repair" />
+			</industrygroup>
+			<industrygroup name="7640" title="Reupholstery And Furniture Repair">
+				<industry name="7641" title="Reupholstery and Furniture Repair" />
+			</industrygroup>
+			<industrygroup name="7690" title="Miscellaneous Repair Shops And Related Services">
+				<industry name="7692" title="Welding Repair" />
+				<industry name="7694" title="Armature Rewinding Shops" />
+				<industry name="7699" title="Repair Shops and Related Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="7800" title="Motion Pictures">
+			<industrygroup name="7810" title="Motion Picture Production And Allied Services">
+				<industry name="7812" title="Motion Picture and Video Tape Production" />
+				<industry name="7819" title="Services Allied to Motion Picture Production" />
+			</industrygroup>
+			<industrygroup name="7820" title="Motion Picture Distribution And Allied Services">
+				<industry name="7822" title="Motion Picture and Video Tape Distribution" />
+				<industry name="7829" title="Services Allied to Motion Picture Distribution" />
+			</industrygroup>
+			<industrygroup name="7830" title="Motion Picture Theaters">
+				<industry name="7832" title="Motion Picture Theaters, Except Drive-In" />
+				<industry name="7833" title="Drive-In Motion Picture Theaters" />
+			</industrygroup>
+			<industrygroup name="7840" title="Video Tape Rental">
+				<industry name="7841" title="Video Tape Rental" />
+			</industrygroup>
+		</major>
+		<major name="7900" title="Amusement And Recreation Services">
+			<industrygroup name="7910" title="Dance Studios, Schools, And Halls">
+				<industry name="7911" title="Dance Studios, Schools, and Halls" />
+			</industrygroup>
+			<industrygroup name="7920" title="Theatrical Producers (except Motion Picture),">
+				<industry name="7922" title="Theatrical Producers (Except Motion Picture) and Miscellaneous Theatrical Services" />
+				<industry name="7929" title="Bands, Orchestras, Actors, and Other Entertainers and Entertainment Groups" />
+			</industrygroup>
+			<industrygroup name="7930" title="Bowling Centers">
+				<industry name="7933" title="Bowling Centers" />
+			</industrygroup>
+			<industrygroup name="7940" title="Commercial Sports">
+				<industry name="7941" title="Professional Sports Clubs and Promoters" />
+				<industry name="7948" title="Racing, Including Track Operation" />
+			</industrygroup>
+			<industrygroup name="7990" title="Miscellaneous Amusement And Recreation">
+				<industry name="7991" title="Physical Fitness Facilities" />
+				<industry name="7992" title="Public Golf Courses" />
+				<industry name="7993" title="Coin-Operated Amusement Devices" />
+				<industry name="7996" title="Amusement Parks" />
+				<industry name="7997" title="Membership Sports and Recreation Clubs" />
+				<industry name="7999" title="Amusement and Recreation Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8000" title="Health Services">
+			<industrygroup name="8010" title="Offices And Clinics Of Doctors Of Medicine">
+				<industry name="8011" title="Offices and Clinics of Doctors of Medicine" />
+			</industrygroup>
+			<industrygroup name="8020" title="Offices And Clinics Of Dentists">
+				<industry name="8021" title="Offices and Clinics of Dentists" />
+			</industrygroup>
+			<industrygroup name="8030" title="Offices And Clinics Of Doctors Of Osteopathy">
+				<industry name="8031" title="Offices and Clinics of Doctors of Osteopathy" />
+			</industrygroup>
+			<industrygroup name="8040" title="Offices And Clinics Of Other Health Practitioners">
+				<industry name="8041" title="Offices and Clinics of Chiropractors" />
+				<industry name="8042" title="Offices and Clinics of Optometrists" />
+				<industry name="8043" title="Offices and Clinics of Podiatrists" />
+				<industry name="8049" title="Offices and Clinics of Health Practitioners, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="8050" title="Nursing And Personal Care Facilities">
+				<industry name="8051" title="Skilled Nursing Care Facilities" />
+				<industry name="8052" title="Intermediate Care Facilities" />
+				<industry name="8059" title="Nursing and Personal Care Facilities, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="8060" title="Hospitals">
+				<industry name="8062" title="General Medical and Surgical Hospitals" />
+				<industry name="8063" title="Psychiatric Hospitals" />
+				<industry name="8069" title="Specialty Hospitals, Except Psychiatric" />
+			</industrygroup>
+			<industrygroup name="8070" title="Medical And Dental Laboratories">
+				<industry name="8071" title="Medical Laboratories" />
+				<industry name="8072" title="Dental Laboratories" />
+			</industrygroup>
+			<industrygroup name="8080" title="Home Health Care Services">
+				<industry name="8082" title="Home Health Care Services" />
+			</industrygroup>
+			<industrygroup name="8090" title="Miscellaneous Health And Allied Services, Not">
+				<industry name="8092" title="Kidney Dialysis Centers" />
+				<industry name="8093" title="Specialty Outpatient Facilities, Not Elsewhere Classified" />
+				<industry name="8099" title="Health and Allied Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8100" title="Legal Services">
+			<industrygroup name="8110" title="Legal Services">
+				<industry name="8111" title="Legal Services" />
+			</industrygroup>
+		</major>
+		<major name="8200" title="Educational Services">
+			<industrygroup name="8210" title="Elementary And Secondary Schools">
+				<industry name="8211" title="Elementary and Secondary Schools" />
+			</industrygroup>
+			<industrygroup name="8220" title="Colleges, Universities, Professional Schools, And">
+				<industry name="8221" title="Colleges, Universities, and Professional Schools" />
+				<industry name="8222" title="Junior Colleges and Technical Institutes" />
+			</industrygroup>
+			<industrygroup name="8230" title="Libraries">
+				<industry name="8231" title="Libraries" />
+			</industrygroup>
+			<industrygroup name="8240" title="Vocational Schools">
+				<industry name="8243" title="Data Processing Schools" />
+				<industry name="8244" title="Business and Secretarial Schools" />
+				<industry name="8249" title="Vocational Schools, Not Elsewhere Classified" />
+			</industrygroup>
+			<industrygroup name="8290" title="Schools And Educational Services, Not Elsewhere">
+				<industry name="8299" title="Schools and Educational Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8300" title="Social Services">
+			<industrygroup name="8320" title="Individual And Family Social Services">
+				<industry name="8322" title="Individual and Family Social Services" />
+			</industrygroup>
+			<industrygroup name="8330" title="Job Training And Vocational Rehabilitation">
+				<industry name="8331" title="Job Training and Vocational Rehabilitation Services" />
+			</industrygroup>
+			<industrygroup name="8350" title="Child Day Care Services">
+				<industry name="8351" title="Child Day Care Services" />
+			</industrygroup>
+			<industrygroup name="8360" title="Residential Care">
+				<industry name="8361" title="Residential Care" />
+			</industrygroup>
+			<industrygroup name="8390" title="Social Services, Not Elsewhere Classified">
+				<industry name="8399" title="Social Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8400" title="Museums, Art Galleries, And Botanical And Zoological Gardens">
+			<industrygroup name="8410" title="Museums And Art Galleries">
+				<industry name="8412" title="Museums and Art Galleries" />
+			</industrygroup>
+			<industrygroup name="8420" title="Arboreta And Botanical Or Zoological Gardens">
+				<industry name="8422" title="Arboreta and Botanical or Zoological Gardens" />
+			</industrygroup>
+		</major>
+		<major name="8600" title="Membership Organizations">
+			<industrygroup name="8610" title="Business Associations">
+				<industry name="8611" title="Business Associations" />
+			</industrygroup>
+			<industrygroup name="8620" title="Professional Membership Organizations">
+				<industry name="8621" title="Professional Membership Organizations" />
+			</industrygroup>
+			<industrygroup name="8630" title="Labor Unions And Similar Labor Organizations">
+				<industry name="8631" title="Labor Unions and Similar Labor Organizations" />
+			</industrygroup>
+			<industrygroup name="8640" title="Civic, Social, And Fraternal Associations">
+				<industry name="8641" title="Civic, Social, and Fraternal Associations" />
+			</industrygroup>
+			<industrygroup name="8650" title="Political Organizations">
+				<industry name="8651" title="Political Organizations" />
+			</industrygroup>
+			<industrygroup name="8660" title="Religious Organizations">
+				<industry name="8661" title="Religious Organizations" />
+			</industrygroup>
+			<industrygroup name="8690" title="Membership Organizations, Not Elsewhere">
+				<industry name="8699" title="Membership Organizations, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8700" title="Engineering, Accounting, Research, Management, And Related Services">
+			<industrygroup name="8710" title="Engineering, Architectural, And Surveying">
+				<industry name="8711" title="Engineering Services" />
+				<industry name="8712" title="Architectural Services" />
+				<industry name="8713" title="Surveying Services" />
+			</industrygroup>
+			<industrygroup name="8720" title="Accounting, Auditing, And Bookkeeping Services">
+				<industry name="8721" title="Accounting, Auditing, and Bookkeeping Services" />
+			</industrygroup>
+			<industrygroup name="8730" title="Research, Development, And Testing Services">
+				<industry name="8731" title="Commercial Physical and Biological Research" />
+				<industry name="8732" title="Commercial Economic, Sociological, and Educational Research" />
+				<industry name="8733" title="Noncommercial Research Organizations" />
+				<industry name="8734" title="Testing Laboratories" />
+			</industrygroup>
+			<industrygroup name="8740" title="Management And Public Relations Services">
+				<industry name="8741" title="Management Services" />
+				<industry name="8742" title="Management Consulting Services" />
+				<industry name="8743" title="Public Relations Services" />
+				<industry name="8744" title="Facilities Support Management Services" />
+				<industry name="8748" title="Business Consulting Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="8800" title="Private Households">
+			<industrygroup name="8810" title="Private Households">
+				<industry name="8811" title="Private Households" />
+			</industrygroup>
+		</major>
+		<major name="8900" title="Miscellaneous Services">
+			<industrygroup name="8990" title="Miscellaneous Services">
+				<industry name="8999" title="Services, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+	</division>
+	<division name="" title="Division J: Public Administration">
+		<major name="9100" title="Executive, Legislative, And General Government, Except Finance">
+			<industrygroup name="9110" title="Executive Offices">
+				<industry name="9111" title="Executive Offices" />
+			</industrygroup>
+			<industrygroup name="9120" title="Legislative Bodies">
+				<industry name="9121" title="Legislative Bodies" />
+			</industrygroup>
+			<industrygroup name="9130" title="Executive And Legislative Offices Combined">
+				<industry name="9131" title="Executive and Legislative Offices Combined" />
+			</industrygroup>
+			<industrygroup name="9190" title="General Government, Not Elsewhere Classified">
+				<industry name="9199" title="General Government, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="9200" title="Justice, Public Order, And Safety">
+			<industrygroup name="9210" title="Courts">
+				<industry name="9211" title="Courts" />
+			</industrygroup>
+			<industrygroup name="9220" title="Public Order And Safety">
+				<industry name="9221" title="Police Protection" />
+				<industry name="9222" title="Legal Counsel and Prosecution" />
+				<industry name="9223" title="Correctional Institutions" />
+				<industry name="9224" title="Fire Protection" />
+				<industry name="9229" title="Public Order and Safety, Not Elsewhere Classified" />
+			</industrygroup>
+		</major>
+		<major name="9300" title="Public Finance, Taxation, And Monetary Policy">
+			<industrygroup name="9310" title="Public Finance, Taxation, And Monetary Policy">
+				<industry name="9311" title="Public Finance, Taxation, and Monetary Policy" />
+			</industrygroup>
+		</major>
+		<major name="9400" title="Administration Of Human Resource Programs">
+			<industrygroup name="9410" title="Administration Of Educational Programs">
+				<industry name="9411" title="Administration of Educational Programs" />
+			</industrygroup>
+			<industrygroup name="9430" title="Administration Of Public Health Programs">
+				<industry name="9431" title="Administration of Public Health Programs" />
+			</industrygroup>
+			<industrygroup name="9440" title="Administration Of Social, Human Resource And">
+				<industry name="9441" title="Administration of Social, Human Resource and Income Maintenance Programs" />
+			</industrygroup>
+			<industrygroup name="9450" title="Administration Of Veteran's Affairs, Except">
+				<industry name="9451" title="Administration of Veterans' Affairs, Except Health and Insurance" />
+			</industrygroup>
+		</major>
+		<major name="9500" title="Administration Of Environmental Quality And Housing Programs">
+			<industrygroup name="9510" title="Administration Of Environmental Quality">
+				<industry name="9511" title="Air and Water Resource and Solid Waste Management" />
+				<industry name="9512" title="Land, Mineral, Wildlife, and Forest Conservation" />
+			</industrygroup>
+			<industrygroup name="9530" title="Administration Of Housing And Urban">
+				<industry name="9531" title="Administration of Housing Programs" />
+				<industry name="9532" title="Administration of Urban Planning and Community and Rural Development" />
+			</industrygroup>
+		</major>
+		<major name="9600" title="Administration Of Economic Programs">
+			<industrygroup name="9610" title="Administration Of General Economic Programs">
+				<industry name="9611" title="Administration of General Economic Programs" />
+			</industrygroup>
+			<industrygroup name="9620" title="Regulation And Administration Of Transportation">
+				<industry name="9621" title="Regulation and Administration of Transportation Programs" />
+			</industrygroup>
+			<industrygroup name="9630" title="Regulation And Administration Of">
+				<industry name="9631" title="Regulation and Administration of Communications, Electric, Gas, and Other Utilities" />
+			</industrygroup>
+			<industrygroup name="9640" title="Regulation Of Agricultural Marketing And">
+				<industry name="9641" title="Regulation of Agricultural Marketing and Commodities" />
+			</industrygroup>
+			<industrygroup name="9650" title="Regulation, Licensing, And Inspection Of">
+				<industry name="9651" title="Regulation, Licensing, and Inspection of Miscellaneous Commercial Sectors" />
+			</industrygroup>
+			<industrygroup name="9660" title="Space Research And Technology">
+				<industry name="9661" title="Space and Research and Technology" />
+			</industrygroup>
+		</major>
+		<major name="9700" title="National Security And International Affairs">
+			<industrygroup name="9710" title="National Security">
+				<industry name="9711" title="National Security" />
+			</industrygroup>
+			<industrygroup name="9720" title="International Affairs">
+				<industry name="9721" title="International Affairs" />
+			</industrygroup>
+		</major>
+		<major name="9900" title="Nonclassifiable Establishments">
+			<industrygroup name="9990" title="Nonclassifiable Establishments">
+				<industry name="9999" title="Nonclassifiable Establishments" />
+			</industrygroup>
+		</major>
+	</division>
+</SIC1987>
