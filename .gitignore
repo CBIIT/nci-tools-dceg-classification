@@ -12,3 +12,4 @@ SOCAssign/static/*
 bin/*
 soccer-output3.csv
 soccer-output3.db
+/bin/
