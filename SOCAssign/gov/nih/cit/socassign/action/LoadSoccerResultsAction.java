@@ -70,7 +70,7 @@ public class LoadSoccerResultsAction extends AbstractAction {
 
 				applicationFrame.setTitle(SOCAssignGlobals.title + " (" + fileName + ")");
 			} catch (IOException ioe) {
-				JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open File " + jfc.getSelectedFile().getAbsolutePath(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(applicationFrame, "Error trying to Open File " + jfc.getSelectedFile().getAbsolutePath() + "\n" + ioe.getMessage(), "SOCassign Error", JOptionPane.ERROR_MESSAGE);				
 			}
 		}
 	}

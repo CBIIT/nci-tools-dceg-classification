@@ -152,6 +152,20 @@ public class SOCcerResults {
 		this.flagged[row] = flag;
 	}
 
+	public void checkForXLSOCError() throws IOException{
+		int start=0;
+		for(String word:head){
+			if (word.endsWith("_1")) break;
+			start++;
+		}
+		for(String[] row:data){
+			for (int col=start;col<row.length;col+=2){
+				if (row[col].startsWith("Nov")) 
+					throw new IOException("Bad SOC code: Look like the file has been modified by Excel.\nRow: "+Arrays.toString(row));
+			}
+		}
+	}
+	
 	/**
 	 * Read the CSV file from SOCcer.  The file can be filtered so the row id 1 does not have to be on the first line
 	 * @param soccerResultsFile
@@ -165,7 +179,8 @@ public class SOCcerResults {
 		// read the data...
 		List<String[]> data = null;
 		AssignmentCodingSystem codingSystem = null;
-
+		SOCcerResults results=null;
+		
 		try {
 			reader = new CSVReader(new BufferedReader(new FileReader(soccerResultsFile)));
 
@@ -176,8 +191,10 @@ public class SOCcerResults {
 			data = reader.readAll();
 			Collections.sort(data, idComparator);
 			logger.finer("finished reading data ..");
-
+			
 			codingSystem = processHead(head);
+			results=new SOCcerResults(head,data,codingSystem);
+			results.checkForXLSOCError();
 		} catch (StringIndexOutOfBoundsException e) {
 			JOptionPane.showMessageDialog(SOCAssignGlobals.getApplicationFrame(), "CSV File appears to be using old header names.");
 		} catch (NumberFormatException e) {
@@ -187,7 +204,7 @@ public class SOCcerResults {
 			if (codingSystem == null) return null;
 		}
 
-		return new SOCcerResults(head,data,codingSystem);
+		return results;
 	}
 
 }
