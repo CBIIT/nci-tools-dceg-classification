@@ -201,7 +201,7 @@ public class SOCcerResults {
 			JOptionPane.showMessageDialog(SOCAssignGlobals.getApplicationFrame(), "CSV File appears to be missing the ID column.");
 		} finally {
 			if (reader != null) reader.close();
-			if (codingSystem == null) return null;
+			if (codingSystem == null) results = null;
 		}
 
 		return results;

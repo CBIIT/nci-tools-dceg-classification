@@ -15,8 +15,8 @@
     <property name="verisign.key.pass" value="CBIIT.NCI.NIH"/>
     <path id="SOCAssign.classpath">
         <pathelement location="."/>
-        <pathelement location="opencsv-3.3.jar"/>
-        <pathelement location="sqlite-jdbc-3.8.11.jar"/>
+        <pathelement location="../opencsv-3.3.jar"/>
+        <pathelement location="../sqlite-jdbc-3.8.11.jar"/>
     </path>
     <target name="init">
         <copy includeemptydirs="false" todir=".">
@@ -76,7 +76,7 @@
     <target depends="build" name="jar">
         <mkdir dir="build/jar"/>
         <jar destfile="build/jar/SOCAssign.jar" basedir="build/classes">
-        	<zipgroupfileset dir="./" includes="*.jar"/>
+        	<zipgroupfileset dir="../" includes="*.jar"/>
             <manifest>
                 <attribute name="Main-Class" value="gov.nih.cit.socassign.SOCAssign"/>
             	<attribute name="Permissions" value="all-permissions"/>
