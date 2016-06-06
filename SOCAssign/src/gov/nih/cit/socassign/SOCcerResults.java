@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Logger;
@@ -189,6 +190,12 @@ public class SOCcerResults {
 			if (head.length < 21) throw new IOException(soccerResultsFile.getAbsolutePath() + " not formatted appropriately");
 
 			data = reader.readAll();
+			// E-mailing csv files sometimes adds a "\r" to the file causing a \r\r\n as the EOL marker.  Remove empty lines...
+			ListIterator<String[]> iterator=data.listIterator();
+			while(iterator.hasNext()){
+				if (iterator.next().length==1) iterator.remove();
+			}
+			
 			Collections.sort(data, idComparator);
 			logger.finer("finished reading data ..");
 			

@@ -15,6 +15,10 @@ import java.util.logging.Logger;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
+import javax.swing.text.StyleContext;
 
 /**
  * <p>This class holds the bulk of the information needed by the coders
@@ -48,6 +52,8 @@ public class SOCAssignModel {
 	/** Maps the RowID to the coders results.  <B>WARNING</B>: this is not necessarily the rowIndex. */
 	private Map<Integer, Assignments> assignmentListMap = new HashMap<Integer,Assignments>();
 	private DefaultListModel<String> singleJobDescriptionListModel = new DefaultListModel<String>();
+	/** A Document that holds the comment text -- The GUI's JTextArea uses this as its model */
+	private PlainDocument commentTextDocument=new PlainDocument();
 
 	/** the selected row NOT the selected rowID (This can get confusing.)*/
 	private int selectedResultsRow = 0;
@@ -186,6 +192,8 @@ public class SOCAssignModel {
 	}
 
 	public void setSelectedResult(int selectedResults) {
+		int oldRow=this.selectedResultsRow;
+		
 		this.selectedResultsRow = selectedResults;
 		String[] row = results.getRow(selectedResults);
 		singleJobDescriptionTableModel.changeResults(row);
@@ -195,6 +203,12 @@ public class SOCAssignModel {
 		singleJobDescriptionListModel.addElement("SIC: " + row[2] + " (" + AssignmentCodingSystem.SIC1987.lookup(row[2]) + ")");
 		singleJobDescriptionListModel.addElement("Job Task: " + row[3]);
 		assignmentListModel.resetList(getAssignmentsForSelectedRow());
+		
+		try {
+			setCommentText(oldRow, commentTextDocument.getText(0, commentTextDocument.getLength()));
+			commentTextDocument.replace(0, commentTextDocument.getLength(), getCommentText(selectedResults), StyleContext.getDefaultStyleContext().getEmptySet());
+		} catch (BadLocationException e) {
+		}
 	}
 
 	public void addAssignment(OccupationCode codeAssigned) {
@@ -225,6 +239,9 @@ public class SOCAssignModel {
 		assignmentListModel.clear();
 	}
 
+	public Document getCommentDocument(){
+		return commentTextDocument;
+	}
 	private void updateAssignmentTable() {
 		try {
 			dao.setAssignment(assignmentListModel.getAssignments());
@@ -242,6 +259,14 @@ public class SOCAssignModel {
 	}
 	public void exportAssignments(File file) throws IOException {
 		SOCAssignResultsExporter.exportResultsToCSV(results, assignmentListMap, file);
+	}
+
+	private HashMap<Integer, String> tmp=new HashMap<Integer, String>();
+	private void setCommentText(int selectedId,String txt){
+		tmp.put(selectedId, txt);
+	}
+	private String getCommentText(int selectedId){
+		return tmp.containsKey(selectedId)?tmp.get(selectedId):"";
 	}
 
 	public void onExit() {

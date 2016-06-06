@@ -4,6 +4,7 @@ import gov.nih.cit.socassign.action.AddAutocompleteAssignmentAction;
 import gov.nih.cit.socassign.action.AddSelectedAssignmentAction;
 import gov.nih.cit.socassign.action.DecreaseAutocompleteIndexAction;
 import gov.nih.cit.socassign.action.DecreaseSelectionAction;
+import gov.nih.cit.socassign.action.EmptyAction;
 import gov.nih.cit.socassign.action.EnterAutocompleteFieldAction;
 import gov.nih.cit.socassign.action.ExportAnnotationAction;
 import gov.nih.cit.socassign.action.FirstJobDescriptionAction;
@@ -55,6 +56,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JList;
 import javax.swing.JMenu;
@@ -65,6 +67,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
@@ -99,6 +102,7 @@ public class SOCAssign {
 	private static final AbstractAction increaseSelection = new IncreaseSelectionAction();
 	private static final AbstractAction decreaseSelection = new DecreaseSelectionAction();
 	private static final AbstractAction toggleFlagAction = new ToggleFlagAction();
+	private static final AbstractAction emptyAction = new EmptyAction();
 	private static final MouseAdapter autocompleteDoubleClickAdapter = new AutocompleteDoubleClickAdapter();
 	private static final MouseAdapter codingSystemMouseAdapter = new CodingSystemAdapter(); // Use a MouseListener instead of a TreeSelectionListener to handle double clicks.
 	private static final MouseAdapter selectAnotherSoccerResultListener = new SelectAnotherSoccerResultAdapter();
@@ -117,6 +121,8 @@ public class SOCAssign {
 	/** A text field where coders can type in a code */
 	private static JTextField assignmentTF = new JTextField(8);
 	private static JPanel buttonPanel = new JPanel(new GridLayout(1, 3));
+	private static JTextArea commentTA=new JTextArea(testModel.getCommentDocument(),"",10,60); 
+	
 	/** Autocomplete fields */
 	private static DefaultListModel<String> autocompleteList = new DefaultListModel<String>();
 	private static JList<String> autocompleteField = new JList<String>(autocompleteList);
@@ -246,25 +252,38 @@ public class SOCAssign {
 		JScrollPane tableScroll = new JScrollPane(SOCAssignGlobals.initializeSingleJobDescriptionTable(createSingleJobDescriptionTable()),JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane assignmentScroll = new JScrollPane(SOCAssignGlobals.initializeAssignmentList(createAssignmentList()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane infoScroll = new JScrollPane(new JList<String>(testModel.getSingleJobDescriptionListModel()),JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		JScrollPane	commentScroll = new JScrollPane(commentTA,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		commentScroll.setColumnHeaderView(new JLabel("Comments"));System.out.println(commentTA.getKeyListeners().length);
+		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_PERIOD,0), "consumeEvent");
+		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA,0), "consumeEvent");
+		commentTA.getActionMap().put("consumeEvent", emptyAction);
+		
 		// create panel
 		JComponent centerPanel = new JLayeredPane();
 		centerPanel.setLayout(layout);
+		
 		//add all elements in order
 		centerPanel.add(assignmentTF,JLayeredPane.DEFAULT_LAYER);
 		centerPanel.add(buttonPanel,JLayeredPane.DEFAULT_LAYER);
 		centerPanel.add(assignmentScroll,JLayeredPane.DEFAULT_LAYER);
 		centerPanel.add(tableScroll,JLayeredPane.DEFAULT_LAYER);
 		centerPanel.add(infoScroll,JLayeredPane.DEFAULT_LAYER);
+		centerPanel.add(commentScroll,JLayeredPane.DEFAULT_LAYER);
+		
 		// setup visual layout
 		centerPanel.setPreferredSize(new Dimension(458,761));
 		layout.putConstraint(SpringLayout.WEST, assignmentTF, 0, SpringLayout.WEST, centerPanel);
 		layout.putConstraint(SpringLayout.EAST, assignmentTF, 0, SpringLayout.EAST, centerPanel);
 		layout.putConstraint(SpringLayout.NORTH, assignmentTF, 0, SpringLayout.NORTH, centerPanel);
+		
 		alignSpring(layout,buttonPanel,centerPanel,assignmentTF);
 		alignSpring(layout,assignmentScroll,centerPanel,buttonPanel);
-		alignSpring(layout,tableScroll,centerPanel,assignmentScroll);
-		alignSpring(layout,infoScroll,centerPanel,tableScroll);
-		layout.putConstraint(SpringLayout.SOUTH, infoScroll, 0, SpringLayout.SOUTH, centerPanel);
+		alignSpring(layout,infoScroll,centerPanel,assignmentScroll);
+		alignSpring(layout,commentScroll,centerPanel,infoScroll);
+		alignSpring(layout,tableScroll,centerPanel,commentScroll);
+
+		
+		layout.putConstraint(SpringLayout.SOUTH, tableScroll, 0, SpringLayout.SOUTH, centerPanel);
 		return centerPanel;
 	}
 
