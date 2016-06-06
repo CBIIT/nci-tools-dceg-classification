@@ -21,21 +21,31 @@ public class Assignments {
 
 	private final int rowId;
 	private List<OccupationCode> codes;
+	private String comment;
 	private FlagType flag;
 
-	public Assignments(int rowId,List<OccupationCode> codes,FlagType flag) {
+	public Assignments(int rowId,List<OccupationCode> codes,FlagType flag,String comment) {
 		this.rowId = rowId;
 		this.codes = new ArrayList<OccupationCode > (codes);
 		if (this.codes.size() > 3) {
 			this.codes = this.codes.subList(0, 3);
 		}
 		this.flag = flag;
+		this.comment=comment;
+	}
+	
+	public Assignments(int rowId,List<OccupationCode> codes,FlagType flag) {
+		this(rowId,codes,flag,"");
 	}
 
 	public Assignments(int rowId, FlagType flag, OccupationCode... codes) {
-		this(rowId,Arrays.asList(codes),flag);
+		this(rowId,Arrays.asList(codes),flag,"");
 	}
 
+	public Assignments(int rowId, FlagType flag,String comment, OccupationCode... codes) {
+		this(rowId,Arrays.asList(codes),flag,comment);
+	}
+	
 	public Assignments(int rowId,List<OccupationCode> codes) {
 		this(rowId, codes, FlagType.NOT_FLAGGED);
 	}
@@ -44,6 +54,13 @@ public class Assignments {
 		this(rowId,Arrays.asList(codes),FlagType.NOT_FLAGGED);
 	}
 
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		if (comment==null) comment="";
+		this.comment = comment;
+	}
 	public void setFlag(FlagType flag) {
 		this.flag = flag;
 	}

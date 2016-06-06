@@ -253,7 +253,7 @@ public class SOCAssign {
 		JScrollPane assignmentScroll = new JScrollPane(SOCAssignGlobals.initializeAssignmentList(createAssignmentList()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane infoScroll = new JScrollPane(new JList<String>(testModel.getSingleJobDescriptionListModel()),JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane	commentScroll = new JScrollPane(commentTA,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		commentScroll.setColumnHeaderView(new JLabel("Comments"));System.out.println(commentTA.getKeyListeners().length);
+		commentScroll.setColumnHeaderView(new JLabel("Comments"));
 		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_PERIOD,0), "consumeEvent");
 		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA,0), "consumeEvent");
 		commentTA.getActionMap().put("consumeEvent", emptyAction);

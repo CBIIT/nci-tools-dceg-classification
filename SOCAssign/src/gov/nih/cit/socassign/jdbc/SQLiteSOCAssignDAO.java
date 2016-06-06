@@ -144,6 +144,8 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 
 	@Override
 	public void loadAssignments(Map<Integer, Assignments>codeMap,CodingSystem system) throws SQLException {
+		updateDBVersionIfNecessary();
+		
 		PreparedStatement getAssignment = connection.prepareStatement(sqlCommands.getProperty("get.all.assignments"));
 		ResultSet rs = getAssignment.executeQuery();
 		while (rs.next()) {
@@ -156,7 +158,9 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			}
 
 			FlagType flag = FlagType.values()[rs.getInt(5)];
-			Assignments assignments = new Assignments(row, codeList,flag);
+			String comment = rs.getString(6);
+			
+			Assignments assignments = new Assignments(row, codeList,flag,comment);
 			codeMap.put(row, assignments);
 		}
 
@@ -164,6 +168,24 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 		getAssignment.close();
 	}
 
+	/**
+	 * Comments were added... need to make sure comment column is in the database.
+	 * @throws SQLException
+	 */
+	public void updateDBVersionIfNecessary() throws SQLException{
+		String sql=sqlCommands.getProperty("assignment.table.column.names");
+		PreparedStatement ps=connection.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();			
+		boolean old=true;
+		while (rs.next()){
+			if (rs.getString(2).equalsIgnoreCase("comment")) old=false;
+		}
+		if (old){
+			sql=sqlCommands.getProperty("add.comments.column");
+			connection.prepareStatement(sql).executeUpdate();
+		}
+	}
+	
 	private void createResultsTable(List<String[]> data) throws SQLException {
 		int batchCounter = 0;
 		int batchSize = 100;
@@ -216,12 +238,13 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			assignCodes.setString(3, code2);
 			assignCodes.setString(4, code3);
 			assignCodes.setInt(5, assignments.getFlag().ordinal());
+			assignCodes.setString(6, assignments.getComment());
 		}
 		assignCodes.executeUpdate();
 	}
 
 	@Override
-	public void updateFlag(Assignments assignments) throws SQLException {
+	public void updateFlagOrComment(Assignments assignments) throws SQLException {
 		String code1 = (assignments.size() > 0)?assignments.get(0).getName():"";
 
 		PreparedStatement rowExists = connection.prepareStatement(sqlCommands.getProperty("find.row.in.assignments.table"));
@@ -231,28 +254,31 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 
 		// if the assignment is in the database...
 		if (rs.next()) {
-			if (code1.length() == 0 && assignments.getFlag() == FlagType.NOT_FLAGGED) {
-				// if there is no occupational code assigned AND it is NOT FLAGGED (now).  Just remove it from the DB...
+			if (code1.length() == 0 && assignments.getFlag() == FlagType.NOT_FLAGGED && assignments.getComment().trim().length()==0) {
+				// if there is no occupational code assigned AND it is NOT FLAGGED (now) AND there is no comment....  Just remove it from the DB...
 				updateFlag = connection.prepareStatement(sqlCommands.getProperty("delete.assignments"));
 				updateFlag.setInt(1, assignments.getRowId());
 			} else {
 				// otherwise update the row.
 				updateFlag = connection.prepareStatement(sqlCommands.getProperty("update.flag.for.row.in.assignment.table"));
 				updateFlag.setInt(1, assignments.getFlag().ordinal());
-				updateFlag.setInt(2, assignments.getRowId());
+				updateFlag.setString(2, assignments.getComment());
+				updateFlag.setInt(3, assignments.getRowId());
 			}
 		} else {
-			// No assigment exists, so add a blank assignment with the flag set...
+			// No assigment exists, so add a blank assignment with the flag/comment set...
 			updateFlag = connection.prepareStatement(sqlCommands.getProperty("add.row.to.assignments.table"));
 			updateFlag.setInt(1, assignments.getRowId());
 			updateFlag.setString(2, "");
 			updateFlag.setString(3, "");
 			updateFlag.setString(4, "");
 			updateFlag.setInt(5, assignments.getFlag().ordinal());
+			updateFlag.setString(6, assignments.getComment());
 		}
 		updateFlag.executeUpdate();
 	}
 
+	
 	@Override
 	public void close() throws IOException {
 		if (connection != null)

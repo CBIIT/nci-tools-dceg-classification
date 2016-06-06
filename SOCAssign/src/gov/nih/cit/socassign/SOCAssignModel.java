@@ -146,7 +146,7 @@ public class SOCAssignModel {
 		try {
 			Assignments assignments = assignmentListMap.get(getRowIdForRowIndex(rowIndex));
 			assignments.setFlag(flag);
-			dao.updateFlag(assignments);
+			dao.updateFlagOrComment(assignments);
 		} catch (SQLException e) {
 
 		}
@@ -192,8 +192,8 @@ public class SOCAssignModel {
 	}
 
 	public void setSelectedResult(int selectedResults) {
-		int oldRow=this.selectedResultsRow;
-		
+		updateComments(selectedResults);
+
 		this.selectedResultsRow = selectedResults;
 		String[] row = results.getRow(selectedResults);
 		singleJobDescriptionTableModel.changeResults(row);
@@ -202,15 +202,43 @@ public class SOCAssignModel {
 		singleJobDescriptionListModel.addElement("Job Title: " + row[1]);
 		singleJobDescriptionListModel.addElement("SIC: " + row[2] + " (" + AssignmentCodingSystem.SIC1987.lookup(row[2]) + ")");
 		singleJobDescriptionListModel.addElement("Job Task: " + row[3]);
-		assignmentListModel.resetList(getAssignmentsForSelectedRow());
 		
-		try {
-			setCommentText(oldRow, commentTextDocument.getText(0, commentTextDocument.getLength()));
-			commentTextDocument.replace(0, commentTextDocument.getLength(), getCommentText(selectedResults), StyleContext.getDefaultStyleContext().getEmptySet());
-		} catch (BadLocationException e) {
-		}
+		assignmentListModel.resetList(getAssignmentsForSelectedRow());
 	}
 
+	public void updateComments(int selectedResults){
+
+		try {
+			// Update the old assignment...
+			Assignments currentAssignments = getAssignmentsForSelectedRow();
+			
+			// it is possible that the currentAssignment is null... so create an empty assignment..
+			if (currentAssignments==null) currentAssignments=new Assignments(selectedResults, FlagType.NOT_FLAGGED,"");
+			String commentText=commentTextDocument.getText(0, commentTextDocument.getLength()).trim();
+
+			//if the comment in the gui does not equal the comment in the assignment, update the assignment and save to DB...
+			if (!currentAssignments.getComment().equals(commentText)) {
+				currentAssignments.setComment(commentText);
+				dao.updateFlagOrComment(currentAssignments);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			// Switch to the new assignment...
+			Assignments selectedAssignment=getAssignmentsForRow(selectedResults);
+			String commentText="";
+			if (selectedAssignment!=null) {
+				commentText=selectedAssignment.getComment();
+			}
+			commentTextDocument.replace(0, commentTextDocument.getLength(), commentText, StyleContext.getDefaultStyleContext().getEmptySet());
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public void addAssignment(OccupationCode codeAssigned) {
 		assignmentListModel.addAssignment(codeAssigned);
 		updateAssignmentTable();
@@ -261,13 +289,6 @@ public class SOCAssignModel {
 		SOCAssignResultsExporter.exportResultsToCSV(results, assignmentListMap, file);
 	}
 
-	private HashMap<Integer, String> tmp=new HashMap<Integer, String>();
-	private void setCommentText(int selectedId,String txt){
-		tmp.put(selectedId, txt);
-	}
-	private String getCommentText(int selectedId){
-		return tmp.containsKey(selectedId)?tmp.get(selectedId):"";
-	}
 
 	public void onExit() {
 		try {

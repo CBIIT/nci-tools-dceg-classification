@@ -15,6 +15,5 @@ public interface SOCAssignDAO extends Closeable {
 	public void fillResultsTable(SOCcerResults results) throws SQLException;
 	public void loadAssignments(Map<Integer, Assignments>codeMap,CodingSystem system) throws SQLException;
 	public void setAssignment(Assignments assignment) throws SQLException;
-	public void updateFlag(Assignments assignments) throws SQLException;
-
+	public void updateFlagOrComment(Assignments assignments) throws SQLException;
 }
