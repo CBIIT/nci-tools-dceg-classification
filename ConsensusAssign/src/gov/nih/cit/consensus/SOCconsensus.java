@@ -35,6 +35,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+import javax.swing.ToolTipManager;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.filechooser.FileFilter;
@@ -58,6 +59,7 @@ public class SOCconsensus{
 	
 	
 	private static void createAndShowGUI() {
+		ToolTipManager.sharedInstance().setInitialDelay(10);
 		codingSystemPanel.updateCodingSystem(AssignmentCodingSystem.SOC2010);
 		OccupationCodeRenderer cellRenderer=new OccupationCodeRenderer();
 

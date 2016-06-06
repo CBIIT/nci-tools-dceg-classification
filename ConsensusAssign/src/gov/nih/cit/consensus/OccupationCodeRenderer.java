@@ -1,5 +1,6 @@
 package gov.nih.cit.consensus;
 
+import gov.nih.cit.socassign.AssignmentCodingSystem;
 import gov.nih.cit.socassign.codingsystem.OccupationCode;
 
 import java.awt.Component;
@@ -22,6 +23,7 @@ public class OccupationCodeRenderer extends DefaultTableCellRenderer {
 		}else {
 			if (value instanceof OccupationCode){
 				setText(((OccupationCode) value).getName());
+				this.setToolTipText( ((OccupationCode) value).getTitle() );
 			} else if (value instanceof String){
 				String svalue=(String)value;
 				if (svalue.length()==0){
@@ -32,9 +34,16 @@ public class OccupationCodeRenderer extends DefaultTableCellRenderer {
 //
 //					setText(svalue.substring(0,slen));
 					setText(svalue);
+					// currently column 2 is a string (the SIC)...
+					if (column==2){
+						this.setToolTipText(AssignmentCodingSystem.SIC1987.lookup(value.toString()));
+					}else{
+						this.setToolTipText(value.toString());
+					}
 				}
 			}
 		}
+
 		return this;
 	}
 }
