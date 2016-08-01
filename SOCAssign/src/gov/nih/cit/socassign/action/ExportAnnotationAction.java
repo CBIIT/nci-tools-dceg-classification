@@ -18,18 +18,22 @@ public class ExportAnnotationAction extends AbstractAction {
 	private static final long serialVersionUID = -8247847955069036181L;
 	private static final String ACTION_NAME = "Export Annotation to CSV";
 
+	// Have a local instance of a JFC to prevent allowing multiple instance of the FileFilter being added to the JFC
+	private JFileChooser jfc;
+	
 	public ExportAnnotationAction() {
 		super(ACTION_NAME);
+		jfc=new JFileChooser();
+		jfc.setFileFilter(new FileNameExtensionFilter("Annotation Results Files (.csv)","csv"));
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		JFileChooser jfc = SOCAssignGlobals.getJFC();
+		
 		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
 		JFrame applicationFrame = SOCAssignGlobals.getApplicationFrame();
 		if (SOCAssignGlobals.getResultsTable().getRowCount() == 0) return;
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
-		jfc.setFileFilter(new FileNameExtensionFilter("Annotation Results Files (.csv)","csv"));
 		int res = jfc.showSaveDialog(applicationFrame);
 		if (res == JFileChooser.APPROVE_OPTION) {
 			try {

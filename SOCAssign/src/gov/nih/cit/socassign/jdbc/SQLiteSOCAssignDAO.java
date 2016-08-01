@@ -101,7 +101,8 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			colSize = rs.getInt(2);
 		}
 		if (rowSize <= 0 || colSize <= 0) throw new SQLException("could not determine the data size.");
-
+		getSize.close();
+		
 		List<String[]> list = Arrays.asList(new String[rowSize + 1][colSize + 1]);
 
 		PreparedStatement getValue = connection.prepareStatement(sqlCommands.getProperty("get.all.results"));
@@ -109,7 +110,7 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 		while (rs.next()) {
 			list.get(rs.getInt(1))[rs.getInt(2)] = rs.getString(3);
 		}
-
+		getValue.close();
 		return list;
 	}
 
@@ -184,6 +185,7 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			sql=sqlCommands.getProperty("add.comments.column");
 			connection.prepareStatement(sql).executeUpdate();
 		}
+		ps.close();
 	}
 	
 	private void createResultsTable(List<String[]> data) throws SQLException {
@@ -241,6 +243,7 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			assignCodes.setString(6, assignments.getComment());
 		}
 		assignCodes.executeUpdate();
+		assignCodes.close();
 	}
 
 	@Override
@@ -276,6 +279,7 @@ public class SQLiteSOCAssignDAO implements SOCAssignDAO {
 			updateFlag.setString(6, assignments.getComment());
 		}
 		updateFlag.executeUpdate();
+		updateFlag.close();
 	}
 
 	

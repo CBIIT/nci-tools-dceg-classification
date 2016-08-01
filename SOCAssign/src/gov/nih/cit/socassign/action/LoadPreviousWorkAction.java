@@ -19,8 +19,13 @@ public class LoadPreviousWorkAction extends AbstractAction {
 	private static final String ACTION_NAME = "Load Previous Work";
 	private static final FileNameExtensionFilter DB_FILE_EXTENSION = new FileNameExtensionFilter("Working Files (.db)","db");
 
+	private JFileChooser jfc;
+	
 	public LoadPreviousWorkAction() {
 		super(ACTION_NAME);
+		
+		this.jfc=new JFileChooser();
+		jfc.setFileFilter(DB_FILE_EXTENSION);
 	}
 
 	@Override
@@ -62,9 +67,7 @@ public class LoadPreviousWorkAction extends AbstractAction {
 	}
 
 	private File getFile() {
-		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
-		JFileChooser jfc = SOCAssignGlobals.getJFC();
-		jfc.setFileFilter(DB_FILE_EXTENSION);
+		AppProperties appProperties = SOCAssignGlobals.getAppProperties();		
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
 		int res = jfc.showOpenDialog(SOCAssignGlobals.getApplicationFrame());
 		if (res == JFileChooser.APPROVE_OPTION) {

@@ -27,6 +27,8 @@ public class SOCAssignGlobals {
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();
+
+	@Deprecated
 	private static final JFileChooser jfc = new JFileChooser(System.getProperty("user.home"));
 
 	private static JFrame applicationFrame;
@@ -135,6 +137,7 @@ public class SOCAssignGlobals {
 		return fontAwesome;
 	}
 
+	@Deprecated
 	public static JFileChooser getJFC() {
 		return jfc;
 	}

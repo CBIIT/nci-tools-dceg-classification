@@ -47,12 +47,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -77,6 +80,7 @@ import javax.swing.UIManager;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.text.JTextComponent;
 
 /**
  * SOCAssign is the main class.
@@ -253,10 +257,25 @@ public class SOCAssign {
 		JScrollPane assignmentScroll = new JScrollPane(SOCAssignGlobals.initializeAssignmentList(createAssignmentList()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane infoScroll = new JScrollPane(new JList<String>(testModel.getSingleJobDescriptionListModel()),JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		JScrollPane	commentScroll = new JScrollPane(commentTA,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+		// add Titles to the JScrollPanes..
+		assignmentScroll.setColumnHeaderView(new JLabel("Assignments"));
+		infoScroll.setColumnHeaderView(new JLabel("Job Description"));
 		commentScroll.setColumnHeaderView(new JLabel("Comments"));
-		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_PERIOD,0), "consumeEvent");
-		commentTA.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA,0), "consumeEvent");
-		commentTA.getActionMap().put("consumeEvent", emptyAction);
+		
+
+		// consume periods and comma when typing in the comment box and assignmentTextField or the job description will change while typing in comments.
+		List<JTextComponent> componentList=Arrays.asList(commentTA,assignmentTF);
+		int[] keystrokes={KeyEvent.VK_PERIOD,KeyEvent.VK_COMMA};
+		for (JTextComponent component:componentList){
+			component.getActionMap().put("consumeEvent", emptyAction);
+			InputMap inputMap=component.getInputMap();
+			for (int keystroke:keystrokes){
+				inputMap.put(KeyStroke.getKeyStroke(keystroke,0), "consumeEvent");
+				inputMap.put(KeyStroke.getKeyStroke(keystroke,KeyEvent.SHIFT_DOWN_MASK), "consumeEvent");
+			}
+		}
+		
 		
 		// create panel
 		JComponent centerPanel = new JLayeredPane();
@@ -271,7 +290,7 @@ public class SOCAssign {
 		centerPanel.add(commentScroll,JLayeredPane.DEFAULT_LAYER);
 		
 		// setup visual layout
-		centerPanel.setPreferredSize(new Dimension(458,761));
+		centerPanel.setPreferredSize(new Dimension(458,721));
 		layout.putConstraint(SpringLayout.WEST, assignmentTF, 0, SpringLayout.WEST, centerPanel);
 		layout.putConstraint(SpringLayout.EAST, assignmentTF, 0, SpringLayout.EAST, centerPanel);
 		layout.putConstraint(SpringLayout.NORTH, assignmentTF, 0, SpringLayout.NORTH, centerPanel);
@@ -359,6 +378,7 @@ public class SOCAssign {
 		JList<OccupationCode> assignmentList = new JList<OccupationCode>(testModel.getAssignmentListModel());
 		assignmentList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		assignmentList.addListSelectionListener(assignmentListSelectionListener);
+		assignmentList.setVisibleRowCount(4);
 		return assignmentList;
 	}
 

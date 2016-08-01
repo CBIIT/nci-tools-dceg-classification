@@ -22,14 +22,17 @@ public class LoadSoccerResultsAction extends AbstractAction {
 	private static final long serialVersionUID = 8572841906487942011L;
 	private static final String ACTION_NAME = "Load SOCcer Results";
 	private static final FileFilter CSV_FF = new FileNameExtensionFilter("SOCcer Results Files (.csv)","csv");
-
+	private JFileChooser jfc;
+	
 	public LoadSoccerResultsAction() {
 		super(ACTION_NAME);
+		
+		jfc=new JFileChooser();
+		jfc.setFileFilter(CSV_FF);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		JFileChooser jfc = SOCAssignGlobals.getJFC();
 		JFrame applicationFrame = SOCAssignGlobals.getApplicationFrame();
 		SOCAssignModel testModel = SOCAssignModel.getInstance();
 		JTable resultsTable = SOCAssignGlobals.getResultsTable();
@@ -37,7 +40,6 @@ public class LoadSoccerResultsAction extends AbstractAction {
 		SelectCodingSystemAction selectCodingSystemAction = new SelectCodingSystemAction();
 		AppProperties appProperties = SOCAssignGlobals.getAppProperties();
 		jfc.setCurrentDirectory(new File(appProperties.getProperty("last.directory", System.getProperty("user.home"))));
-		jfc.setFileFilter(CSV_FF);
 		int res = jfc.showOpenDialog(applicationFrame);
 		if (res == JFileChooser.APPROVE_OPTION) {
 			String lastDirectory = jfc.getSelectedFile().getAbsolutePath();
@@ -64,6 +66,12 @@ public class LoadSoccerResultsAction extends AbstractAction {
 					fileName = fileName + ".db";
 				} else {
 					fileName = fileName.substring(0,indx) + ".db";
+				}
+				int i=0;
+				String prefix=fileName.substring(0,fileName.lastIndexOf(".db"));
+				// do not overwrite old files...
+				for (File f=new File(fileName);f.exists();f=new File(fileName) ){
+					fileName=prefix+"_"+(++i)+".db";
 				}
 				testModel.setNewDB(fileName);
 				SOCAssignGlobals.updateLastWorkingFileList(new File(fileName));
