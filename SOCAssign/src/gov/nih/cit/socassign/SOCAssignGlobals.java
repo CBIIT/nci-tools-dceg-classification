@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JMenu;
@@ -23,14 +22,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class SOCAssignGlobals {
-	public static final String title = "SOCAssign v0.0.4";
+	public static final String title = "SOCAssign v0.0.5";
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();
-
-	@Deprecated
-	private static final JFileChooser jfc = new JFileChooser(System.getProperty("user.home"));
-
 	private static JFrame applicationFrame;
 	private static JTable resultsTable;
 	private static JList<OccupationCode> assignmentList;
@@ -135,11 +130,6 @@ public class SOCAssignGlobals {
 
 	public static Font getFontAwesome() {
 		return fontAwesome;
-	}
-
-	@Deprecated
-	public static JFileChooser getJFC() {
-		return jfc;
 	}
 
 	public static JMenu initializeFileMenu(JMenu fileMenu) {
