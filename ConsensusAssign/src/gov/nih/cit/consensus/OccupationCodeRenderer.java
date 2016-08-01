@@ -10,6 +10,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 public class OccupationCodeRenderer extends DefaultTableCellRenderer {
 
+	private static final long serialVersionUID = -4083608985765921227L;
+
 	public OccupationCodeRenderer() {}
 
 	@Override
@@ -29,13 +31,9 @@ public class OccupationCodeRenderer extends DefaultTableCellRenderer {
 				if (svalue.length()==0){
 					setText("");
 				} else{
-//					int slen=svalue.indexOf(' ');
-//					if (slen==-1) slen=svalue.length();
-//
-//					setText(svalue.substring(0,slen));
 					setText(svalue);
 					// currently column 2 is a string (the SIC)...
-					if (column==2){
+					if (column==2){	
 						this.setToolTipText(AssignmentCodingSystem.SIC1987.lookup(value.toString()));
 					}else{
 						this.setToolTipText(value.toString());

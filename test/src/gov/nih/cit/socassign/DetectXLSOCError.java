@@ -16,7 +16,7 @@ public class DetectXLSOCError {
 		Assert.assertNotNull("unable to open file"+url.getFile(), f);
 				
 		try{
-			SOCcerResults r=SOCcerResults.readSOCcerResultsFile(f);
+			SOCcerResults.readSOCcerResultsFile(f);
 			Assert.fail("exception not thrown.");
 		}catch (Exception e){
 			System.out.println(e.getMessage());
