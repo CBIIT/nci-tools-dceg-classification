@@ -14,3 +14,4 @@ bin/*
 soccer-output3.csv
 soccer-output3.db
 /bin/
+.DS_Store
