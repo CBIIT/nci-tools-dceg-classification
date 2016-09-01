@@ -21,7 +21,7 @@ public class ToggleFlagAction extends AbstractAction {
 			int selectedRow = resultsTable.convertRowIndexToModel(row);
 			boolean flagValue = (Boolean)resultsTable.getValueAt(row, 0);
 			int rowID = (Integer)resultsTable.getValueAt(row, 1);
-			System.out.println("FLAG TOGGLER: (selected row) " + selectedRow +  " (rowID) " + rowID + " (current value) " + flagValue+" (row) "+ row + " " +resultsTable.getValueAt(row, 1) + " " +resultsTable.getValueAt(row, 0));
+			//System.out.println("FLAG TOGGLER: (selected row) " + selectedRow +  " (rowID) " + rowID + " (current value) " + flagValue+" (row) "+ row + " " +resultsTable.getValueAt(row, 1) + " " +resultsTable.getValueAt(row, 0));
 			testModel.updateFlag(selectedRow, flagValue?FlagType.NOT_FLAGGED:FlagType.FLAGGED);
 			testModel.getTableModel().fireTableRowsUpdated(selectedRow, selectedRow);
 		} else {

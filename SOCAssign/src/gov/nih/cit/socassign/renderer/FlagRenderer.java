@@ -8,6 +8,7 @@ import java.awt.Component;
 import java.awt.Font;
 
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
 public class FlagRenderer extends DefaultTableCellRenderer {
@@ -15,19 +16,21 @@ public class FlagRenderer extends DefaultTableCellRenderer {
 
 	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 		super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+		SOCAssignModel model=SOCAssignModel.getInstance();
+		int modelRow=SOCAssignGlobals.getResultsTable().convertRowIndexToModel(row);
+		
 		Font fontAwesome = SOCAssignGlobals.getFontAwesome();
 		if (fontAwesome != null) {
-			setFont(fontAwesome);
+			setFont(fontAwesome.deriveFont((float)getFont().getSize()));
 			setForeground(Color.RED);
-			setText(((Boolean)value)?"\uf024":"");
+			String txt=( ((Boolean)value)?" \uf024 ":"" )+(model.isRowCommented(modelRow)?" \uf0e5":"");
+			setText(txt);
 		}
 		if (!isSelected) {
-			if (SOCAssignModel.getInstance().isRowAssigned(SOCAssignGlobals.getResultsTable().convertRowIndexToModel(row))) {
-				setBackground(SOCAssignGlobals.PALE_GREEN);
-			} else {
-				setBackground(Color.WHITE);
-			}
+			setBackground( model.isRowAssigned(modelRow)? SOCAssignGlobals.PALE_GREEN:Color.WHITE );
 		}
+		setHorizontalTextPosition(CENTER);
 		return this;
 	}
 }

@@ -22,7 +22,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class SOCAssignGlobals {
-	public static final String title = "SOCAssign v0.0.5";
+	public static final String title = "SOCAssign v0.0.6";
 	public static final Color PALE_GREEN = new Color(152, 251, 152);
 
 	private static final LoadPreviousWorkAction loadDBAction = new LoadPreviousWorkAction();

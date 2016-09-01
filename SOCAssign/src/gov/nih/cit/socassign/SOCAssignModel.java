@@ -90,7 +90,13 @@ public class SOCAssignModel {
 		Assignments assignment = assignmentListMap.get(getRowIdForRowIndex(rowIndex));
 		return (assignment != null && assignment.size() > 0);
 	}
-
+	/** This method checks to see if the coder has assigned any codes to the rowIndex of the resultsTable.
+	 * @return true if at least 1 code has been assigned, false otherwise*/
+	public boolean isRowCommented(int rowIndex) {
+		Assignments assignment = assignmentListMap.get(getRowIdForRowIndex(rowIndex));
+		return (assignment != null && assignment.getComment().trim().length()>0);
+	}
+	
 	/** This method returns the coding system
 	 *  @return the coding system SOCcer used in the analysis.  Usually {@link AssignmentCodingSystem#SOC2010} */
 	public AssignmentCodingSystem getCodingSystem() {
