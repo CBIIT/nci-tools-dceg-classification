@@ -57,8 +57,8 @@ public class SOCAssignResultsExporter {
 	public static void exportResultsToCSV(SOCcerResults results,
 			Map<Integer, Assignments> assignedResults, File file) throws IOException {
 
-		CSVWriter writer = new CSVWriter(new FileWriter(file));
-
+		CSVWriter writer = new CSVWriter(new FileWriter(file),CSVWriter.DEFAULT_SEPARATOR,CSVWriter.DEFAULT_QUOTE_CHARACTER,System.getProperty("line.separator"));
+		
 		int soccerJobDescriptionLength = results.getHead().length - 20;
 		String[] inputData = new String[soccerJobDescriptionLength];
 
