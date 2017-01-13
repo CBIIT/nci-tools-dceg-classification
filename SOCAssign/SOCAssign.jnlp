@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0+" codebase="http://soccer-dev.nci.nih.gov/soccer/" href="soccerassign/SOCAssign.jnlp">
+<jnlp spec="1.0+" codebase="@url@" href="soccerassign/SOCAssign.jnlp">
     <information>
            <title>SOCAssign</title>
            <vendor>NCI CBIIT</vendor>
-           <homepage href="http://soccer-dev.nci.nih.gov/" />
+           <homepage href="@url@" />
            <description>SOCAssign Application</description>
     </information>
     <security>
