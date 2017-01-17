@@ -33,9 +33,10 @@
         <delete file="${verisign.key.store}"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <target depends="url_exist,build-subprojects,build-project" name="build">
-     	<antcall target="generateJNLP"/>
+
+    <target depends="build-subprojects,build-project" name="build">
     </target>
+
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -91,10 +92,12 @@
             <classpath refid="SOCAssign.classpath"/>
         </java>
     </target>
+<!--
     <target name="generateJNLP">
       	<replace file="SOCAssign.jnlp" token="@url@" value="${url}"/>
     </target>
     <target name="url_exist" unless="url">
         <fail> URL is not set, stop</fail>
     </target>
+-->    
 </project>
