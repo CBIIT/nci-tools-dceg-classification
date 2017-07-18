@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<NOC2011>
+  <broad name="0" title="Management occupations">
+    <major name="00" title="Senior management occupations">
+      <minor name="001" title="Legislators and senior management">
+        <unit name="0011" title="Legislators"/>
+        <unit name="0012" title="Senior government managers and officials"/>
+        <unit name="0013" title="Senior managers - financial, communications and other business services"/>
+        <unit name="0014" title="Senior managers - health, education, social and community services and membership organizations"/>
+        <unit name="0015" title="Senior managers - trade, broadcasting and other services, n.e.c."/>
+        <unit name="0016" title="Senior managers - construction, transportation, production and utilities"/>
+      </minor>
+    </major>
+    <major name="01" title="Specialized middle management occupations">
+      <minor name="011" title="Administrative services managers">
+        <unit name="0111" title="Financial managers"/>
+        <unit name="0112" title="Human resources managers"/>
+        <unit name="0113" title="Purchasing managers"/>
+        <unit name="0114" title="Other administrative services managers"/>
+      </minor>
+      <minor name="012" title="Managers in financial and business services">
+        <unit name="0121" title="Insurance, real estate and financial brokerage managers"/>
+        <unit name="0122" title="Banking, credit and other investment managers"/>
+        <unit name="0124" title="Advertising, marketing and public relations managers"/>
+        <unit name="0125" title="Other business services managers"/>
+      </minor>
+      <minor name="013" title="Managers in communication (except broadcasting)">
+        <unit name="0131" title="Telecommunication carriers managers"/>
+        <unit name="0132" title="Postal and courier services managers"/>
+      </minor>
+    </major>
+    <major name="02" title="Specialized middle management occupations">
+      <minor name="021" title="Managers in engineering, architecture, science and information systems">
+        <unit name="0211" title="Engineering managers"/>
+        <unit name="0212" title="Architecture and science managers"/>
+        <unit name="0213" title="Computer and information systems managers"/>
+      </minor>
+    </major>
+    <major name="03" title="Specialized middle management occupations">
+      <minor name="031" title="Managers in health care">
+        <unit name="0311" title="Managers in health care"/>
+      </minor>
+    </major>
+    <major name="04" title="Specialized middle management occupations">
+      <minor name="041" title="Managers in public administration">
+        <unit name="0411" title="Government managers - health and social policy development and program administration"/>
+        <unit name="0412" title="Government managers - economic analysis, policy development and program administration"/>
+        <unit name="0413" title="Government managers - education policy development and program administration"/>
+        <unit name="0414" title="Other managers in public administration"/>
+      </minor>
+      <minor name="042" title="Managers in education and social and community services">
+        <unit name="0421" title="Administrators - post-secondary education and vocational training"/>
+        <unit name="0422" title="School principals and administrators of elementary and secondary education"/>
+        <unit name="0423" title="Managers in social, community and correctional services"/>
+      </minor>
+      <minor name="043" title="Managers in public protection services">
+        <unit name="0431" title="Commissioned police officers"/>
+        <unit name="0432" title="Fire chiefs and senior firefighting officers"/>
+        <unit name="0433" title="Commissioned officers of the Canadian Forces"/>
+      </minor>
+    </major>
+    <major name="05" title="Specialized middle management occupations">
+      <minor name="051" title="Managers in art, culture, recreation and sport">
+        <unit name="0511" title="Library, archive, museum and art gallery managers"/>
+        <unit name="0512" title="Managers - publishing, motion pictures, broadcasting and performing arts"/>
+        <unit name="0513" title="Recreation, sports and fitness program and service directors"/>
+      </minor>
+    </major>
+    <major name="06" title="Middle management occupations in retail and wholesale trade and customer services">
+      <minor name="060" title="Corporate sales managers">
+        <unit name="0601" title="Corporate sales managers"/>
+      </minor>
+      <minor name="062" title="Retail and wholesale trade managers">
+        <unit name="0621" title="Retail and wholesale trade managers"/>
+      </minor>
+      <minor name="063" title="Managers in food service and accommodation">
+        <unit name="0631" title="Restaurant and food service managers"/>
+        <unit name="0632" title="Accommodation service managers"/>
+      </minor>
+      <minor name="065" title="Managers in customer and personal services, n.e.c.">
+        <unit name="0651" title="Managers in customer and personal services, n.e.c."/>
+      </minor>
+    </major>
+    <major name="07" title="Middle management occupations in trades, transportation, production and utilities">
+      <minor name="071" title="Managers in construction and facility operation and maintenance">
+        <unit name="0711" title="Construction managers"/>
+        <unit name="0712" title="Home building and renovation managers"/>
+        <unit name="0714" title="Facility operation and maintenance managers"/>
+      </minor>
+      <minor name="073" title="Managers in transportation">
+        <unit name="0731" title="Managers in transportation"/>
+      </minor>
+    </major>
+    <major name="08" title="Middle management occupations in trades, transportation, production and utilities">
+      <minor name="081" title="Managers in natural resources production and fishing">
+        <unit name="0811" title="Managers in natural resources production and fishing"/>
+      </minor>
+      <minor name="082" title="Managers in agriculture, horticulture and aquaculture">
+        <unit name="0821" title="Managers in agriculture"/>
+        <unit name="0822" title="Managers in horticulture"/>
+        <unit name="0823" title="Managers in aquaculture"/>
+      </minor>
+    </major>
+    <major name="09" title="Middle management occupations in trades, transportation, production and utilities">
+      <minor name="091" title="Managers in manufacturing and utilities">
+        <unit name="0911" title="Manufacturing managers"/>
+        <unit name="0912" title="Utilities managers"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="1" title="Business, finance and administration occupations">
+    <major name="11" title="Professional occupations in business and finance">
+      <minor name="111" title="Auditors, accountants and investment professionals">
+        <unit name="1111" title="Financial auditors and accountants"/>
+        <unit name="1112" title="Financial and investment analysts"/>
+        <unit name="1113" title="Securities agents, investment dealers and brokers"/>
+        <unit name="1114" title="Other financial officers"/>
+      </minor>
+      <minor name="112" title="Human resources and business service professionals">
+        <unit name="1121" title="Human resources professionals"/>
+        <unit name="1122" title="Professional occupations in business management consulting"/>
+        <unit name="1123" title="Professional occupations in advertising, marketing and public relations"/>
+      </minor>
+    </major>
+    <major name="12" title="Administrative and financial supervisors and administrative occupations">
+      <minor name="121" title="Administrative services supervisors">
+        <unit name="1211" title="Supervisors, general office and administrative support workers"/>
+        <unit name="1212" title="Supervisors, finance and insurance office workers"/>
+        <unit name="1213" title="Supervisors, library, correspondence and related information workers"/>
+        <unit name="1214" title="Supervisors, mail and message distribution occupations"/>
+        <unit name="1215" title="Supervisors, supply chain, tracking and scheduling co-ordination occupations"/>
+      </minor>
+      <minor name="122" title="Administrative and regulatory occupations">
+        <unit name="1221" title="Administrative officers"/>
+        <unit name="1222" title="Executive assistants"/>
+        <unit name="1223" title="Human resources and recruitment officers"/>
+        <unit name="1224" title="Property administrators"/>
+        <unit name="1225" title="Purchasing agents and officers"/>
+        <unit name="1226" title="Conference and event planners"/>
+        <unit name="1227" title="Court officers and justices of the peace"/>
+        <unit name="1228" title="Employment insurance, immigration, border services and revenue officers"/>
+      </minor>
+      <minor name="124" title="Office administrative assistants - general, legal and medical">
+        <unit name="1241" title="Administrative assistants"/>
+        <unit name="1242" title="Legal administrative assistants"/>
+        <unit name="1243" title="Medical administrative assistants"/>
+      </minor>
+      <minor name="125" title="Court reporters, transcriptionists, records management technicians and statistical officers">
+        <unit name="1251" title="Court reporters, medical transcriptionists and related occupations"/>
+        <unit name="1252" title="Health information management occupations"/>
+        <unit name="1253" title="Records management technicians"/>
+        <unit name="1254" title="Statistical officers and related research support occupations"/>
+      </minor>
+    </major>
+    <major name="13" title="Finance, insurance and related business administrative occupations">
+      <minor name="131" title="Finance, insurance and related business administrative occupations">
+        <unit name="1311" title="Accounting technicians and bookkeepers"/>
+        <unit name="1312" title="Insurance adjusters and claims examiners"/>
+        <unit name="1313" title="Insurance underwriters"/>
+        <unit name="1314" title="Assessors, valuators and appraisers"/>
+        <unit name="1315" title="Customs, ship and other brokers"/>
+      </minor>
+    </major>
+    <major name="14" title="Office support occupations">
+      <minor name="141" title="General office workers">
+        <unit name="1411" title="General office support workers"/>
+        <unit name="1414" title="Receptionists"/>
+        <unit name="1415" title="Personnel clerks"/>
+        <unit name="1416" title="Court clerks"/>
+      </minor>
+      <minor name="142" title="Office equipment operators">
+        <unit name="1422" title="Data entry clerks"/>
+        <unit name="1423" title="Desktop publishing operators and related occupations"/>
+      </minor>
+      <minor name="143" title="Financial, insurance and related administrative support workers">
+        <unit name="1431" title="Accounting and related clerks"/>
+        <unit name="1432" title="Payroll clerks"/>
+        <unit name="1434" title="Banking, insurance and other financial clerks"/>
+        <unit name="1435" title="Collectors"/>
+      </minor>
+      <minor name="145" title="Library, correspondence and other clerks">
+        <unit name="1451" title="Library assistants and clerks"/>
+        <unit name="1452" title="Correspondence, publication and regulatory clerks"/>
+        <unit name="1454" title="Survey interviewers and statistical clerks"/>
+      </minor>
+    </major>
+    <major name="15" title="Distribution, tracking and scheduling co-ordination occupations">
+      <minor name="151" title="Mail and message distribution occupations">
+        <unit name="1511" title="Mail, postal and related workers"/>
+        <unit name="1512" title="Letter carriers"/>
+        <unit name="1513" title="Couriers, messengers and door-to-door distributors"/>
+      </minor>
+      <minor name="152" title="Supply chain logistics, tracking and scheduling co-ordination occupations">
+        <unit name="1521" title="Shippers and receivers"/>
+        <unit name="1522" title="Storekeepers and partspersons"/>
+        <unit name="1523" title="Production logistics co-ordinators"/>
+        <unit name="1524" title="Purchasing and inventory control workers"/>
+        <unit name="1525" title="Dispatchers"/>
+        <unit name="1526" title="Transportation route and crew schedulers"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="2" title="Natural and applied sciences and related occupations">
+    <major name="21" title="Professional occupations in natural and applied sciences">
+      <minor name="211" title="Physical science professionals">
+        <unit name="2111" title="Physicists and astronomers"/>
+        <unit name="2112" title="Chemists"/>
+        <unit name="2113" title="Geoscientists and oceanographers"/>
+        <unit name="2114" title="Meteorologists and climatologists"/>
+        <unit name="2115" title="Other professional occupations in physical sciences"/>
+      </minor>
+      <minor name="212" title="Life science professionals">
+        <unit name="2121" title="Biologists and related scientists"/>
+        <unit name="2122" title="Forestry professionals"/>
+        <unit name="2123" title="Agricultural representatives, consultants and specialists"/>
+      </minor>
+      <minor name="213" title="Civil, mechanical, electrical and chemical engineers">
+        <unit name="2131" title="Civil engineers"/>
+        <unit name="2132" title="Mechanical engineers"/>
+        <unit name="2133" title="Electrical and electronics engineers"/>
+        <unit name="2134" title="Chemical engineers"/>
+      </minor>
+      <minor name="214" title="Other engineers">
+        <unit name="2141" title="Industrial and manufacturing engineers"/>
+        <unit name="2142" title="Metallurgical and materials engineers"/>
+        <unit name="2143" title="Mining engineers"/>
+        <unit name="2144" title="Geological engineers"/>
+        <unit name="2145" title="Petroleum engineers"/>
+        <unit name="2146" title="Aerospace engineers"/>
+        <unit name="2147" title="Computer engineers (except software engineers and designers)"/>
+        <unit name="2148" title="Other professional engineers, n.e.c."/>
+      </minor>
+      <minor name="215" title="Architects, urban planners and land surveyors">
+        <unit name="2151" title="Architects"/>
+        <unit name="2152" title="Landscape architects"/>
+        <unit name="2153" title="Urban and land use planners"/>
+        <unit name="2154" title="Land surveyors"/>
+      </minor>
+      <minor name="216" title="Mathematicians, statisticians and actuaries">
+        <unit name="2161" title="Mathematicians, statisticians and actuaries"/>
+      </minor>
+      <minor name="217" title="Computer and information systems professionals">
+        <unit name="2171" title="Information systems analysts and consultants"/>
+        <unit name="2172" title="Database analysts and data administrators"/>
+        <unit name="2173" title="Software engineers and designers"/>
+        <unit name="2174" title="Computer programmers and interactive media developers"/>
+        <unit name="2175" title="Web designers and developers"/>
+      </minor>
+    </major>
+    <major name="22" title="Technical occupations related to natural and applied sciences">
+      <minor name="221" title="Technical occupations in physical sciences">
+        <unit name="2211" title="Chemical technologists and technicians"/>
+        <unit name="2212" title="Geological and mineral technologists and technicians"/>
+      </minor>
+      <minor name="222" title="Technical occupations in life sciences">
+        <unit name="2221" title="Biological technologists and technicians"/>
+        <unit name="2222" title="Agricultural and fish products inspectors"/>
+        <unit name="2223" title="Forestry technologists and technicians"/>
+        <unit name="2224" title="Conservation and fishery officers"/>
+        <unit name="2225" title="Landscape and horticulture technicians and specialists"/>
+      </minor>
+      <minor name="223" title="Technical occupations in civil, mechanical and industrial engineering">
+        <unit name="2231" title="Civil engineering technologists and technicians"/>
+        <unit name="2232" title="Mechanical engineering technologists and technicians"/>
+        <unit name="2233" title="Industrial engineering and manufacturing technologists and technicians"/>
+        <unit name="2234" title="Construction estimators"/>
+      </minor>
+      <minor name="224" title="Technical occupations in electronics and electrical engineering">
+        <unit name="2241" title="Electrical and electronics engineering technologists and technicians"/>
+        <unit name="2242" title="Electronic service technicians (household and business equipment)"/>
+        <unit name="2243" title="Industrial instrument technicians and mechanics"/>
+        <unit name="2244" title="Aircraft instrument, electrical and avionics mechanics, technicians and inspectors"/>
+      </minor>
+      <minor name="225" title="Technical occupations in architecture, drafting, surveying, geomatics and meteorology">
+        <unit name="2251" title="Architectural technologists and technicians"/>
+        <unit name="2252" title="Industrial designers"/>
+        <unit name="2253" title="Drafting technologists and technicians"/>
+        <unit name="2254" title="Land survey technologists and technicians"/>
+        <unit name="2255" title="Technical occupations in geomatics and meteorology"/>
+      </minor>
+      <minor name="226" title="Other technical inspectors and regulatory officers">
+        <unit name="2261" title="Non-destructive testers and inspection technicians"/>
+        <unit name="2262" title="Engineering inspectors and regulatory officers"/>
+        <unit name="2263" title="Inspectors in public and environmental health and occupational health and safety"/>
+        <unit name="2264" title="Construction inspectors"/>
+      </minor>
+      <minor name="227" title="Transportation officers and controllers">
+        <unit name="2271" title="Air pilots, flight engineers and flying instructors"/>
+        <unit name="2272" title="Air traffic controllers and related occupations"/>
+        <unit name="2273" title="Deck officers, water transport"/>
+        <unit name="2274" title="Engineer officers, water transport"/>
+        <unit name="2275" title="Railway traffic controllers and marine traffic regulators"/>
+      </minor>
+      <minor name="228" title="Technical occupations in computer and information systems">
+        <unit name="2281" title="Computer network technicians"/>
+        <unit name="2282" title="User support technicians"/>
+        <unit name="2283" title="Information systems testing technicians"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="3" title="Health occupations">
+    <major name="30" title="Professional occupations in nursing">
+      <minor name="301" title="Professional occupations in nursing">
+        <unit name="3011" title="Nursing co-ordinators and supervisors"/>
+        <unit name="3012" title="Registered nurses and registered psychiatric nurses"/>
+      </minor>
+    </major>
+    <major name="31" title="Professional occupations in health (except nursing)">
+      <minor name="311" title="Physicians, dentists and veterinarians">
+        <unit name="3111" title="Specialist physicians"/>
+        <unit name="3112" title="General practitioners and family physicians"/>
+        <unit name="3113" title="Dentists"/>
+        <unit name="3114" title="Veterinarians"/>
+      </minor>
+      <minor name="312" title="Optometrists, chiropractors and other health diagnosing and treating professionals">
+        <unit name="3121" title="Optometrists"/>
+        <unit name="3122" title="Chiropractors"/>
+        <unit name="3124" title="Allied primary health practitioners"/>
+        <unit name="3125" title="Other professional occupations in health diagnosing and treating"/>
+      </minor>
+      <minor name="313" title="Pharmacists, dietitians and nutritionists">
+        <unit name="3131" title="Pharmacists"/>
+        <unit name="3132" title="Dietitians and nutritionists"/>
+      </minor>
+      <minor name="314" title="Therapy and assessment professionals">
+        <unit name="3141" title="Audiologists and speech-language pathologists"/>
+        <unit name="3142" title="Physiotherapists"/>
+        <unit name="3143" title="Occupational therapists"/>
+        <unit name="3144" title="Other professional occupations in therapy and assessment"/>
+      </minor>
+    </major>
+    <major name="32" title="Technical occupations in health">
+      <minor name="321" title="Medical technologists and technicians (except dental health)">
+        <unit name="3211" title="Medical laboratory technologists"/>
+        <unit name="3212" title="Medical laboratory technicians and pathologists' assistants"/>
+        <unit name="3213" title="Animal health technologists and veterinary technicians"/>
+        <unit name="3214" title="Respiratory therapists, clinical perfusionists and cardiopulmonary technologists"/>
+        <unit name="3215" title="Medical radiation technologists"/>
+        <unit name="3216" title="Medical sonographers"/>
+        <unit name="3217" title="Cardiology technologists and electrophysiological diagnostic technologists, n.e.c."/>
+        <unit name="3219" title="Other medical technologists and technicians (except dental health)"/>
+      </minor>
+      <minor name="322" title="Technical occupations in dental health care">
+        <unit name="3221" title="Denturists"/>
+        <unit name="3222" title="Dental hygienists and dental therapists"/>
+        <unit name="3223" title="Dental technologists, technicians and laboratory assistants"/>
+      </minor>
+      <minor name="323" title="Other technical occupations in health care">
+        <unit name="3231" title="Opticians"/>
+        <unit name="3232" title="Practitioners of natural healing"/>
+        <unit name="3233" title="Licensed practical nurses"/>
+        <unit name="3234" title="Paramedical occupations"/>
+        <unit name="3236" title="Massage therapists"/>
+        <unit name="3237" title="Other technical occupations in therapy and assessment"/>
+      </minor>
+    </major>
+    <major name="34" title="Assisting occupations in support of health services">
+      <minor name="341" title="Assisting occupations in support of health services">
+        <unit name="3411" title="Dental assistants"/>
+        <unit name="3413" title="Nurse aides, orderlies and patient service associates"/>
+        <unit name="3414" title="Other assisting occupations in support of health services"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="4" title="Occupations in education, law and social, community and government services">
+    <major name="40" title="Professional occupations in education services">
+      <minor name="401" title="University professors and post-secondary assistants">
+        <unit name="4011" title="University professors and lecturers"/>
+        <unit name="4012" title="Post-secondary teaching and research assistants"/>
+      </minor>
+      <minor name="402" title="College and other vocational instructors">
+        <unit name="4021" title="College and other vocational instructors"/>
+      </minor>
+      <minor name="403" title="Secondary and elementary school teachers and educational counsellors">
+        <unit name="4031" title="Secondary school teachers"/>
+        <unit name="4032" title="Elementary school and kindergarten teachers"/>
+        <unit name="4033" title="Educational counsellors"/>
+      </minor>
+    </major>
+    <major name="41" title="Professional occupations in law and social, community and government services">
+      <minor name="411" title="Judges, lawyers and Quebec notaries">
+        <unit name="4111" title="Judges"/>
+        <unit name="4112" title="Lawyers and Quebec notaries"/>
+      </minor>
+      <minor name="415" title="Social and community service professionals">
+        <unit name="4151" title="Psychologists"/>
+        <unit name="4152" title="Social workers"/>
+        <unit name="4153" title="Family, marriage and other related counsellors"/>
+        <unit name="4154" title="Professional occupations in religion"/>
+        <unit name="4155" title="Probation and parole officers and related occupations"/>
+        <unit name="4156" title="Employment counsellors"/>
+      </minor>
+      <minor name="416" title="Policy and program researchers, consultants and officers">
+        <unit name="4161" title="Natural and applied science policy researchers, consultants and program officers"/>
+        <unit name="4162" title="Economists and economic policy researchers and analysts"/>
+        <unit name="4163" title="Business development officers and marketing researchers and consultants"/>
+        <unit name="4164" title="Social policy researchers, consultants and program officers"/>
+        <unit name="4165" title="Health policy researchers, consultants and program officers"/>
+        <unit name="4166" title="Education policy researchers, consultants and program officers"/>
+        <unit name="4167" title="Recreation, sports and fitness policy researchers, consultants and program officers"/>
+        <unit name="4168" title="Program officers unique to government"/>
+        <unit name="4169" title="Other professional occupations in social science, n.e.c."/>
+      </minor>
+    </major>
+    <major name="42" title="Paraprofessional occupations in legal, social, community and education services">
+      <minor name="421" title="Paraprofessional occupations in legal, social, community and education services">
+        <unit name="4211" title="Paralegal and related occupations"/>
+        <unit name="4212" title="Social and community service workers"/>
+        <unit name="4214" title="Early childhood educators and assistants"/>
+        <unit name="4215" title="Instructors of persons with disabilities"/>
+        <unit name="4216" title="Other instructors"/>
+        <unit name="4217" title="Other religious occupations"/>
+      </minor>
+    </major>
+    <major name="43" title="Occupations in front-line public protection services">
+      <minor name="431" title="Occupations in front-line public protection services">
+        <unit name="4311" title="Police officers (except commissioned)"/>
+        <unit name="4312" title="Firefighters"/>
+        <unit name="4313" title="Non-commissioned ranks of the Canadian Forces"/>
+      </minor>
+    </major>
+    <major name="44" title="Care providers and educational, legal and public protection support occupations">
+      <minor name="441" title="Home care providers and educational support occupations">
+        <unit name="4411" title="Home child care providers"/>
+        <unit name="4412" title="Home support workers, housekeepers and related occupations"/>
+        <unit name="4413" title="Elementary and secondary school teacher assistants"/>
+      </minor>
+      <minor name="442" title="Legal and public protection support occupations">
+        <unit name="4421" title="Sheriffs and bailiffs"/>
+        <unit name="4422" title="Correctional service officers"/>
+        <unit name="4423" title="By-law enforcement and other regulatory officers, n.e.c."/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="5" title="Occupations in art, culture, recreation and sport">
+    <major name="51" title="Professional occupations in art and culture">
+      <minor name="511" title="Librarians, archivists, conservators and curators">
+        <unit name="5111" title="Librarians"/>
+        <unit name="5112" title="Conservators and curators"/>
+        <unit name="5113" title="Archivists"/>
+      </minor>
+      <minor name="512" title="Writing, translating and related communications professionals">
+        <unit name="5121" title="Authors and writers"/>
+        <unit name="5122" title="Editors"/>
+        <unit name="5123" title="Journalists"/>
+        <unit name="5125" title="Translators, terminologists and interpreters"/>
+      </minor>
+      <minor name="513" title="Creative and performing artists">
+        <unit name="5131" title="Producers, directors, choreographers and related occupations"/>
+        <unit name="5132" title="Conductors, composers and arrangers"/>
+        <unit name="5133" title="Musicians and singers"/>
+        <unit name="5134" title="Dancers"/>
+        <unit name="5135" title="Actors and comedians"/>
+        <unit name="5136" title="Painters, sculptors and other visual artists"/>
+      </minor>
+    </major>
+    <major name="52" title="Technical occupations in art, culture, recreation and sport">
+      <minor name="521" title="Technical occupations in libraries, public archives, museums and art galleries">
+        <unit name="5211" title="Library and public archive technicians"/>
+        <unit name="5212" title="Technical occupations related to museums and art galleries"/>
+      </minor>
+      <minor name="522" title="Photographers, graphic arts technicians and technical and co-ordinating occupations in motion pictures, broadcasting and the performing arts">
+        <unit name="5221" title="Photographers"/>
+        <unit name="5222" title="Film and video camera operators"/>
+        <unit name="5223" title="Graphic arts technicians"/>
+        <unit name="5224" title="Broadcast technicians"/>
+        <unit name="5225" title="Audio and video recording technicians"/>
+        <unit name="5226" title="Other technical and co-ordinating occupations in motion pictures, broadcasting and the performing arts"/>
+        <unit name="5227" title="Support occupations in motion pictures, broadcasting, photography and the performing arts"/>
+      </minor>
+      <minor name="523" title="Announcers and other performers, n.e.c.">
+        <unit name="5231" title="Announcers and other broadcasters"/>
+        <unit name="5232" title="Other performers, n.e.c."/>
+      </minor>
+      <minor name="524" title="Creative designers and craftspersons">
+        <unit name="5241" title="Graphic designers and illustrators"/>
+        <unit name="5242" title="Interior designers and interior decorators"/>
+        <unit name="5243" title="Theatre, fashion, exhibit and other creative designers"/>
+        <unit name="5244" title="Artisans and craftspersons"/>
+        <unit name="5245" title="Patternmakers - textile, leather and fur products"/>
+      </minor>
+      <minor name="525" title="Athletes, coaches, referees and related occupations">
+        <unit name="5251" title="Athletes"/>
+        <unit name="5252" title="Coaches"/>
+        <unit name="5253" title="Sports officials and referees"/>
+        <unit name="5254" title="Program leaders and instructors in recreation, sport and fitness"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="6" title="Sales and service occupations">
+    <major name="62" title="Retail sales supervisors and specialized sales occupations">
+      <minor name="621" title="Retail sales supervisors">
+        <unit name="6211" title="Retail sales supervisors"/>
+      </minor>
+      <minor name="622" title="Technical sales specialists in wholesale trade and retail and wholesale buyers">
+        <unit name="6221" title="Technical sales specialists - wholesale trade"/>
+        <unit name="6222" title="Retail and wholesale buyers"/>
+      </minor>
+      <minor name="623" title="Insurance, real estate and financial sales occupations">
+        <unit name="6231" title="Insurance agents and brokers"/>
+        <unit name="6232" title="Real estate agents and salespersons"/>
+        <unit name="6235" title="Financial sales representatives"/>
+      </minor>
+    </major>
+    <major name="63" title="Service supervisors and specialized service occupations">
+      <minor name="631" title="Service supervisors">
+        <unit name="6311" title="Food service supervisors"/>
+        <unit name="6312" title="Executive housekeepers"/>
+        <unit name="6313" title="Accommodation, travel, tourism and related services supervisors"/>
+        <unit name="6314" title="Customer and information services supervisors"/>
+        <unit name="6315" title="Cleaning supervisors"/>
+        <unit name="6316" title="Other services supervisors"/>
+      </minor>
+      <minor name="632" title="Chefs and cooks">
+        <unit name="6321" title="Chefs"/>
+        <unit name="6322" title="Cooks"/>
+      </minor>
+      <minor name="633" title="Butchers and bakers">
+        <unit name="6331" title="Butchers, meat cutters and fishmongers - retail and wholesale"/>
+        <unit name="6332" title="Bakers"/>
+      </minor>
+      <minor name="634" title="Specialized occupations in personal and customer services">
+        <unit name="6341" title="Hairstylists and barbers"/>
+        <unit name="6342" title="Tailors, dressmakers, furriers and milliners"/>
+        <unit name="6343" title="Shoe repairers and shoemakers"/>
+        <unit name="6344" title="Jewellers, jewellery and watch repairers and related occupations"/>
+        <unit name="6345" title="Upholsterers"/>
+        <unit name="6346" title="Funeral directors and embalmers"/>
+      </minor>
+    </major>
+    <major name="64" title="Sales representatives and salespersons - wholesale and retail trade">
+      <minor name="641" title="Sales and account representatives - wholesale trade (non-technical)">
+        <unit name="6411" title="Sales and account representatives - wholesale trade (non-technical)"/>
+      </minor>
+      <minor name="642" title="Retail salespersons">
+        <unit name="6421" title="Retail salespersons"/>
+      </minor>
+    </major>
+    <major name="65" title="Service representatives and other customer and personal services occupations">
+      <minor name="651" title="Occupations in food and beverage service">
+        <unit name="6511" title="Ma�tres d'h�tel and hosts/hostesses"/>
+        <unit name="6512" title="Bartenders"/>
+        <unit name="6513" title="Food and beverage servers"/>
+      </minor>
+      <minor name="652" title="Occupations in travel and accommodation">
+        <unit name="6521" title="Travel counsellors"/>
+        <unit name="6522" title="Pursers and flight attendants"/>
+        <unit name="6523" title="Airline ticket and service agents"/>
+        <unit name="6524" title="Ground and water transport ticket agents, cargo service representatives and related clerks"/>
+        <unit name="6525" title="Hotel front desk clerks"/>
+      </minor>
+      <minor name="653" title="Tourism and amusement services occupations">
+        <unit name="6531" title="Tour and travel guides"/>
+        <unit name="6532" title="Outdoor sport and recreational guides"/>
+        <unit name="6533" title="Casino occupations"/>
+      </minor>
+      <minor name="654" title="Security guards and related security service occupations">
+        <unit name="6541" title="Security guards and related security service occupations"/>
+      </minor>
+      <minor name="655" title="Customer and information services representatives">
+        <unit name="6551" title="Customer services representatives - financial institutions"/>
+        <unit name="6552" title="Other customer and information services representatives"/>
+      </minor>
+      <minor name="656" title="Other occupations in personal service">
+        <unit name="6561" title="Image, social and other personal consultants"/>
+        <unit name="6562" title="Estheticians, electrologists and related occupations"/>
+        <unit name="6563" title="Pet groomers and animal care workers"/>
+        <unit name="6564" title="Other personal service occupations"/>
+      </minor>
+    </major>
+    <major name="66" title="Sales support occupations">
+      <minor name="661" title="Cashiers">
+        <unit name="6611" title="Cashiers"/>
+      </minor>
+      <minor name="662" title="Other sales support and related occupations">
+        <unit name="6621" title="Service station attendants"/>
+        <unit name="6622" title="Store shelf stockers, clerks and order fillers"/>
+        <unit name="6623" title="Other sales related occupations"/>
+      </minor>
+    </major>
+    <major name="67" title="Service support and other service occupations, n.e.c.">
+      <minor name="671" title="Food counter attendants, kitchen helpers and related support occupations">
+        <unit name="6711" title="Food counter attendants, kitchen helpers and related support occupations"/>
+      </minor>
+      <minor name="672" title="Support occupations in accommodation, travel and amusement services">
+        <unit name="6721" title="Support occupations in accommodation, travel and facilities set-up services"/>
+        <unit name="6722" title="Operators and attendants in amusement, recreation and sport"/>
+      </minor>
+      <minor name="673" title="Cleaners">
+        <unit name="6731" title="Light duty cleaners"/>
+        <unit name="6732" title="Specialized cleaners"/>
+        <unit name="6733" title="Janitors, caretakers and building superintendents"/>
+      </minor>
+      <minor name="674" title="Other service support and related occupations, n.e.c.">
+        <unit name="6741" title="Dry cleaning, laundry and related occupations"/>
+        <unit name="6742" title="Other service support occupations, n.e.c."/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="7" title="Trades, transport and equipment operators and related occupations">
+    <major name="72" title="Industrial, electrical and construction trades">
+      <minor name="720" title="Contractors and supervisors, industrial, electrical and construction trades and related workers">
+        <unit name="7201" title="Contractors and supervisors, machining, metal forming, shaping and erecting trades and related occupations"/>
+        <unit name="7202" title="Contractors and supervisors, electrical trades and telecommunications occupations"/>
+        <unit name="7203" title="Contractors and supervisors, pipefitting trades"/>
+        <unit name="7204" title="Contractors and supervisors, carpentry trades"/>
+        <unit name="7205" title="Contractors and supervisors, other construction trades, installers, repairers and servicers"/>
+      </minor>
+      <minor name="723" title="Machining, metal forming, shaping and erecting trades">
+        <unit name="7231" title="Machinists and machining and tooling inspectors"/>
+        <unit name="7232" title="Tool and die makers"/>
+        <unit name="7233" title="Sheet metal workers"/>
+        <unit name="7234" title="Boilermakers"/>
+        <unit name="7235" title="Structural metal and platework fabricators and fitters"/>
+        <unit name="7236" title="Ironworkers"/>
+        <unit name="7237" title="Welders and related machine operators"/>
+      </minor>
+      <minor name="724" title="Electrical trades and electrical power line and telecommunications workers">
+        <unit name="7241" title="Electricians (except industrial and power system)"/>
+        <unit name="7242" title="Industrial electricians"/>
+        <unit name="7243" title="Power system electricians"/>
+        <unit name="7244" title="Electrical power line and cable workers"/>
+        <unit name="7245" title="Telecommunications line and cable workers"/>
+        <unit name="7246" title="Telecommunications installation and repair workers"/>
+        <unit name="7247" title="Cable television service and maintenance technicians"/>
+      </minor>
+      <minor name="725" title="Plumbers, pipefitters and gas fitters">
+        <unit name="7251" title="Plumbers"/>
+        <unit name="7252" title="Steamfitters, pipefitters and sprinkler system installers"/>
+        <unit name="7253" title="Gas fitters"/>
+      </minor>
+      <minor name="727" title="Carpenters and cabinetmakers">
+        <unit name="7271" title="Carpenters"/>
+        <unit name="7272" title="Cabinetmakers"/>
+      </minor>
+      <minor name="728" title="Masonry and plastering trades">
+        <unit name="7281" title="Bricklayers"/>
+        <unit name="7282" title="Concrete finishers"/>
+        <unit name="7283" title="Tilesetters"/>
+        <unit name="7284" title="Plasterers, drywall installers and finishers and lathers"/>
+      </minor>
+      <minor name="729" title="Other construction trades">
+        <unit name="7291" title="Roofers and shinglers"/>
+        <unit name="7292" title="Glaziers"/>
+        <unit name="7293" title="Insulators"/>
+        <unit name="7294" title="Painters and decorators (except interior decorators)"/>
+        <unit name="7295" title="Floor covering installers"/>
+      </minor>
+    </major>
+    <major name="73" title="Maintenance and equipment operation trades">
+      <minor name="730" title="Contractors and supervisors, maintenance trades and heavy equipment and transport operators">
+        <unit name="7301" title="Contractors and supervisors, mechanic trades"/>
+        <unit name="7302" title="Contractors and supervisors, heavy equipment operator crews"/>
+        <unit name="7303" title="Supervisors, printing and related occupations"/>
+        <unit name="7304" title="Supervisors, railway transport operations"/>
+        <unit name="7305" title="Supervisors, motor transport and other ground transit operators"/>
+      </minor>
+      <minor name="731" title="Machinery and transportation equipment mechanics (except motor vehicle)">
+        <unit name="7311" title="Construction millwrights and industrial mechanics"/>
+        <unit name="7312" title="Heavy-duty equipment mechanics"/>
+        <unit name="7313" title="Refrigeration and air conditioning mechanics"/>
+        <unit name="7314" title="Railway carmen/women"/>
+        <unit name="7315" title="Aircraft mechanics and aircraft inspectors"/>
+        <unit name="7316" title="Machine fitters"/>
+        <unit name="7318" title="Elevator constructors and mechanics"/>
+      </minor>
+      <minor name="732" title="Automotive service technicians">
+        <unit name="7321" title="Automotive service technicians, truck and bus mechanics and mechanical repairers"/>
+        <unit name="7322" title="Motor vehicle body repairers"/>
+      </minor>
+      <minor name="733" title="Other mechanics and related repairers">
+        <unit name="7331" title="Oil and solid fuel heating mechanics"/>
+        <unit name="7332" title="Appliance servicers and repairers"/>
+        <unit name="7333" title="Electrical mechanics"/>
+        <unit name="7334" title="Motorcycle, all-terrain vehicle and other related mechanics"/>
+        <unit name="7335" title="Other small engine and small equipment repairers"/>
+      </minor>
+      <minor name="736" title="Train crew operating occupations">
+        <unit name="7361" title="Railway and yard locomotive engineers"/>
+        <unit name="7362" title="Railway conductors and brakemen/women"/>
+      </minor>
+      <minor name="737" title="Crane operators, drillers and blasters">
+        <unit name="7371" title="Crane operators"/>
+        <unit name="7372" title="Drillers and blasters - surface mining, quarrying and construction"/>
+        <unit name="7373" title="Water well drillers"/>
+      </minor>
+      <minor name="738" title="Printing press operators and other trades and related occupations, n.e.c.">
+        <unit name="7381" title="Printing press operators"/>
+        <unit name="7384" title="Other trades and related occupations, n.e.c."/>
+      </minor>
+    </major>
+    <major name="74" title="Other installers, repairers and servicers and material handlers">
+      <minor name="744" title="Other installers, repairers and servicers">
+        <unit name="7441" title="Residential and commercial installers and servicers"/>
+        <unit name="7442" title="Waterworks and gas maintenance workers"/>
+        <unit name="7444" title="Pest controllers and fumigators"/>
+        <unit name="7445" title="Other repairers and servicers"/>
+      </minor>
+      <minor name="745" title="Longshore workers and material handlers">
+        <unit name="7451" title="Longshore workers"/>
+        <unit name="7452" title="Material handlers"/>
+      </minor>
+    </major>
+    <major name="75" title="Transport and heavy equipment operation and related maintenance occupations">
+      <minor name="751" title="Motor vehicle and transit drivers">
+        <unit name="7511" title="Transport truck drivers"/>
+        <unit name="7512" title="Bus drivers, subway operators and other transit operators"/>
+        <unit name="7513" title="Taxi and limousine drivers and chauffeurs"/>
+        <unit name="7514" title="Delivery and courier service drivers"/>
+      </minor>
+      <minor name="752" title="Heavy equipment operators">
+        <unit name="7521" title="Heavy equipment operators (except crane)"/>
+        <unit name="7522" title="Public works maintenance equipment operators and related workers"/>
+      </minor>
+      <minor name="753" title="Other transport equipment operators and related maintenance workers">
+        <unit name="7531" title="Railway yard and track maintenance workers"/>
+        <unit name="7532" title="Water transport deck and engine room crew"/>
+        <unit name="7533" title="Boat and cable ferry operators and related occupations"/>
+        <unit name="7534" title="Air transport ramp attendants"/>
+        <unit name="7535" title="Other automotive mechanical installers and servicers"/>
+      </minor>
+    </major>
+    <major name="76" title="Trades helpers, construction labourers and related occupations">
+      <minor name="761" title="Trades helpers and labourers">
+        <unit name="7611" title="Construction trades helpers and labourers"/>
+        <unit name="7612" title="Other trades helpers and labourers"/>
+      </minor>
+      <minor name="762" title="Public works and other labourers, n.e.c.">
+        <unit name="7621" title="Public works and maintenance labourers"/>
+        <unit name="7622" title="Railway and motor transport labourers"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="8" title="Natural resources, agriculture and related production occupations">
+    <major name="82" title="Supervisors and technical occupations in natural resources, agriculture and related production">
+      <minor name="821" title="Supervisors, logging and forestry">
+        <unit name="8211" title="Supervisors, logging and forestry"/>
+      </minor>
+      <minor name="822" title="Contractors and supervisors, mining, oil and gas">
+        <unit name="8221" title="Supervisors, mining and quarrying"/>
+        <unit name="8222" title="Contractors and supervisors, oil and gas drilling and services"/>
+      </minor>
+      <minor name="823" title="Underground miners, oil and gas drillers and related occupations">
+        <unit name="8231" title="Underground production and development miners"/>
+        <unit name="8232" title="Oil and gas well drillers, servicers, testers and related workers"/>
+      </minor>
+      <minor name="824" title="Logging machinery operators">
+        <unit name="8241" title="Logging machinery operators"/>
+      </minor>
+      <minor name="825" title="Contractors and supervisors, agriculture, horticulture and related operations and services">
+        <unit name="8252" title="Agricultural service contractors, farm supervisors and specialized livestock workers"/>
+        <unit name="8255" title="Contractors and supervisors, landscaping, grounds maintenance and horticulture services"/>
+      </minor>
+      <minor name="826" title="Fishing vessel masters and fishermen/women">
+        <unit name="8261" title="Fishing masters and officers"/>
+        <unit name="8262" title="Fishermen/women"/>
+      </minor>
+    </major>
+    <major name="84" title="Workers in natural resources, agriculture and related production">
+      <minor name="841" title="Mine service workers and operators in oil and gas drilling">
+        <unit name="8411" title="Underground mine service and support workers"/>
+        <unit name="8412" title="Oil and gas well drilling and related workers and services operators"/>
+      </minor>
+      <minor name="842" title="Logging and forestry workers">
+        <unit name="8421" title="Chain saw and skidder operators"/>
+        <unit name="8422" title="Silviculture and forestry workers"/>
+      </minor>
+      <minor name="843" title="Agriculture and horticulture workers">
+        <unit name="8431" title="General farm workers"/>
+        <unit name="8432" title="Nursery and greenhouse workers"/>
+      </minor>
+      <minor name="844" title="Other workers in fishing and trapping and hunting occupations">
+        <unit name="8441" title="Fishing vessel deckhands"/>
+        <unit name="8442" title="Trappers and hunters"/>
+      </minor>
+    </major>
+    <major name="86" title="Harvesting, landscaping and natural resources labourers">
+      <minor name="861" title="Harvesting, landscaping and natural resources labourers">
+        <unit name="8611" title="Harvesting labourers"/>
+        <unit name="8612" title="Landscaping and grounds maintenance labourers"/>
+        <unit name="8613" title="Aquaculture and marine harvest labourers"/>
+        <unit name="8614" title="Mine labourers"/>
+        <unit name="8615" title="Oil and gas drilling, servicing and related labourers"/>
+        <unit name="8616" title="Logging and forestry labourers"/>
+      </minor>
+    </major>
+  </broad>
+  <broad name="9" title="Occupations in manufacturing and utilities">
+    <major name="92" title="Processing, manufacturing and utilities supervisors and central control operators">
+      <minor name="921" title="Supervisors, processing and manufacturing occupations">
+        <unit name="9211" title="Supervisors, mineral and metal processing"/>
+        <unit name="9212" title="Supervisors, petroleum, gas and chemical processing and utilities"/>
+        <unit name="9213" title="Supervisors, food, beverage and associated products processing"/>
+        <unit name="9214" title="Supervisors, plastic and rubber products manufacturing"/>
+        <unit name="9215" title="Supervisors, forest products processing"/>
+        <unit name="9217" title="Supervisors, textile, fabric, fur and leather products processing and manufacturing"/>
+      </minor>
+      <minor name="922" title="Supervisors, assembly and fabrication">
+        <unit name="9221" title="Supervisors, motor vehicle assembling"/>
+        <unit name="9222" title="Supervisors, electronics manufacturing"/>
+        <unit name="9223" title="Supervisors, electrical products manufacturing"/>
+        <unit name="9224" title="Supervisors, furniture and fixtures manufacturing"/>
+        <unit name="9226" title="Supervisors, other mechanical and metal products manufacturing"/>
+        <unit name="9227" title="Supervisors, other products manufacturing and assembly"/>
+      </minor>
+      <minor name="923" title="Central control and process operators in processing and manufacturing">
+        <unit name="9231" title="Central control and process operators, mineral and metal processing"/>
+        <unit name="9232" title="Petroleum, gas and chemical process operators"/>
+        <unit name="9235" title="Pulping, papermaking and coating control operators"/>
+      </minor>
+      <minor name="924" title="Utilities equipment operators and controllers">
+        <unit name="9241" title="Power engineers and power systems operators"/>
+        <unit name="9243" title="Water and waste treatment plant operators"/>
+      </minor>
+    </major>
+    <major name="94" title="Processing and manufacturing machine operators and related production workers">
+      <minor name="941" title="Machine operators and related workers in mineral and metal products processing and manufacturing">
+        <unit name="9411" title="Machine operators, mineral and metal processing"/>
+        <unit name="9412" title="Foundry workers"/>
+        <unit name="9413" title="Glass forming and finishing machine operators and glass cutters"/>
+        <unit name="9414" title="Concrete, clay and stone forming operators"/>
+        <unit name="9415" title="Inspectors and testers, mineral and metal processing"/>
+        <unit name="9416" title="Metalworking and forging machine operators"/>
+        <unit name="9417" title="Machining tool operators"/>
+        <unit name="9418" title="Other metal products machine operators"/>
+      </minor>
+      <minor name="942" title="Machine operators and related workers in chemical, plastic and rubber processing">
+        <unit name="9421" title="Chemical plant machine operators"/>
+        <unit name="9422" title="Plastics processing machine operators"/>
+        <unit name="9423" title="Rubber processing machine operators and related workers"/>
+      </minor>
+      <minor name="943" title="Machine operators and related workers in pulp and paper production and wood processing and manufacturing">
+        <unit name="9431" title="Sawmill machine operators"/>
+        <unit name="9432" title="Pulp mill machine operators"/>
+        <unit name="9433" title="Papermaking and finishing machine operators"/>
+        <unit name="9434" title="Other wood processing machine operators"/>
+        <unit name="9435" title="Paper converting machine operators"/>
+        <unit name="9436" title="Lumber graders and other wood processing inspectors and graders"/>
+        <unit name="9437" title="Woodworking machine operators"/>
+      </minor>
+      <minor name="944" title="Machine operators and related workers in textile, fabric, fur and leather products processing and manufacturing">
+        <unit name="9441" title="Textile fibre and yarn, hide and pelt processing machine operators and workers"/>
+        <unit name="9442" title="Weavers, knitters and other fabric making occupations"/>
+        <unit name="9445" title="Fabric, fur and leather cutters"/>
+        <unit name="9446" title="Industrial sewing machine operators"/>
+        <unit name="9447" title="Inspectors and graders, textile, fabric, fur and leather products manufacturing"/>
+      </minor>
+      <minor name="946" title="Machine operators and related workers in food, beverage and associated products processing">
+        <unit name="9461" title="Process control and machine operators, food, beverage and associated products processing"/>
+        <unit name="9462" title="Industrial butchers and meat cutters, poultry preparers and related workers"/>
+        <unit name="9463" title="Fish and seafood plant workers"/>
+        <unit name="9465" title="Testers and graders, food, beverage and associated products processing"/>
+      </minor>
+      <minor name="947" title="Printing equipment operators and related occupations">
+        <unit name="9471" title="Plateless printing equipment operators"/>
+        <unit name="9472" title="Camera, platemaking and other prepress occupations"/>
+        <unit name="9473" title="Binding and finishing machine operators"/>
+        <unit name="9474" title="Photographic and film processors"/>
+      </minor>
+    </major>
+    <major name="95" title="Assemblers in manufacturing">
+      <minor name="952" title="Mechanical, electrical and electronics assemblers">
+        <unit name="9521" title="Aircraft assemblers and aircraft assembly inspectors"/>
+        <unit name="9522" title="Motor vehicle assemblers, inspectors and testers"/>
+        <unit name="9523" title="Electronics assemblers, fabricators, inspectors and testers"/>
+        <unit name="9524" title="Assemblers and inspectors, electrical appliance, apparatus and equipment manufacturing"/>
+        <unit name="9525" title="Assemblers, fabricators and inspectors, industrial electrical motors and transformers"/>
+        <unit name="9526" title="Mechanical assemblers and inspectors"/>
+        <unit name="9527" title="Machine operators and inspectors, electrical apparatus manufacturing"/>
+      </minor>
+      <minor name="953" title="Other assembly and related occupations">
+        <unit name="9531" title="Boat assemblers and inspectors"/>
+        <unit name="9532" title="Furniture and fixture assemblers and inspectors"/>
+        <unit name="9533" title="Other wood products assemblers and inspectors"/>
+        <unit name="9534" title="Furniture finishers and refinishers"/>
+        <unit name="9535" title="Plastic products assemblers, finishers and inspectors"/>
+        <unit name="9536" title="Industrial painters, coaters and metal finishing process operators"/>
+        <unit name="9537" title="Other products assemblers, finishers and inspectors"/>
+      </minor>
+    </major>
+    <major name="96" title="Labourers in processing, manufacturing and utilities">
+      <minor name="961" title="Labourers in processing, manufacturing and utilities">
+        <unit name="9611" title="Labourers in mineral and metal processing"/>
+        <unit name="9612" title="Labourers in metal fabrication"/>
+        <unit name="9613" title="Labourers in chemical products processing and utilities"/>
+        <unit name="9614" title="Labourers in wood, pulp and paper processing"/>
+        <unit name="9615" title="Labourers in rubber and plastic products manufacturing"/>
+        <unit name="9616" title="Labourers in textile processing"/>
+        <unit name="9617" title="Labourers in food, beverage and associated products processing"/>
+        <unit name="9618" title="Labourers in fish and seafood processing"/>
+        <unit name="9619" title="Other labourers in processing, manufacturing and utilities"/>
+      </minor>
+    </major>
+  </broad>
+</NOC2011>

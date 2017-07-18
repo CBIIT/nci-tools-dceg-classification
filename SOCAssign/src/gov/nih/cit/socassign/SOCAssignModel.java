@@ -94,7 +94,7 @@ public class SOCAssignModel {
 	 * @return true if at least 1 code has been assigned, false otherwise*/
 	public boolean isRowCommented(int rowIndex) {
 		Assignments assignment = assignmentListMap.get(getRowIdForRowIndex(rowIndex));
-		return (assignment != null && assignment.getComment().trim().length()>0);
+		return (assignment != null && assignment.getComment()!=null && assignment.getComment().trim().length()>0);
 	}
 	
 	/** This method returns the coding system

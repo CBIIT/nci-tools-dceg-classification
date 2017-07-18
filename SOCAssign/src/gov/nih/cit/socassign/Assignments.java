@@ -55,6 +55,7 @@ public class Assignments {
 	}
 
 	public String getComment() {
+		if (comment==null) comment="";
 		return comment;
 	}
 	public void setComment(String comment) {
